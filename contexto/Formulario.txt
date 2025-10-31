@@ -1,0 +1,185 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Formulario de Información Inicial
+
+— Proyecto Web KABSA Group
+
+
+SECCIÓN 1 — Datos Generales del Proyecto
+
+
+1.    Nombre completo  del representante: Martin Delgado Herrera
+2.  Cargo: Administrador
+3.  Correo  de contacto principal: cmdh200@hotmail.com 
+4.  Teléfono / WhatsApp: 991690103
+5.  Fecha de inicio prevista del proyecto: 28OCT2025
+6.  Dominio web actual  (si existe): NO
+7.  ¿Cuenta con hosting o desea que lo gestionemos?
+☐ Ya tiene hosting
+☐ Desea que Chamba Digital  lo  proporcione – DESEO QUE LO PROPORCIONE
+8.  Cantidad estimada  de correos corporativos a crear:1000 CORREOS
+9.  Dominio preferido (.pe, .com, .com.pe, etc.): .pe
+
+SECCIÓN 2 — Información sobre KABSA Group (empresa matriz)
+
+1.    Nombre completo  del grupo  empresarial: KABSA GROUP
+2.  Año de fundación del grupo: 2025
+3.  Historia o reseña general  del grupo: CREAR
+4.  Misión del grupo: CREAR
+5.  Visión del grupo: CREAR
+6.  Valores corporativos: CREAR
+7.  Áreas de operación o sectores en los que participan: Sector CONSTRUCCION
+8.  Descripción  general  de los servicios o líneas de negocio:  
+9.  Principales proyectos  o clientes destacados:  
+10. Ubicación  principal / oficinas:
+11.   Fotos o material institucional  (logotipo,  videos, imágenes, brochures):
+12. Redes sociales (si las tiene): Facebook:
+LinkedIn: Instagram: YouTube:
+
+SECCIÓN 3 — Empresas que componen  KABSA Group
+
+
+(Por favor, complete esta sección por cada empresa del grupo.)
+
+
+Empresa 1
+
+
+1.    Nombre de la empresa: CORPORACION KATSUMOTO S.A.C.
+2.  Año de fundación: 22/05/2023
+3.  Descripción  breve: Empresa dedicada a ACTIVIDADES DE ARQUITECTURA E INGENIERÍA Y ACTIVIDADES CONEXAS DE CONSULTORÍA TÉCNICA
+4.  Servicios que ofrece: 
+5.  Proyectos realizados o en curso: A.- “CONTRATACION DE LA EJECUCION DE LA OBRA: “REPARACION DE PISTA DE ATERRIZAJE, PLATAFORMA DE AERONAVES, CALLE DE RODAJE, MARGEN DE PISTA DE ATERRIZAJE, FRANJA DE PISTA DE ATERRIZAJE, SISTEMA DE DRENAJE Y CERCO; EN EL(LA) AERÓDROMO DE YURIMAGUAS, DISTRITO DE YURIMAGUAS, PROVINCIA DE ALTO AMAZONAS, DEPARTAMENTO DE LORETO.” Actual
+B.- CONTRATACION DE LA EJECUCION DE OBRA:MEJORAMIENTO DE LA CAPACIDAD RESOLUTIVA DE LOS SERVICIOS DE SALUD DEL ESTABLECIMIENTO DE SALUD MONSEFU DISTRITO DE MONSEFU, PROVINCIA DE CHICLAYO, LAMBAYEQUE. Actual
+
+Socios estrategicos --- GRUPO BUCER, SOCIEDAD ANONIMA DE CAPITAL VARIABLE SUCURSAL DEL PERU – (junto a KATSUMOTO conformaron el CONSORCIO ARGOS para la reparacion de pista de aterrizaje.) BUSCAR INFORMACION DE BUCER
+SAINC INGENIEROS CONSTRUCTORES S.A. – SUCURSAL DEL PERÚ – junto a KATSUMOTO conformaron el CONSORCIO BRONTES- para el mejoramiento del hospital) BUSCAR INFORMACION DE SAINC
+6.  Ubicación  / cobertura: LIMA – A NIVEL NACIONAL
+7.  Slogan no hay
+7.  Logo y material gráfico (si aplica): ENVIADO AL WHASTAPP
+8.  Responsable o persona  de contacto dentro de la empresa: Martin Delgado
+9.  Redes sociales o página  web (si tiene): NO
+
+
+
+
+
+
+
+
+
+
+Empresa 2 
+
+
+1.    Nombre de la empresa: ARGOS CORPORATION S.A.C. antes era AGS
+2.  Año de fundación: 19/01/2015
+3.  Descripción  breve: LEER BROCHURE
+4.  Servicios que ofrece: BIENES Y SERVICIOS – CONSTRUCCION – LEER BROCHURE
+
+4. Slogan CONSTRUCCIONES QUE MEJORAN VIDAS
+5.  Proyectos realizados o en curso: BROCHURE
+6.  Ubicación  / cobertura: LIMA – A NIVEL NACIONAL
+7.  Logo y material gráfico (si aplica): ENVIADO AL WHASTAPP
+8.  Responsable o persona  de contacto dentro de la empresa: MARTIN DELGADO
+9.  Redes sociales o página  web (si tiene): NO
+
+
+Empresa 3
+
+
+1.    Nombre de la empresa: BRONTES CONSTRUCTORA S.A.
+2.  Año de fundación: 10/06/2014
+3.  Descripción  breve: Leer BROCHURE
+4.  Servicios que ofrece:, Consultaría de Proyectos Integrales, Financiamiento y Dirección Técnica de Obras y Proyectos.
+5.  Proyectos realizados o en curso: 
+6.  Ubicación  / cobertura: LIMA – A NIVEL NACIONAL
+7.  Logo y material gráfico (si aplica): ENVIADO AL WHASTAPP
+7. Slogan “Diseñamos tus ideas Construimos tus sueños”
+8.  Responsable o persona  de contacto dentro de la empresa: MARTIN DELGADO
+9.  Redes sociales o página  web (si tiene): NO
+
+
+SECCIÓN 4 — Estructura del Sitio Web
+
+
+1.    ¿Qué tipo de sitio desea desarrollar?
+☐ One Page
+☐ Multipágina
+☐ A definir  según propuesta
+2.  Páginas o secciones que desea incluir (marcar o agregar nuevas):
+☐ Inicio
+☐ Nosotros
+☐ Empresas del Grupo
+☐ Proyectos
+☐ Noticias o Blog
+☐ Contacto
+☐ Otras (especifique):  	
+3.  ¿Desea incluir mapa interactivo de proyectos  en el Perú?
+☐ Sí
+
+☐ No
+4.  ¿Desea incluir galerías fotográficas o videos institucionales?
+☐ Sí
+☐ No
+5.  Idiomas del sitio web:
+☐ Español
+☐ Inglés
+☐ Otro:  	
+6.  Ejemplos de páginas web de referencia que le gusten (opcional): https://grupoimcesa.com.pe     https://www.grupogloria.com/grupo 
+
+
+SECCIÓN 5 — Contenidos y Materiales
+
+
+1.    ¿Cuenta con textos institucionales redactados o desea apoyo en redacción?
+☐ Ya los tiene listos
+☐ Necesita apoyo en redacción
+2.  ¿Cuenta con fotos y videos profesionales?
+☐ Sí
+☐ No
+☐ Parcialmente
+3.  ¿Desea incluir videos o fotografías con dron en el sitio web?
+☐ Sí
+☐ NoPOR AHORA
+4.  Adjuntar materiales  (logos, fotos, documentos,  etc.): (enlace de carpeta Drive o WeTransfer) ENVIADO AL WHASTAPP
+
+SECCIÓN 6 — Expectativas y Observaciones
+
+
+1.    ¿Cuál es el principal objetivo del sitio web?
+☐ Presentación corporativa
+☐ Atraer clientes
+☐ Mostrar proyectos  y experiencia
+☐ Otro:  	
+2.  ¿Qué mensaje principal desea transmitir con la web?
+GRUPO DE EMPRESAS QUE GENERAN CONFIANZA Y SEGURIDAD, EXPERTOS DE GRANDES PROYECTOS
+3.  Tono de comunicación  preferido:
+☐ Formal
+☐ Corporativo
+☐ Moderno y dinámico
+4.  Colores corporativos preferidos o código de marca  (si aplica):
+5.  Comentarios o requerimientos adicionales:
+
+SECCIÓN 7 — Confirmación
+
+
+1.    Nombre del responsable que autoriza el inicio del proyecto: MARTIN DELGADO
+2.  Firma digital  o confirmación por correo: CORREO
+3.  Fecha: 28OCT2025

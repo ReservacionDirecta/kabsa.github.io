@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KABSA GROUP: ingeniería, construcción e infraestructura. Proyectos viales, saneamiento, edificaciones y logística en Perú.">
+    <meta property="og:title" content="KABSA GROUP – Construcción e Infraestructura">
+    <meta property="og:description" content="Grupo empresarial especializado en construcción e infraestructura con excelencia técnica, cumplimiento y compromiso social.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="contexto/LOGO KABSA PNG.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <title>KABSA GROUP – Construcción e Infraestructura</title>
+    
+    <!-- Cargar Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Cargar Plugins de Tailwind (Forms y Typography) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kabsa-blue': '#040872', // Azul oscuro corporativo
+                        'kabsa-dark-gray': '#333333',
+                        'kabsa-gray': '#F0F2F5', // Fondo gris claro
+                        'whatsapp-green': '#25D366'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'ui-sans-serif', 'system-ui']
+                    }
+                }
+            },
+            plugins: [
+                function({ addBase, theme }) {
+                    addBase({
+                        'h1': { fontSize: theme('fontSize.4xl'), fontWeight: theme('fontWeight.bold'), color: theme('colors.kabsa-gray') },
+                        'h2': { fontSize: theme('fontSize.3xl'), fontWeight: theme('fontWeight.bold'), color: theme('colors.kabsa-gray') },
+                        'h3': { fontSize: theme('fontSize.2xl'), fontWeight: theme('fontWeight.bold'), color: theme('colors.kabsa-gray') },
+                    });
+                },
+            ],
+        }
+    </script>
+    
+    <!-- Cargar Tipografía Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Animate On Scroll Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="assets/global.css" />
+    
+    <!-- Estilos Personalizados -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow-lg {
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            }
+            .sticky-shadow {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            }
+            .scroll-reveal {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            .scroll-reveal.fade-in-up {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            /* Mejoras visuales */
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            }
+            .btn-hover {
+                transition: all 0.3s ease;
+            }
+            .btn-hover:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .img-hover {
+                overflow: hidden;
+            }
+            .img-hover img {
+                transition: transform 0.5s ease;
+            }
+            .img-hover:hover img {
+                transform: scale(1.05);
+            }
+            /* Animaciones para modales */
+            .modal-animation {
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            .modal-content {
+                transform: scale(0.95);
+                transition: transform 0.3s ease;
+            }
+            .modal.active .modal-content {
+                transform: scale(1);
+            }
+            /* Mejoras en formularios */
+            .form-input-focus {
+                transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+            .form-input-focus:focus {
+                border-color: #040872;
+                box-shadow: 0 0 0 3px rgba(13, 43, 79, 0.2);
+                outline: none;
+            }
+        }
+    </style>
+    
+    <!-- Cargar Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9729T47');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHMJRY1TXM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CHMJRY1TXM');
+    </script>
+
+</head>
+<body class="font-sans text-kabsa-dark-gray antialiased overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9729T47"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ===== 1. HEADER (Parcial) ===== -->
+    <div data-include="partials/navbar.html"></div>
+
+    <!-- ===== CONTENEDOR PRINCIPAL DE VISTAS (PÁGINAS) ===== -->
+    <main>
+
+        <!-- ===== VISTA 1: INICIO (LA PÁGINA PRINCIPAL ONE-PAGE) ===== -->
+        <div id="view-inicio">
+            
+            <!-- 2. HERO SECTION (Carrusel) -->
+            <section id="inicio" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden" data-aos="fade-in" data-aos-duration="1000">
+                <!-- Slides -->
+                <div id="hero-slider" class="absolute inset-0">
+                    <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-700" style="background-image:url('https://images.unsplash.com/photo-1564183063457-680b3759a5bd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
+                    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-700" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1600&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
+                    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-700" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
+                    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-700" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
+                    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-700" style="background-image:url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1600&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
+                    <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-700" style="background-image:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1600&auto=format&fit=crop'); background-size:cover; background-position:center;"></div>
+                    <div class="absolute inset-0 bg-black/60"></div>
+                </div>
+
+                <!-- Texto/CTAs -->
+                <div class="relative z-10 text-white text-center p-6 max-w-4xl">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 !leading-tight text-shadow-lg" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">Construimos confianza. <br> Construimos futuro.</h1>
+                    <p class="text-lg md:text-2xl mb-10">Empresas especializadas unidas: ingeniería, innovación y compromiso.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#grupo" class="bg-kabsa-blue text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow-xl btn-hover">Conoce al Grupo</a>
+                        <a href="#" onclick="showView('view-contacto'); return false;" class="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white hover:text-kabsa-blue transition duration-300 shadow-xl btn-hover">Contáctanos</a>
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <button id="hero-prev" class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full p-2">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <button id="hero-next" class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full p-2">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+                    <button class="hero-dot w-2.5 h-2.5 rounded-full bg-white/70"></button>
+                    <button class="hero-dot w-2.5 h-2.5 rounded-full bg-white/40"></button>
+                    <button class="hero-dot w-2.5 h-2.5 rounded-full bg-white/40"></button>
+                    <button class="hero-dot w-2.5 h-2.5 rounded-full bg-white/40"></button>
+                    <button class="hero-dot w-2.5 h-2.5 rounded-full bg-white/40"></button>
+                    <button class="hero-dot w-2.5 h-2.5 rounded-full bg-white/40"></button>
+                </div>
+            </section>
+
+            <!-- 3. SECCIÓN: SOBRE EL GRUPO KABSA (RESUMEN) -->
+            <section id="grupo" class="py-24 bg-white" data-aos="fade-up">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                        <div class="scroll-reveal">
+                            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue mb-6">Quiénes somos</h2>
+                            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                                KABSA GROUP es un conglomerado peruano conformado por empresas especializadas en el sector construcción. 
+                                Nacemos con el propósito de desarrollar proyectos que impulsen el progreso del país, con calidad, cumplimiento y responsabilidad social.
+                            </p>
+                            <a href="grupo.html" class="font-semibold text-kabsa-blue text-lg hover:underline">
+                                Conoce nuestra historia →
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 scroll-reveal" data-delay="200">
+                            <div class="bg-kabsa-gray p-8 rounded-lg text-center shadow-md border border-gray-200">
+                                <span class="text-5xl font-bold text-kabsa-blue block mb-2">+10</span>
+                                <p class="text-gray-600 font-medium">años de experiencia</p>
+                            </div>
+                            <div class="bg-kabsa-gray p-8 rounded-lg text-center shadow-md border border-gray-200">
+                                <span class="text-5xl font-bold text-kabsa-blue block mb-2">+50</span>
+                                <p class="text-gray-600 font-medium">proyectos ejecutados</p>
+                            </div>
+                            <div class="bg-kabsa-gray p-8 rounded-lg text-center shadow-md border border-gray-200">
+                                <span class="text-5xl font-bold text-kabsa-blue block mb-2">
+                                    <i data-lucide="map-pin" class="w-12 h-12 mx-auto"></i>
+                                </span>
+                                <p class="text-gray-600 font-medium">Cobertura nacional</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. SECCIÓN: EMPRESAS DEL GRUPO (RESUMEN) -->
+            <section id="empresas" class="py-24 bg-kabsa-gray" data-aos="fade-up">
+                <div class="container mx-auto px-4 lg:px-6 text-center">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue mb-5">Múltiples empresas, una sola visión.</h2>
+                    <p class="text-xl text-gray-700 mb-16 max-w-3xl mx-auto scroll-reveal" data-delay="200">
+                        Cada una con especialización propia, trabajando de forma integrada para ofrecer soluciones completas.
+                    </p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        <!-- Card 1 -->
+                        <div class="group bg-white p-6 sm:p-10 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 scroll-reveal" data-delay="400">
+                            <div class="relative h-44 w-full rounded-lg overflow-hidden mb-5">
+                                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Arquitectura e Ingeniería" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop" alt="Planos y supervisión técnica" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+                            </div>
+                            <div class="mb-3">
+                                <img src="assets/logokatsumoto.png" alt="Logo Katsumoto" class="h-12 w-auto object-contain">
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-kabsa-blue">CORPORACION KATSUMOTO S.A.C.</h3>
+                            <p class="text-gray-600 mb-6">Arquitectura e ingeniería; consultoría técnica. Obras públicas/privadas: vial, saneamiento, edificaciones.</p>
+                            <a href="katsumoto.html" class="font-semibold text-kabsa-blue text-lg hover:underline">Ver más →</a>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="group bg-white p-6 sm:p-10 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 scroll-reveal" data-delay="600">
+                            <div class="relative h-44 w-full rounded-lg overflow-hidden mb-5">
+                                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="Obras civiles y construcción" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0">
+                                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop" alt="Pavimentación y obras lineales" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+                            </div>
+                            <div class="mb-3">
+                                <img src="assets/logo argos.png" alt="Logo ARGOS CORPORATION S.A.C." class="h-12 w-auto object-contain">
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-kabsa-blue">ARGOS CORPORATION S.A.C.</h3>
+                            <p class="text-gray-600 mb-6">Construcción de edificios y obras civiles; comercialización de maquinaria y equipos. "CONSTRUCCIONES QUE MEJORAN VIDAS".</p>
+                            <a href="argos.html" class="font-semibold text-kabsa-blue text-lg hover:underline">Ver más →</a>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="group bg-white p-6 sm:p-10 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 scroll-reveal" data-delay="800">
+                            <div class="relative h-44 w-full rounded-lg overflow-hidden mb-5">
+                                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop" alt="Infraestructura y saneamiento" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0">
+                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop" alt="Ingeniería vial" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+                            </div>
+                            <div class="mb-3">
+                                <img src="contexto/logo brontes - 2025.png" alt="Logo Brontes" class="h-12 w-auto object-contain">
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4 text-kabsa-blue">BRONTES CONSTRUCTORA S.A.</h3>
+                            <p class="text-gray-600 mb-6">Ejecución técnica, carpintería arquitectónica, fabricación de componentes, alquiler de maquinaria.</p>
+                            <a href="brontes.html" class="font-semibold text-kabsa-blue text-lg hover:underline">Ver más →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. SECCIÓN: CARACTERÍSTICAS DESTACADAS DEL GRUPO -->
+            <section class="py-24 bg-[#F8FAFC]">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue text-center mb-16">¿Por qué elegir KABSA GROUP?</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Característica 1 -->
+                        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 scroll-reveal">
+                            <div class="w-16 h-16 bg-kabsa-blue rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-kabsa-blue mb-4">Experiencia Integral</h3>
+                            <p class="text-gray-600">Más de 10 años de experiencia combinada en construcción, ingeniería y consultoría técnica especializada.</p>
+                        </div>
+
+                        <!-- Característica 2 -->
+                        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 scroll-reveal" data-delay="200">
+                            <div class="w-16 h-16 bg-kabsa-blue rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-kabsa-blue mb-4">Metodología BIM</h3>
+                            <p class="text-gray-600">Implementamos metodología BIM y LPS para optimizar la gestión y control de proyectos de construcción.</p>
+                        </div>
+
+                        <!-- Característica 3 -->
+                        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 scroll-reveal" data-delay="400">
+                            <div class="w-16 h-16 bg-kabsa-blue rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-kabsa-blue mb-4">Certificaciones ISO</h3>
+                            <p class="text-gray-600">Certificados en ISO 9001:2015, ISO 45001:2018 e ISO 37001:2016 garantizando calidad y seguridad.</p>
+                        </div>
+
+                        <!-- Característica 4 -->
+                        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 scroll-reveal" data-delay="600">
+                            <div class="w-16 h-16 bg-kabsa-blue rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-kabsa-blue mb-4">Equipo Especializado</h3>
+                            <p class="text-gray-600">Profesionales altamente capacitados en ingeniería vial, infraestructura, saneamiento y construcción.</p>
+                        </div>
+
+                        <!-- Característica 5 -->
+                        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 scroll-reveal" data-delay="800">
+                            <div class="w-16 h-16 bg-kabsa-blue rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-kabsa-blue mb-4">Capacidad de Contratación</h3>
+                            <p class="text-gray-600">Más de S/ 500 millones en capacidad de contratación para proyectos de gran envergadura.</p>
+                        </div>
+
+                        <!-- Característica 6 -->
+                        <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 scroll-reveal" data-delay="1000">
+                            <div class="w-16 h-16 bg-kabsa-blue rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-kabsa-blue mb-4">Cobertura Nacional</h3>
+                            <p class="text-gray-600">Presencia en múltiples regiones del Perú con proyectos ejecutados en Lima, Piura, Lambayeque y más.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. SECCIÓN: PROYECTOS DESTACADOS (RESUMEN) -->
+            <section id="proyectos" class="py-24 bg-white">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue text-center mb-16">Proyectos que hablan por nosotros.</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Proyecto 1 -->
+                        <div class="group relative block rounded-lg overflow-hidden shadow-lg scroll-reveal cursor-pointer" onclick="openModal('modal-proyecto-1')">
+                            <img src="https://plus.unsplash.com/premium_photo-1663046024054-47d889bb1f1e?q=80&w=600&auto=format&fit=crop" alt="Proyecto Vial" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-2xl font-bold">Proyecto Vial Tramo 1</h3>
+                                <p class="text-sm">Cliente: Provías | Estado: Ejecutado</p>
+                            </div>
+                        </div>
+                        <!-- Proyecto 2 -->
+                        <div class="group relative block rounded-lg overflow-hidden shadow-lg scroll-reveal cursor-pointer" data-delay="200" onclick="openModal('modal-proyecto-2')">
+                            <img src="https://images.unsplash.com/photo-1527335988388-b40ee248d80c?q=80&w=600&auto=format&fit=crop" alt="Obra Saneamiento" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-2xl font-bold">Saneamiento Piura</h3>
+                                <p class="text-sm">Cliente: GORE Piura | Estado: En curso</p>
+                            </div>
+                        </div>
+                        <!-- Proyecto 3 -->
+                        <div class="group relative block rounded-lg overflow-hidden shadow-lg scroll-reveal cursor-pointer" data-delay="400" onclick="openModal('modal-proyecto-3')">
+                            <img src="https://plus.unsplash.com/premium_photo-1683136809051-73451a58e7b9?q=80&w=600&auto=format&fit=crop" alt="Edificación" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-2xl font-bold">Edificio Corporativo</h3>
+                                <p class="text-sm">Cliente: Privado | Estado: Ejecutado</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-16 scroll-reveal">
+                        <a href="proyectos.html" class="bg-kabsa-blue text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow-xl">
+                            Ver todos los proyectos
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. DÓNDE ESTAMOS (Mapa de proyectos) -->
+            <section id="donde-estamos" class="py-16 sm:py-20 bg-white">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+                        <!-- Columna texto -->
+                        <div data-aos="flip-right" data-aos-duration="1000">
+                            <div class="flex items-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2 text-kabsa-blue" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <h2 class="text-2xl sm:text-3xl font-bold text-kabsa-blue">¿Dónde estamos?</h2>
+                            </div>
+                            <p class="text-gray-600 mb-6">Proyectos de las empresas del Grupo KABSA en todo el Perú. Selecciona un departamento para ver las ubicaciones específicas.</p>
+                            <a href="contacto.html" class="inline-block bg-kabsa-blue text-white px-5 py-2 rounded-md btn-hover">Contáctenos</a>
+                            <div class="mt-8">
+                                <label for="country-select" class="block text-sm font-medium text-gray-700 mb-2">Filtrar por departamento:</label>
+                                <select id="country-select" class="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-kabsa-blue">
+                                    <option value="ALL" selected>Todos los departamentos</option>
+                                    <option value="Lima">Lima</option>
+                                    <option value="Cajamarca">Cajamarca</option>
+                                    <option value="Cusco">Cusco</option>
+                                    <option value="La Libertad">La Libertad</option>
+                                    <option value="Amazonas">Amazonas</option>
+                                    <option value="Piura">Piura</option>
+                                    <option value="Loreto">Loreto</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Columna mapa -->
+                        <div class="lg:col-span-2">
+                            <div id="mapa-proyectos" class="w-full h-[360px] sm:h-[420px] rounded-lg shadow-lg" data-aos="fade" data-aos-duration="1200"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. SECCIÓN: NOTICIAS Y ACTUALIDAD (RESUMEN) -->
+            <section id="noticias" class="py-24 bg-kabsa-gray">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue text-center mb-5">Noticias y Actualidad</h2>
+                    <p class="text-xl text-gray-700 mb-16 max-w-3xl mx-auto text-center scroll-reveal" data-delay="200">
+                        Últimos avances y novedades del grupo.
+                    </p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        <!-- Noticia 1 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col scroll-reveal cursor-pointer" data-delay="400">
+                            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=600&auto=format&fit=crop" alt="Imagen de noticia" class="w-full h-56 object-cover" onclick="openModal('modal-noticia-1')">
+                            <div class="p-6 flex flex-col flex-grow text-justify-all">
+                                <h3 class="text-xl font-bold mb-3 text-kabsa-blue text-left">KABSA GROUP ejecuta nueva obra de saneamiento en Piura</h3>
+                                <p class="text-gray-600 mb-5 flex-grow">La empresa continúa consolidando su presencia en el norte del país...</p>
+                                <a href="#" onclick="openModal('modal-noticia-1'); return false;" class="font-semibold text-kabsa-blue text-lg hover:underline mt-auto">Leer más →</a>
+                            </div>
+                        </div>
+                        <!-- Noticia 2 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col scroll-reveal cursor-pointer" data-delay="600">
+                            <img src="https://images.unsplash.com/photo-1623639226281-f90d014f6b8f?q=80&w=600&auto=format&fit=crop" alt="Imagen de noticia" class="w-full h-56 object-cover" onclick="openModal('modal-noticia-2')">
+                            <div class="p-6 flex flex-col flex-grow text-justify-all">
+                                <h3 class="text-xl font-bold mb-3 text-kabsa-blue text-left">Adjudicación de proyecto vial con Gobierno Regional</h3>
+                                <p class="text-gray-600 mb-5 flex-grow">El grupo liderará la construcción del tramo San Marcos – Pedro Gálvez...</p>
+                                <a href="#" onclick="openModal('modal-noticia-2'); return false;" class="font-semibold text-kabsa-blue text-lg hover:underline mt-auto">Leer más →</a>
+                            </div>
+                        </div>
+                        <!-- Noticia 3 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col scroll-reveal cursor-pointer" data-delay="800">
+                            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=600&auto=format&fit=crop" alt="Imagen de noticia" class="w-full h-56 object-cover" onclick="openModal('modal-noticia-3')">
+                            <div class="p-6 flex flex-col flex-grow text-justify-all">
+                                <h3 class="text-xl font-bold mb-3 text-kabsa-blue text-left">Compromiso social: Campaña de invierno 2025</h3>
+                                <p class="text-gray-600 mb-5 flex-grow">Apoyando a las comunidades altoandinas en nuestra zona de influencia...</p>
+                                <a href="#" onclick="openModal('modal-noticia-3'); return false;" class="font-semibold text-kabsa-blue text-lg hover:underline mt-auto">Leer más →</a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="text-center mt-16 scroll-reveal">
+                        <a href="noticias.html" class="bg-kabsa-blue text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-opacity-90 transition duration-300 shadow-xl">
+                            Ver todas las noticias
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. CTA FINAL -->
+            <section id="cta-final" class="py-24 bg-kabsa-blue text-white">
+                <div class="container mx-auto px-4 lg:px-6 text-center scroll-reveal">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">¿Listo para iniciar tu próximo proyecto?</h2>
+                    <p class="text-xl mb-10 max-w-2xl mx-auto">Conversemos y diseñemos juntos la mejor solución.</p>
+                    <a href="#" onclick="showView('view-contacto'); return false;" class="bg-white text-kabsa-blue font-bold px-10 py-4 rounded-lg text-lg hover:bg-gray-100 transition duration-300 shadow-xl">
+                        Contáctanos
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===== VISTA 2: EL GRUPO KABSA (PÁGINA DEDICADA) ===== -->
+        <div id="view-grupo" class="hidden">
+            <section class="py-24 bg-white">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue text-center mb-16">El Grupo KABSA</h2>
+                    <div class="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=600&auto=format&fit=crop" alt="Equipo KABSA" class="rounded-lg shadow-xl w-full">
+                        
+                        <!-- Usamos 'prose' para formatear el texto rápidamente -->
+                        <article class="prose lg:prose-lg">
+                            <h3>Historia</h3>
+                            <p>KABSA GROUP (fundado en 2025) integra empresas peruanas del sector construcción —incluyendo KATSUMOTO, ARGOS y BRONTES— para ofrecer soluciones completas de ingeniería, consultoría y logística con cobertura nacional.</p>
+                            
+                            <h3>Misión</h3>
+                            <p>Desarrollar proyectos de ingeniería y construcción con calidad, seguridad y cumplimiento, aportando soluciones integrales que mejoren la infraestructura del país y el bienestar de las comunidades.</p>
+
+                            <h3>Visión</h3>
+                            <p>Ser el grupo líder en soluciones constructivas a nivel nacional, reconocido por la transparencia, la excelencia técnica y los resultados sostenibles.</p>
+                            
+                            <h3>Valores</h3>
+                            <ul>
+                                <li>Integridad</li>
+                                <li>Responsabilidad</li>
+                                <li>Eficiencia</li>
+                                <li>Innovación</li>
+                                <li>Trabajo en equipo</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===== VISTA 3: EMPRESAS DEL GRUPO (PÁGINA DEDICADA) ===== -->
+        <div id="view-empresas" class="hidden">
+            <section class="py-24 bg-kabsa-gray">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue text-center mb-16">Empresas del Grupo</h2>
+                    <div class="max-w-5xl mx-auto space-y-12">
+                        
+                        <!-- Empresa 1 -->
+                        <div class="grid md:grid-cols-3 gap-8 items-center bg-white p-6 md:p-8 rounded-lg shadow-lg">
+                            <div class="md:col-span-1 text-center">
+                                <i data-lucide="hard-hat" class="w-20 h-20 md:w-24 md:h-24 mx-auto text-kabsa-blue mb-4"></i>
+                                <h3 class="text-2xl md:text-3xl font-bold text-kabsa-blue">KABSA Ingeniería y Construcción</h3>
+                            </div>
+                            <div class="md:col-span-2">
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    Especialistas en ejecución de obras públicas y privadas. Nos enfocamos en infraestructura vial, edificaciones de gran envergadura, proyectos de saneamiento y obras civiles integrales, garantizando siempre los más altos estándares de calidad y seguridad.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Empresa 2 -->
+                        <div class="grid md:grid-cols-3 gap-8 items-center bg-white p-6 md:p-8 rounded-lg shadow-lg">
+                            <div class="md:col-span-1 text-center">
+                                <i data-lucide="clipboard-list" class="w-20 h-20 md:w-24 md:h-24 mx-auto text-kabsa-blue mb-4"></i>
+                                <h3 class="text-2xl md:text-3xl font-bold text-kabsa-blue">KABSA Proyectos & Servicios</h3>
+                            </div>
+                            <div class="md:col-span-2">
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    Ofrecemos consultoría técnica avanzada, diseño estructural y supervisión de obras. Nuestro equipo se encarga de la planificación integral de proyectos y la realización de estudios de impacto, asegurando la viabilidad y éxito de cada iniciativa.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Empresa 3 -->
+                        <div class="grid md:grid-cols-3 gap-8 items-center bg-white p-6 md:p-8 rounded-lg shadow-lg">
+                            <div class="md:col-span-1 text-center">
+                                <i data-lucide="truck" class="w-20 h-20 md:w-24 md:h-24 mx-auto text-kabsa-blue mb-4"></i>
+                                <h3 class="text-2xl md:text-3xl font-bold text-kabsa-blue">KABSA Equipos & Logística</h3>
+                            </div>
+                            <div class="md:col-span-2">
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    Proveemos soluciones eficientes para grandes proyectos a través de la gestión de maquinaria pesada, transporte especializado y suministro de materiales. Optimizamos la cadena logística para garantizar el cumplimiento de plazos.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===== VISTA 4: PROYECTOS (PÁGINA DEDICADA/GALERÍA) ===== -->
+        <div id="view-proyectos" class="hidden">
+            <section class="py-24 bg-white">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue text-center mb-16">Nuestros Proyectos</h2>
+                    
+                    <!-- Filtro de botones (ahora con flex-wrap para móvil) -->
+                    <div class="flex flex-wrap justify-center gap-2 mb-12">
+                        <button onclick="filterProjects('todos')" class="filter-btn active bg-kabsa-blue text-white font-semibold px-6 py-2 rounded-full">Todos</button>
+                        <button onclick="filterProjects('infraestructura')" class="filter-btn bg-kabsa-gray text-kabsa-dark-gray font-semibold px-6 py-2 rounded-full hover:bg-gray-300">Infraestructura Vial</button>
+                        <button onclick="filterProjects('saneamiento')" class="filter-btn bg-kabsa-gray text-kabsa-dark-gray font-semibold px-6 py-2 rounded-full hover:bg-gray-300">Saneamiento</button>
+                        <button onclick="filterProjects('edificaciones')" class="filter-btn bg-kabsa-gray text-kabsa-dark-gray font-semibold px-6 py-2 rounded-full hover:bg-gray-300">Edificaciones</button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Proyecto 1-9 (Galería extendida) -->
+                        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Proyecto+Vial+1" alt="[Foto Proyecto 1]" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-2xl font-bold">Proyecto Vial Tramo 1</h3>
+                                <p class="text-sm">Cliente: Provías | Estado: Ejecutado</p>
+                            </div>
+                        </a>
+                        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x400/555/eee?text=Obra+Saneamiento+2" alt="[Foto Proyecto 2]" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-2xl font-bold">Saneamiento Piura</h3>
+                                <p class="text-sm">Cliente: GORE Piura | Estado: En curso</p>
+                            </div>
+                        </a>
+                        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Edificación+3" alt="[Foto Proyecto 3]" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-2xl font-bold">Edificio Corporativo</h3>
+                                <p class="text-sm">Cliente: Privado | Estado: Ejecutado</p>
+                            </div>
+                        </a>
+                        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x400/555/eee?text=Proyecto+Vial+4" alt="[Foto Proyecto 4]" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-2xl font-bold">Puente Camaná</h3>
+                                <p class="text-sm">Cliente: MTC | Estado: Ejecutado</p>
+                            </div>
+                        </a>
+                        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Edificación+5" alt="[Foto Proyecto 5]" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-2xl font-bold">Colegio Alto Rendimiento</h3>
+                                <p class="text-sm">Cliente: MINEDU | Estado: En curso</p>
+                            </div>
+                        </a>
+                        <a href="#" class="group relative block rounded-lg overflow-hidden shadow-lg">
+                            <img src="https://placehold.co/600x400/555/eee?text=Obra+Saneamiento+6" alt="[Foto Proyecto 6]" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 class="text-2xl font-bold">PTAR Huancayo</h3>
+                                <p class="text-sm">Cliente: Municipalidad | Estado: Ejecutado</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===== VISTA 5: NOTICIAS (PÁGINA DEDICADA/BLOG) ===== -->
+        <div id="view-noticias" class="hidden">
+            <section class="py-24 bg-kabsa-gray">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue text-center mb-16">Noticias y Actualidad</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        
+                        <!-- Noticia 1-6 (Blog extendido) -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="https://placehold.co/600x400/555/eee?text=Noticia+1" alt="[Imagen de noticia]" class="w-full h-56 object-cover">
+                            <div class="p-6 flex flex-col flex-grow text-justify-all">
+                                <h3 class="text-xl font-bold mb-3 text-kabsa-blue text-left">KABSA GROUP ejecuta nueva obra de saneamiento en Piura</h3>
+                                <p class="text-gray-600 mb-5 flex-grow">La empresa continúa consolidando su presencia en el norte del país...</p>
+                                <a href="#" class="font-semibold text-kabsa-blue text-lg hover:underline mt-auto">Leer más →</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="https://placehold.co/600x400/555/eee?text=Noticia+2" alt="[Imagen de noticia]" class="w-full h-56 object-cover">
+                            <div class="p-6 flex flex-col flex-grow text-justify-all">
+                                <h3 class="text-xl font-bold mb-3 text-kabsa-blue text-left">Adjudicación de proyecto vial con Gobierno Regional</h3>
+                                <p class="text-gray-600 mb-5 flex-grow">El grupo liderará la construcción del tramo San Marcos – Pedro Gálvez...</p>
+                                <a href="#" class="font-semibold text-kabsa-blue text-lg hover:underline mt-auto">Leer más →</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="https://placehold.co/600x400/555/eee?text=Noticia+3" alt="[Imagen de noticia]" class="w-full h-56 object-cover">
+                            <div class="p-6 flex flex-col flex-grow text-justify-all">
+                                <h3 class="text-xl font-bold mb-3 text-kabsa-blue text-left">Compromiso social: Campaña de invierno 2025</h3>
+                                <p class="text-gray-600 mb-5 flex-grow">Apoyando a las comunidades altoandinas en nuestra zona de influencia...</p>
+                                <a href="#" class="font-semibold text-kabsa-blue text-lg hover:underline mt-auto">Leer más →</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="https://placehold.co/600x400/555/eee?text=Noticia+4" alt="[Imagen de noticia]" class="w-full h-56 object-cover">
+                            <div class="p-6 flex flex-col flex-grow text-justify-all">
+                                <h3 class="text-xl font-bold mb-3 text-kabsa-blue text-left">Innovación: Adquisición de nueva flota de maquinaria</h3>
+                                <p class="text-gray-600 mb-5 flex-grow">Incorporamos tecnología de punta para optimizar nuestros procesos...</p>
+                                <a href="#" class="font-semibold text-kabsa-blue text-lg hover:underline mt-auto">Leer más →</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="https://placehold.co/600x400/555/eee?text=Noticia+5" alt="[Imagen de noticia]" class="w-full h-56 object-cover">
+                            <div class="p-6 flex flex-col flex-grow text-justify-all">
+                                <h3 class="text-xl font-bold mb-3 text-kabsa-blue text-left">KABSA recibe certificación ISO 9001</h3>
+                                <p class="text-gray-600 mb-5 flex-grow">Refirmamos nuestro compromiso con la calidad y la mejora continua...</p>
+                                <a href="#" class="font-semibold text-kabsa-blue text-lg hover:underline mt-auto">Leer más →</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                            <img src="https://placehold.co/600x400/555/eee?text=Noticia+6" alt="[Imagen de noticia]" class="w-full h-56 object-cover">
+                            <div class="p-6 flex flex-col flex-grow text-justify-all">
+                                <h3 class="text-xl font-bold mb-3 text-kabsa-blue text-left">Inicio de obra: Hospital Regional de Amazonas</h3>
+                                <p class="text-gray-600 mb-5 flex-grow">Un hito para la salud de la región. KABSA lidera el consorcio...</p>
+                                <a href="#" class="font-semibold text-kabsa-blue text-lg hover:underline mt-auto">Leer más →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ===== VISTA 6: CONTACTO (PÁGINA DEDICADA CON FORMULARIO) ===== -->
+        <div id="view-contacto" class="hidden">
+            <section class="py-24 bg-white">
+                <div class="container mx-auto px-4 lg:px-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue text-center mb-6">Hablemos de tu Próximo Proyecto</h2>
+                    <p class="text-xl text-gray-700 mb-16 max-w-3xl mx-auto text-center">
+                        Nuestro equipo responderá en menos de 24 horas.
+                    </p>
+
+                    <div class="grid lg:grid-cols-2 gap-16 items-start">
+                        
+                        <!-- Columna de Formulario -->
+                        <div class="bg-kabsa-gray p-8 sm:p-12 rounded-lg shadow-lg">
+                            <form id="contact-form">
+                                <div class="space-y-6">
+                                    <!-- Mensaje de éxito (oculto) -->
+                                    <div id="form-success" class="hidden p-4 rounded-md bg-green-100 text-green-800 border border-green-300">
+                                        ¡Mensaje enviado! Gracias por contactarnos.
+                                    </div>
+
+                                    <!-- Mensaje de error (oculto) -->
+                                    <div id="form-error" class="hidden p-4 rounded-md bg-red-100 text-red-800 border border-red-300">
+                                        Por favor, complete todos los campos requeridos correctamente.
+                                    </div>
+
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-700">Nombre Completo <span class="text-red-500">*</span></label>
+                                        <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-kabsa-blue focus:ring-kabsa-blue sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico <span class="text-red-500">*</span></label>
+                                        <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-kabsa-blue focus:ring-kabsa-blue sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono (Opcional)</label>
+                                        <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-kabsa-blue focus:ring-kabsa-blue sm:text-sm">
+                                    </div>
+                                    <div>
+                                        <label for="subject" class="block text-sm font-medium text-gray-700">Asunto <span class="text-red-500">*</span></label>
+                                        <select id="subject" name="subject" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-kabsa-blue focus:ring-kabsa-blue sm:text-sm">
+                                            <option value="">Seleccione un asunto</option>
+                                            <option value="informacion">Solicitud de información</option>
+                                            <option value="presupuesto">Solicitud de presupuesto</option>
+                                            <option value="trabajo">Oportunidades laborales</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="message" class="block text-sm font-medium text-gray-700">Mensaje <span class="text-red-500">*</span></label>
+                                        <textarea id="message" name="message" rows="5" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-kabsa-blue focus:ring-kabsa-blue sm:text-sm"></textarea>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="privacy-policy" name="privacy-policy" type="checkbox" required class="h-4 w-4 text-kabsa-blue focus:ring-kabsa-blue border-gray-300 rounded">
+                                        <label for="privacy-policy" class="ml-2 block text-sm text-gray-700">
+                                            Acepto la <a href="#" class="text-kabsa-blue hover:underline">política de privacidad</a> <span class="text-red-500">*</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-lg text-base font-medium text-white bg-kabsa-blue hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-kabsa-blue transition duration-300">
+                                            Enviar Mensaje
+                                        </button>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-2">Los campos marcados con <span class="text-red-500">*</span> son obligatorios</p>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Columna de Info y Mapa -->
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="text-2xl font-bold text-kabsa-blue mb-4">Información de Contacto</h3>
+                                <ul class="space-y-4 text-lg text-gray-700">
+                                    <li class="flex items-start">
+                                        <i data-lucide="map-pin" class="w-6 h-6 mr-4 mt-1 text-kabsa-blue flex-shrink-0"></i>
+                                        <span>Av. Principal 123, Oficina 501, Lima, Perú</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="phone" class="w-6 h-6 mr-4 text-kabsa-blue flex-shrink-0"></i>
+                                        <span>+51 999 000 000</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="mail" class="w-6 h-6 mr-4 text-kabsa-blue flex-shrink-0"></i>
+                                        <span>info@kabsagroup.com</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i data-lucide="clock" class="w-6 h-6 mr-4 text-kabsa-blue flex-shrink-0"></i>
+                                        <span>Lunes - Viernes: 9:00 AM - 6:00 PM</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-kabsa-blue mb-4">Ubicación</h3>
+                                <!-- Placeholder para el mapa de Google -->
+                                <div class="w-full h-80 bg-kabsa-gray rounded-lg shadow-md flex items-center justify-center border border-gray-300">
+                                    <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=600&auto=format&fit=crop" alt="Mapa de ubicación" class="w-full h-full object-cover rounded-lg">
+                                    <!-- Para un mapa real, usar:
+                                    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- ===== 8. FOOTER (Parcial) ===== -->
+    <div data-include="partials/footer.html"></div>
+
+
+    <!-- ===== Botón WhatsApp Fijo ===== -->
+    <a href="https://wa.me/51991690103" target="_blank" 
+       class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-whatsapp-green text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center z-40 shadow-xl transform hover:scale-110 transition-transform duration-300">
+        <i data-lucide="message-circle" class="w-7 h-7 sm:w-8 sm:h-8"></i>
+        <span class="sr-only">Contactar por WhatsApp</span>
+    </a>
+
+
+    <!-- ===== SCRIPTS JAVASCRIPT ===== -->
+    <script>
+        // Inicializar Iconos Lucide
+        lucide.createIcons();
+
+        // --- Lógica del Menú Móvil ---
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const header = document.getElementById('header');
+        let isMenuOpen = false;
+
+        const toggleMenu = () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('-translate-x-full');
+            const icon = menuBtn.querySelector('i');
+            if (isMenuOpen) {
+                icon.setAttribute('data-lucide', 'x');
+                header.classList.add('bg-white');
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); // Re-renderizar icono
+        };
+        menuBtn.addEventListener('click', toggleMenu);
+
+
+        // --- Lógica de Navegación (SPA) ---
+        const allViews = document.querySelectorAll('main > div[id^="view-"]');
+
+        /**
+         * Muestra una "vista" (página) específica y oculta las demás.
+         * @param {string} viewId - El ID de la vista a mostrar (ej. 'view-proyectos').
+         */
+        function showView(viewId) {
+            // Cerrar el menú móvil si está abierto
+            if (isMenuOpen) {
+                toggleMenu();
+            }
+            
+            allViews.forEach(view => {
+                view.classList.add('hidden');
+            });
+            const targetView = document.getElementById(viewId);
+            if (targetView) {
+                targetView.classList.remove('hidden');
+                // Forzar la re-observación de animaciones en la nueva vista
+                observeAnimations(targetView);
+            } else {
+                console.error(`Vista con ID '${viewId}' no encontrada`);
+            }
+            window.scrollTo(0, 0); // Ir al inicio de la página
+        }
+
+        /**
+         * Muestra la vista de "inicio" y luego hace scroll a una sección.
+         * @param {string} sectionId - El ID de la sección a la que hacer scroll (ej. 'grupo').
+         */
+        function navigateToSection(sectionId) {
+            showView('view-inicio');
+            
+            // Usamos setTimeout para dar tiempo al navegador a mostrar la vista
+            // antes de intentar hacer scroll a un elemento dentro de ella.
+            setTimeout(() => {
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    window.scrollTo(0, 0); // Fallback si es 'inicio'
+                }
+            }, 100);
+        }
+        
+        /**
+         * Filtra los proyectos por categoría
+         * @param {string} category - La categoría a filtrar ('todos', 'infraestructura', 'saneamiento', 'edificaciones')
+         */
+        function filterProjects(category) {
+            // Actualizar estado de los botones
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.classList.remove('active', 'bg-kabsa-blue', 'text-white');
+                btn.classList.add('bg-kabsa-gray', 'text-kabsa-dark-gray');
+            });
+            
+            // Activar el botón seleccionado
+            const activeBtn = document.querySelector(`.filter-btn[onclick*="${category}"]`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-kabsa-gray', 'text-kabsa-dark-gray');
+                activeBtn.classList.add('active', 'bg-kabsa-blue', 'text-white');
+            }
+            
+            // Aquí iría la lógica para filtrar los proyectos
+            // Por ahora solo mostramos un mensaje en consola
+            console.log(`Filtrando proyectos por: ${category}`);
+        }
+
+        // --- Lógica de Animación al Hacer Scroll ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('fade-in-up');
+                    }, parseInt(delay));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        /**
+         * Aplica el observador de animaciones a todos los elementos .scroll-reveal
+         * dentro de un contenedor específico (o de todo el documento si no se especifica).
+         * @param {HTMLElement} [container=document] - El elemento contenedor.
+         */
+        function observeAnimations(container = document) {
+             container.querySelectorAll('.scroll-reveal').forEach(el => {
+                // Resetear animación si ya se mostró (para vistas SPA)
+                el.classList.remove('fade-in-up');
+                observer.observe(el);
+            });
+        }
+        
+        // Observar animaciones en la vista inicial
+        observeAnimations(document.getElementById('view-inicio'));
+
+
+        // --- Lógica del Formulario de Contacto ---
+        const contactForm = document.getElementById('contact-form');
+        const formSuccessMessage = document.getElementById('form-success');
+        const formErrorMessage = document.getElementById('form-error');
+
+        if (contactForm) {
+            // Función para mostrar errores en campos específicos
+            function showFieldError(field) {
+                field.classList.add('border-red-500');
+                field.classList.add('bg-red-50');
+            }
+            
+            // Función para limpiar errores
+            function clearFieldError(field) {
+                field.classList.remove('border-red-500');
+                field.classList.remove('bg-red-50');
+            }
+            
+            // Agregar validación en tiempo real para cada campo
+            const requiredFields = contactForm.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                field.addEventListener('blur', function() {
+                    if (!field.value.trim() && field.type !== 'checkbox') {
+                        showFieldError(field);
+                    } else if (field.type === 'email') {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(field.value.trim())) {
+                            showFieldError(field);
+                        }
+                    }
+                });
+                
+                field.addEventListener('input', function() {
+                    if (field.value.trim() || field.type === 'checkbox') {
+                        clearFieldError(field);
+                    }
+                });
+            });
+
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevenir el envío real del formulario
+                
+                // Ocultar mensajes previos
+                formSuccessMessage.classList.add('hidden');
+                formErrorMessage.classList.add('hidden');
+                
+                // Validar campos del formulario
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const subject = document.getElementById('subject').value.trim();
+                const message = document.getElementById('message').value.trim();
+                const privacyPolicy = document.getElementById('privacy-policy').checked;
+                
+                let hasErrors = false;
+                
+                // Verificar campos vacíos
+                requiredFields.forEach(field => {
+                    if (field.type === 'checkbox') {
+                        if (!field.checked) {
+                            showFieldError(field);
+                            hasErrors = true;
+                        }
+                    } else if (!field.value.trim()) {
+                        showFieldError(field);
+                        hasErrors = true;
+                    }
+                });
+                
+                // Validar formato de email
+                if (email) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        showFieldError(document.getElementById('email'));
+                        hasErrors = true;
+                    }
+                }
+                
+                if (hasErrors) {
+                    formErrorMessage.classList.remove('hidden');
+                    return;
+                }
+                
+                // Simulación de envío
+                // Aquí iría el código para enviar con fetch() a una API
+                
+                // Mostrar mensaje de éxito
+                formSuccessMessage.classList.remove('hidden');
+                contactForm.reset();
+                
+                // Ocultar mensaje después de 5 segundos
+                setTimeout(() => {
+                    formSuccessMessage.classList.add('hidden');
+                }, 5000);
+                formSuccessMessage.classList.remove('hidden');
+                contactForm.reset(); // Limpiar el formulario
+
+                // Ocultar el mensaje después de 5 segundos
+                setTimeout(() => {
+                    formSuccessMessage.classList.add('hidden');
+                }, 5000);
+            });
+        }
+
+    
+        // --- Función para Modales ---
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('modal-animation');
+                document.body.classList.add('overflow-hidden');
+                
+                // Animación de entrada mejorada
+                setTimeout(() => {
+                    const modalContent = modal.querySelector('.modal-content');
+                    if (modalContent) {
+                        modalContent.classList.remove('opacity-0', 'translate-y-10');
+                        modalContent.classList.add('opacity-100', 'translate-y-0');
+                        modalContent.style.transform = 'scale(1)';
+                    }
+                }, 10);
+            }
+        }
+        
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                const modalContent = modal.querySelector('.modal-content');
+                if (modalContent) {
+                    modalContent.classList.remove('opacity-100', 'translate-y-0');
+                    modalContent.classList.add('opacity-0', 'translate-y-10');
+                }
+                
+                // Esperar a que termine la animación
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                }, 300);
+            }
+        }
+        
+        // Cerrar modal al hacer clic fuera del contenido
+        document.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    const modalId = modal.getAttribute('id');
+                    closeModal(modalId);
+                }
+            });
+        });
+    </script>
+
+    <!-- MODALES -->
+    <!-- Modal Empresa 1 -->
+    <div id="modal-empresa-1" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-10">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-bold text-kabsa-blue">CORPORACION KATSUMOTO S.A.C.</h2>
+                    <button onclick="closeModal('modal-empresa-1')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="KABSA Ingeniería y Construcción" class="w-full h-64 object-cover rounded-lg shadow-md">
+                    </div>
+                    <p class="text-lg mb-4">Arquitectura e ingeniería; consultoría técnica. Obras públicas y privadas en infraestructura vial, saneamiento y edificaciones. Cobertura nacional.</p>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Servicios</h3>
+                    <ul class="list-disc pl-5 mb-6">
+                        <li>Construcción de infraestructura vial</li>
+                        <li>Obras de saneamiento</li>
+                        <li>Edificaciones públicas y privadas</li>
+                        <li>Movimiento de tierras</li>
+                        <li>Obras de arte</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Experiencia</h3>
+                    <p>Con más de 10 años en el mercado, hemos ejecutado más de 30 proyectos de infraestructura vial, 15 proyectos de saneamiento y 5 edificaciones importantes, consolidándonos como una empresa confiable y de calidad.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Proyecto+Vial" alt="Proyecto Vial" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Saneamiento" alt="Proyecto Saneamiento" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de inicialización de AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false,
+                offset: 50,
+                disable: 'mobile'
+            });
+            
+            // Aplicar animaciones a elementos existentes
+            const animateElements = () => {
+                // Aplicar a tarjetas de empresas
+                document.querySelectorAll('.grid-cols-1.md\\:grid-cols-3 > div').forEach((el, index) => {
+                    el.setAttribute('data-aos', 'fade-up');
+                    el.setAttribute('data-aos-delay', (index * 100).toString());
+                });
+                
+                // Aplicar a tarjetas de proyectos
+                document.querySelectorAll('#view-proyectos .grid > div').forEach((el, index) => {
+                    el.setAttribute('data-aos', 'fade-up');
+                    el.setAttribute('data-aos-delay', (index * 100).toString());
+                });
+                
+                // Aplicar a tarjetas de noticias
+                document.querySelectorAll('#view-noticias .grid > div').forEach((el, index) => {
+                    el.setAttribute('data-aos', 'fade-up');
+                    el.setAttribute('data-aos-delay', (index * 100).toString());
+                });
+                
+                // No aplicar animaciones a los títulos para evitar conflictos
+                
+                // Aplicar a párrafos descriptivos
+                document.querySelectorAll('section > div > p').forEach(el => {
+                    el.setAttribute('data-aos', 'fade-up');
+                    el.setAttribute('data-aos-delay', '200');
+                });
+                
+                // Refrescar AOS para aplicar los cambios
+                AOS.refresh();
+            };
+            
+            // Ejecutar después de un breve retraso para asegurar que el DOM esté listo
+            setTimeout(animateElements, 100);
+        });
+    </script>
+
+    <!-- Modal Empresa 2 -->
+    <div id="modal-empresa-2" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-10">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-bold text-kabsa-blue">ARGOS CORPORATION S.A.C.</h2>
+                    <button onclick="closeModal('modal-empresa-2')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="KABSA Proyectos & Servicios" class="w-full h-64 object-cover rounded-lg shadow-md">
+                    </div>
+                    <p class="text-lg mb-4">Construcción de edificios y obras civiles; comercialización de maquinaria y equipos. Slogan: "CONSTRUCCIONES QUE MEJORAN VIDAS". Domicilio: Av. Velasco Astete 3525, Surco. Gerente: Humberto Toro Villalovos. Correo: info@argoscorporation.pe</p>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Servicios</h3>
+                    <ul class="list-disc pl-5 mb-6">
+                        <li>Elaboración de expedientes técnicos</li>
+                        <li>Diseño estructural</li>
+                        <li>Supervisión de obras</li>
+                        <li>Estudios de pre-inversión</li>
+                        <li>Consultoría en ingeniería</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Equipo</h3>
+                    <p>Contamos con un equipo multidisciplinario de ingenieros civiles, arquitectos, especialistas ambientales y economistas que garantizan la calidad técnica de nuestros servicios.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Diseño+Estructural" alt="Diseño Estructural" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Supervisión" alt="Supervisión" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Empresa 3 -->
+    <div id="modal-empresa-3" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-10">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-bold text-kabsa-blue">BRONTES CONSTRUCTORA S.A.</h2>
+                    <button onclick="closeModal('modal-empresa-3')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop" alt="KABSA Equipos & Logística" class="w-full h-64 object-cover rounded-lg shadow-md">
+                    </div>
+                    <p class="text-lg mb-4">Ejecución de obras, acabados y carpintería arquitectónica; fabricación de componentes; alquiler de maquinaria. Domicilio: Av. Los Alisos 777, Los Olivos. Gerente: Edwin Roy Toro Tarrillo. Correos: info@brontes.pe / proyectos@brontes.pe</p>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Servicios</h3>
+                    <ul class="list-disc pl-5 mb-6">
+                        <li>Alquiler de maquinaria pesada</li>
+                        <li>Transporte de materiales y equipos</li>
+                        <li>Gestión logística de proyectos</li>
+                        <li>Mantenimiento de equipos</li>
+                        <li>Soluciones de transporte especializado</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Flota</h3>
+                    <p>Disponemos de una moderna flota de equipos que incluye excavadoras, cargadores frontales, retroexcavadoras, motoniveladoras, rodillos compactadores, volquetes y camiones de diversa capacidad.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Maquinaria" alt="Maquinaria" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Transporte" alt="Transporte" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Proyecto 1 -->
+    <div id="modal-proyecto-1" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-10">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-bold text-kabsa-blue">Proyecto Vial Tramo 1</h2>
+                    <button onclick="closeModal('modal-proyecto-1')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="mb-6">
+                        <img src="https://plus.unsplash.com/premium_photo-1663046024054-47d889bb1f1e?q=80&w=1200&auto=format&fit=crop" alt="Panorámica del Proyecto Vial" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-kabsa-blue">Detalles del Proyecto</h3>
+                            <ul class="list-none pl-0 space-y-2">
+                                <li><strong>Cliente:</strong> Provías Nacional</li>
+                                <li><strong>Ubicación:</strong> Cajamarca</li>
+                                <li><strong>Duración:</strong> 18 meses</li>
+                                <li><strong>Estado:</strong> Ejecutado</li>
+                                <li><strong>Valor:</strong> S/. 45 millones</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-kabsa-blue">Alcance</h3>
+                            <ul class="list-disc pl-5">
+                                <li>Construcción de 25 km de carretera asfaltada</li>
+                                <li>5 puentes de concreto armado</li>
+                                <li>Sistema de drenaje pluvial</li>
+                                <li>Señalización horizontal y vertical</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue">Descripción</h3>
+                    <p>Este proyecto consistió en la construcción de la carretera que une las localidades de San Marcos y Pedro Gálvez en Cajamarca, mejorando la conectividad y reduciendo los tiempos de viaje en más de un 60%. La obra incluyó importantes desafíos técnicos debido a la geografía accidentada de la zona.</p>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Impacto</h3>
+                    <p>La ejecución de este proyecto ha beneficiado directamente a más de 50,000 habitantes de la zona, mejorando el acceso a servicios básicos y dinamizando la economía local al facilitar el transporte de productos agrícolas hacia los principales mercados regionales.</p>
+                    
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Detalle+1" alt="Detalle 1" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Detalle+2" alt="Detalle 2" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Detalle+3" alt="Detalle 3" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Proyecto 2 -->
+    <div id="modal-proyecto-2" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-10">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-bold text-kabsa-blue">Saneamiento Piura</h2>
+                    <button onclick="closeModal('modal-proyecto-2')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1527335988388-b40ee248d80c?q=80&w=1200&auto=format&fit=crop" alt="Panorámica del Proyecto de Saneamiento" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-kabsa-blue">Detalles del Proyecto</h3>
+                            <ul class="list-none pl-0 space-y-2">
+                                <li><strong>Cliente:</strong> Gobierno Regional de Piura</li>
+                                <li><strong>Ubicación:</strong> Piura</li>
+                                <li><strong>Duración:</strong> 24 meses</li>
+                                <li><strong>Estado:</strong> En curso (70% avance)</li>
+                                <li><strong>Valor:</strong> S/. 65 millones</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-kabsa-blue">Alcance</h3>
+                            <ul class="list-disc pl-5">
+                                <li>Instalación de 45 km de redes de agua potable</li>
+                                <li>Construcción de planta de tratamiento de aguas residuales</li>
+                                <li>Instalación de 35 km de redes de alcantarillado</li>
+                                <li>10 estaciones de bombeo</li>
+                                <li>5,000 conexiones domiciliarias</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue">Descripción</h3>
+                    <p>Este proyecto de saneamiento integral busca mejorar el acceso a agua potable y servicios de alcantarillado en zonas periurbanas de Piura, beneficiando a más de 30,000 habitantes. La obra incluye tecnología de punta para el tratamiento de aguas residuales con estándares internacionales.</p>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Impacto</h3>
+                    <p>Una vez concluido, el proyecto reducirá significativamente la incidencia de enfermedades gastrointestinales en la zona y mejorará la calidad de vida de los habitantes. Además, contribuirá a la preservación del medio ambiente al tratar adecuadamente las aguas residuales antes de su disposición final.</p>
+                    
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <img src="https://placehold.co/600x400/555/eee?text=Avance+1" alt="Avance 1" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/555/eee?text=Avance+2" alt="Avance 2" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/555/eee?text=Avance+3" alt="Avance 3" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Proyecto 3 -->
+    <div id="modal-proyecto-3" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-10">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-bold text-kabsa-blue">Edificio Corporativo</h2>
+                    <button onclick="closeModal('modal-proyecto-3')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="mb-6">
+                        <img src="https://plus.unsplash.com/premium_photo-1683136809051-73451a58e7b9?q=80&w=1200&auto=format&fit=crop" alt="Edificio Corporativo" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-kabsa-blue">Detalles del Proyecto</h3>
+                            <ul class="list-none pl-0 space-y-2">
+                                <li><strong>Cliente:</strong> Grupo Empresarial Privado</li>
+                                <li><strong>Ubicación:</strong> Lima</li>
+                                <li><strong>Duración:</strong> 14 meses</li>
+                                <li><strong>Estado:</strong> Ejecutado</li>
+                                <li><strong>Valor:</strong> S/. 28 millones</li>
+                                <li><strong>Área:</strong> 5,200 m²</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-kabsa-blue">Características</h3>
+                            <ul class="list-disc pl-5">
+                                <li>Edificio de 8 pisos + 3 sótanos</li>
+                                <li>Certificación LEED Silver</li>
+                                <li>Sistema de automatización inteligente</li>
+                                <li>Fachada de muro cortina con eficiencia energética</li>
+                                <li>Áreas verdes y terrazas sostenibles</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue">Descripción</h3>
+                    <p>Este moderno edificio corporativo ubicado en el distrito financiero de San Isidro, Lima, fue diseñado bajo estrictos estándares de sostenibilidad y eficiencia energética. El proyecto incluyó soluciones arquitectónicas innovadoras y sistemas constructivos de última generación.</p>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Innovación</h3>
+                    <p>El edificio incorpora tecnologías de vanguardia como sistemas de recolección de agua de lluvia, paneles solares para áreas comunes, iluminación LED inteligente y materiales de construcción eco-amigables, reduciendo su huella de carbono en un 30% comparado con edificaciones convencionales.</p>
+                    
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Interior+1" alt="Interior 1" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Interior+2" alt="Interior 2" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Fachada" alt="Fachada" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Noticia 1 -->
+    <div id="modal-noticia-1" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-10">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-bold text-kabsa-blue">KABSA GROUP ejecuta nueva obra de saneamiento en Piura</h2>
+                    <button onclick="closeModal('modal-noticia-1')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1200&auto=format&fit=crop" alt="Obra Saneamiento Piura" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    
+                    <div class="flex items-center text-gray-500 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>15 de Marzo, 2025</span>
+                    </div>
+                    
+                    <p class="text-lg">La empresa continúa consolidando su presencia en el norte del país con la adjudicación de un importante proyecto de saneamiento en Piura, que beneficiará a más de 30,000 habitantes de zonas periurbanas.</p>
+                    
+                    <p>El Grupo KABSA, a través de su empresa KABSA Ingeniería y Construcción, ha iniciado la ejecución de un proyecto de saneamiento integral en la región Piura, con una inversión de S/. 65 millones. La obra, que tendrá una duración de 24 meses, comprende la instalación de 45 km de redes de agua potable, 35 km de redes de alcantarillado, la construcción de una planta de tratamiento de aguas residuales y 10 estaciones de bombeo.</p>
+                    
+                    <p>"Este proyecto representa un hito importante para nuestra empresa en la región norte del país, donde venimos trabajando en diversos proyectos de infraestructura. Estamos comprometidos con mejorar la calidad de vida de la población a través de obras de calidad y con altos estándares técnicos", señaló Carlos Sánchez, Gerente General de KABSA GROUP.</p>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Impacto social</h3>
+                    <p>El proyecto de saneamiento en Piura no solo mejorará el acceso a servicios básicos para miles de familias, sino que también generará más de 300 puestos de trabajo directos y 500 indirectos durante su ejecución. Además, se implementarán programas de capacitación para la población local en temas relacionados con el uso responsable del agua y el mantenimiento básico de las instalaciones sanitarias.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <img src="https://placehold.co/600x400/555/eee?text=Imagen+1" alt="Imagen 1" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/555/eee?text=Imagen+2" alt="Imagen 2" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Noticia 2 -->
+    <div id="modal-noticia-2" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-10">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-bold text-kabsa-blue">Adjudicación de proyecto vial con Gobierno Regional</h2>
+                    <button onclick="closeModal('modal-noticia-2')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1623639226281-f90d014f6b8f?q=80&w=1200&auto=format&fit=crop" alt="Proyecto Vial Cajamarca" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    
+                    <div class="flex items-center text-gray-500 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>28 de Febrero, 2025</span>
+                    </div>
+                    
+                    <p class="text-lg">El grupo liderará la construcción del tramo San Marcos – Pedro Gálvez en Cajamarca, un proyecto estratégico para mejorar la conectividad en la región.</p>
+                    
+                    <p>KABSA GROUP ha sido adjudicado con la construcción de la carretera que unirá las localidades de San Marcos y Pedro Gálvez en la región Cajamarca, un proyecto valorado en S/. 45 millones que será ejecutado en un plazo de 18 meses. La obra comprende la construcción de 25 km de carretera asfaltada, 5 puentes de concreto armado, sistemas de drenaje pluvial y señalización completa.</p>
+                    
+                    <p>La adjudicación se realizó tras un riguroso proceso de selección en el que KABSA GROUP destacó por su propuesta técnica y económica, así como por su experiencia en proyectos similares en la región. "Este proyecto representa un desafío importante debido a la geografía accidentada de la zona, pero contamos con el equipo técnico y la maquinaria necesaria para ejecutarlo con éxito", afirmó Luis Ramírez, Director de Proyectos de KABSA Ingeniería y Construcción.</p>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Beneficios para la región</h3>
+                    <p>La construcción de esta carretera reducirá los tiempos de viaje entre ambas localidades en más de un 60%, beneficiando directamente a más de 50,000 habitantes. Además, facilitará el transporte de productos agrícolas hacia los principales mercados regionales, dinamizando la economía local.</p>
+                    
+                    <p>El Gobierno Regional de Cajamarca ha destacado la importancia de este proyecto como parte de su plan de desarrollo vial, que busca mejorar la conectividad en toda la región y reducir la brecha de infraestructura existente.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Mapa+Vial" alt="Mapa Vial" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/0D2B4F/ffffff?text=Firma+Contrato" alt="Firma de Contrato" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Noticia 3 -->
+    <div id="modal-noticia-3" class="modal fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="modal-content bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-10">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-bold text-kabsa-blue">Compromiso social: Campaña de invierno 2025</h2>
+                    <button onclick="closeModal('modal-noticia-3')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="prose max-w-none">
+                    <div class="mb-6">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=1200&auto=format&fit=crop" alt="Campaña Social" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    
+                    <div class="flex items-center text-gray-500 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>10 de Enero, 2025</span>
+                    </div>
+                    
+                    <p class="text-lg">Apoyando a las comunidades altoandinas en nuestra zona de influencia con la entrega de kits de abrigo y atención médica gratuita.</p>
+                    
+                    <p>Como parte de su compromiso con la responsabilidad social empresarial, KABSA GROUP ha lanzado su Campaña de Invierno 2025, una iniciativa que busca apoyar a las comunidades altoandinas ubicadas en las zonas de influencia de sus proyectos, especialmente en las regiones de Cajamarca y Puno, donde las temperaturas pueden descender considerablemente durante los meses de invierno.</p>
+                    
+                    <p>La campaña incluye la entrega de más de 2,000 kits de abrigo que contienen frazadas térmicas, ropa de abrigo y calzado especial para el frío. Además, se realizarán jornadas de atención médica gratuita en 15 comunidades, con énfasis en la prevención y tratamiento de enfermedades respiratorias, que suelen incrementarse durante la temporada de heladas.</p>
+                    
+                    <h3 class="text-xl font-semibold text-kabsa-blue mt-6">Educación y prevención</h3>
+                    <p>Como complemento a la entrega de ayuda material, KABSA GROUP ha desarrollado un programa de capacitación en prevención de enfermedades y primeros auxilios, dirigido a líderes comunitarios y personal de los centros de salud locales. "Queremos que nuestro apoyo tenga un impacto duradero, por eso no solo entregamos ayuda material, sino que también trabajamos en fortalecer las capacidades locales para enfrentar las dificultades del invierno", explicó María Torres, Coordinadora de Responsabilidad Social de KABSA GROUP.</p>
+                    
+                    <p>La campaña se desarrollará durante los meses de mayo a agosto y contará con la participación voluntaria de colaboradores de las diferentes empresas del grupo, quienes dedicarán tiempo y esfuerzo para llevar ayuda a las comunidades más alejadas.</p>
+                    
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <img src="https://placehold.co/600x400/555/eee?text=Entrega+Kits" alt="Entrega de Kits" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/555/eee?text=Atención+Médica" alt="Atención Médica" class="rounded-lg">
+                        <img src="https://placehold.co/600x400/555/eee?text=Capacitación" alt="Capacitación" class="rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Leaflet CSS/JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="assets/hover-effect.js"></script>
+    <script src="assets/main.js"></script>
+</body>
+</html>
+
+
+

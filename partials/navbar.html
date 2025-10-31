@@ -1,0 +1,62 @@
+<header id="header" class="bg-white sticky top-0 z-50 transition-all duration-300 sticky-shadow">
+    <nav class="container mx-auto px-4 lg:px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html#inicio" class="cursor-pointer flex-shrink-0 flex items-center">
+            <img src="contexto/LOGO KABSA PNG.png" alt="KABSA GROUP" class="h-10 md:h-12 w-auto"/>
+        </a>
+
+        <!-- Menú de Navegación y Botón (Contenedor Derecho) -->
+        <div class="hidden md:flex items-center">
+            <!-- Links de Navegación (Escritorio) -->
+            <div class="flex items-center space-x-6 lg:space-x-8">
+                <a href="index.html#inicio" class="text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium">Inicio</a>
+                <!-- Dropdown: El Grupo -->
+                <div class="relative" data-dropdown="group-menu">
+                    <button type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-toggle class="inline-flex items-center text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium focus:outline-none">
+                        El Grupo
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                    </button>
+                    <div data-dropdown-panel class="hidden absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 py-2 z-50">
+                        <a href="grupo.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue">Grupo KABSA</a>
+                        <a href="empresas.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue">Empresas</a>
+                        <a href="grupo.html#estadisticas" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue">Estadísticas</a>
+                        <a href="staff.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue">Staff de Profesionales</a>
+                    </div>
+                </div>
+                <a href="proyectos.html" class="text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium">Proyectos</a>
+                <a href="noticias.html" class="text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium">Noticias</a>
+                <a href="contacto.html" class="text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium">Contacto</a>
+            </div>
+
+            <!-- Botón WhatsApp (Escritorio) -->
+            <a href="https://wa.me/51991690103" target="_blank" class="flex-shrink-0 flex items-center bg-whatsapp-green text-white px-5 py-2 rounded-full font-semibold hover:bg-opacity-90 transition duration-300 shadow-md ml-8">
+                WhatsApp
+            </a>
+        </div>
+
+        <!-- Botón Menú (Móvil) -->
+        <button id="menu-btn" class="md:hidden text-kabsa-blue z-50">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+
+    </nav>
+
+    <!-- Menú Móvil (Oculto por defecto) -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-6 text-2xl z-40 transition-transform duration-300 transform -translate-x-full">
+        <a href="index.html#inicio" onclick="toggleMenu();" class="text-gray-800 hover:text-kabsa-blue">Inicio</a>
+        <div class="text-center">
+            <div class="text-gray-800 font-semibold mb-2">El Grupo</div>
+            <div class="flex flex-col space-y-2 text-xl">
+                <a href="grupo.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Grupo KABSA</a>
+                <a href="empresas.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Empresas</a>
+                <a href="grupo.html#estadisticas" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Estadísticas</a>
+                        <a href="staff.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Staff</a>
+            </div>
+        </div>
+        <a href="proyectos.html" onclick="toggleMenu();" class="text-gray-800 hover:text-kabsa-blue">Proyectos</a>
+        <a href="noticias.html" onclick="toggleMenu();" class="text-gray-800 hover:text-kabsa-blue">Noticias</a>
+        <a href="contacto.html" onclick="toggleMenu();" class="text-gray-800 hover:text-kabsa-blue">Contacto</a>
+    </div>
+</header>
+
+

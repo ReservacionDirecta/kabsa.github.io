@@ -1,0 +1,331 @@
+Mapeo Estructural Completo: Grupo Gloria
+Resumen Ejecutivo
+He realizado un mapeo exhaustivo de la estructura web de Grupo Gloria (www.grupogloria.com), analizando su arquitectura de información, jerarquía de navegación, componentes de diseño y estrategia digital.​
+
+Datos Clave del Sitio:
+
+Última actualización del sitemap: Diciembre 2024
+
+Total de URLs indexadas: 80+
+
+Niveles de navegación: 3 niveles principales
+
+Presencia internacional: 7 países (Perú, Bolivia, Colombia, Ecuador, Argentina, Puerto Rico, Chile)
+
+Sectores de negocio: 5 principales (Alimentos, Cemento, Agroindustria, Papeles, Otros)
+
+Arquitectura de Navegación Principal
+Nivel 1: Menú Principal (7 secciones)
+1. Inicio/Home (Prioridad SEO: 1.00)
+
+Hero section con slider rotativo
+
+Mensaje principal: "Negocios presentes en 7 países"
+
+Presentación de sectores en formato grid/cards
+
+Sección de ODS (Objetivos de Desarrollo Sostenible)
+
+Feed de últimas novedades
+
+2. Grupo (Prioridad SEO: 0.80)
+
+Historia del conglomerado (desde 1941, 80+ años)
+
+Misión, visión y valores corporativos​
+
+Presencia geográfica internacional
+
+Subsección: Datos Estadísticos con KPIs del grupo
+
+Pilares estratégicos: Innovación, Calidad, Competitividad​
+
+3. Empresas (Prioridad SEO: 0.80) - Hub Central
+
+Este es el corazón del sitio, organizado en 5 categorías con 30+ empresas:
+
+a) Alimentos (9 empresas)​
+
+Leche Gloria S.A. (Perú - empresa líder)
+
+Deprodeca S.A.C. (Perú)
+
+Gloria Puerto Rico - Suiza Dairy Co.
+
+Gloria Bolivia - PIL Andina S.A.
+
+Gloria Argentina - Corlasa
+
+Gloria Colombia
+
+Gloria Ecuador - Leansa
+
+Panificadora Gloria S.A.
+
+Agroindustrial del Perú
+
+b) Soluciones/Cemento (6 empresas)
+
+Yura S.A. (Perú - líder en cemento)​
+
+Cal & Cemento Sur S.A.
+
+Concretos Supermix S.A.
+
+Soboce S.A. (Bolivia)
+
+Unión Cementera Nacional - UCEM (Ecuador)
+
+Yura Chile
+
+c) Agroindustria (12 empresas azucareras)
+
+Casa Grande S.A.A.
+
+Cartavio S.A.A.
+
+Empresa Agrícola Sintuco S.A.
+
+Agroindustrias San Jacinto S.A.A.
+
+Agrolmos S.A.
+
+Agroaurora S.A.C.
+
+Chiquitoy S.A.
+
+La Troncal (Ecuador)
+
+Agro Futura Company S.A.C.
+
+Agro Casa Grande S.A.C.
+
+Agrosanjacinto S.A.C.
+
+Producargo S.A.
+
+d) Papeles (1 empresa)
+
+Trupal S.A. (envases de cartón)
+
+e) Otros (2 empresas)
+
+Racionalización Empresarial S.A. (Raciemsa - transporte y logística)
+
+Centro (instituto educativo)
+
+4. Sostenibilidad (Prioridad SEO: 0.80)
+
+Compromiso con los 17 ODS de la ONU 2030
+
+Énfasis en cambio climático y huella de carbono
+
+Economía circular e inclusión laboral
+
+Impacto positivo en cadena de valor
+
+Desarrollo social y económico en comunidades
+
+5. Novedades (Prioridad SEO: 0.80)
+
+Blog corporativo con 45+ artículos indexados
+
+Formato: imagen destacada + título + extracto + "Leer más"
+
+Contenido reciente incluye:
+
+Compra de Ecuajugos en Ecuador
+
+Copa Soprole (bienestar de colaboradores)
+
+Participación en ANATEC Perú (logística sostenible)
+
+Inauguración planta fotovoltaica Yura (energía renovable)​
+
+Programa RECICREA de Trupal (sostenibilidad educativa)
+
+6. Contacto (Prioridad SEO: 0.80)
+
+Directorio completo: 30+ ubicaciones
+
+Información organizada por empresa y país
+
+Datos: direcciones físicas, teléfonos, emails
+
+Cobertura: Perú, Bolivia, Colombia, Ecuador, Argentina, Puerto Rico, Chile
+
+7. Trabaja con Nosotros (Prioridad SEO: 0.80)
+
+Portal de reclutamiento y postulaciones
+
+Formulario de aplicación laboral
+
+Información sobre cultura organizacional
+
+Componentes de Diseño Web
+Header
+Logo: Grupo Gloria (superior izquierda)
+
+Navegación horizontal: Menú principal con 7 ítems
+
+Megamenú: Especialmente en "Empresas" con subcategorías desplegables
+
+Elementos adicionales: Posible búsqueda y selector de idioma/país
+
+Hero Section (Home)
+Tipo: Slider corporativo rotativo
+
+Mensaje clave: Presencia internacional en 7 países
+
+Visuales: Imágenes de plantas industriales y operaciones
+
+CTAs: Enlaces a secciones principales
+
+Paleta Visual
+Color principal: Azul corporativo (identidad Grupo Gloria)
+
+Secundarios: Blanco para fondos limpios, grises para textos
+
+Acentos: Colores diferenciados por sector de negocio
+
+Tipografía: Sans-serif moderna (estilo Montserrat/Roboto)
+
+Sistema de Cards
+Empresas: Card individual por cada una de las 30+ empresas
+
+Contenido: Logo, descripción breve, enlace a página interna
+
+Novedades: Imagen + título + extracto + botón CTA
+
+Footer
+Columnas organizadas:
+
+Sobre Grupo Gloria + enlaces rápidos
+
+Contacto corporativo
+
+Redes sociales
+
+Legal: Política de privacidad, cookies, términos
+
+Información legal destacada:​
+
+Protección de Datos Personales (Ley 29733 Perú)
+
+Derechos ARCO (Acceso, Rectificación, Cancelación, Oposición)
+
+Portal: http://lpdp.centro.com.pe
+
+Email: leydeprotecciondedatos@centro.com.pe
+
+© Leche Gloria S.A. - RUC 20100190797
+
+Estrategia Digital y UX
+Tipo de Sitio
+Corporativo institucional B2B/B2C híbrido con múltiples audiencias:
+
+Inversionistas y stakeholders
+
+Clientes B2B (distribuidores, mayoristas)
+
+Potenciales empleados
+
+Medios de comunicación
+
+Comunidades locales
+
+Arquitectura de Información
+Modelo: Jerárquico con categorización clara por sectores
+
+Profundidad: 3-4 niveles máximos
+
+URLs amigables: Estructura descriptiva y limpia
+
+Sistema de etiquetado: Intuitivo y orientado al usuario
+
+Flujos de Usuario Típicos
+Inversionista/Stakeholder:
+
+text
+Home → Grupo → Datos Estadísticos → Empresas → Sostenibilidad
+Cliente B2B:
+
+text
+Home → Empresas → [Sector] → [Empresa específica] → Contacto
+Candidato a empleo:
+
+text
+Home → Trabaja con Nosotros → Formulario de postulación
+Medios de comunicación:
+
+text
+Home → Novedades → [Artículo] → Contacto
+Valores Corporativos Comunicados​
+Cumplimiento de obligaciones: Conducta ética y honesta
+
+Dedicación al trabajo: Esfuerzo orientado a calidad
+
+Prudencia en administración: Gestión racional de recursos
+
+Cultura del éxito: Logro de objetivos y liderazgo
+
+Orientación a la persona: Inversión en capital humano
+
+Responsabilidad social: Impacto positivo en comunidades
+
+Optimización SEO y Técnica
+Estructura SEO
+Sitemap XML: Actualizado regularmente (última: diciembre 2024)
+
+Prioridades: Nivel 1 (0.80-1.00), Nivel 2 (0.80), Nivel 3 (0.64)
+
+Meta información: Title tags y descriptions optimizados
+
+URLs semánticas: Legibles y descriptivas
+
+Stack Técnico Inferido
+CMS: Probable WordPress u otro CMS robusto
+
+Responsive Design: Optimización móvil
+
+Cookies y GDPR: Sistema de consentimiento implementado
+
+Analytics: Integración probable con Google Analytics
+
+Performance: Estructura optimizada según sitemap limpio
+
+Elementos Diferenciales
+Fortalezas Identificadas
+Organización clara: Categorización lógica por sectores de negocio
+
+Información completa: 30+ ubicaciones con datos de contacto detallados
+
+Actualización constante: Blog activo con contenido 2024-2025
+
+Compromiso visible: Énfasis destacado en sostenibilidad y ODS
+
+Presencia multinacional: Comunicación efectiva de alcance internacional
+
+Escalabilidad: Estructura preparada para crecimiento
+
+Transparencia legal: Política de privacidad y protección de datos clara​
+
+Puntos de Mejora Potencial
+Profundidad de navegación: 3+ clics para llegar a empresas específicas
+
+Filtros y búsqueda: Sistema de filtrado necesario con 30+ empresas
+
+Multiidioma: No se detecta versión en inglés en sitemap actual
+
+Storytelling Corporativo​
+El sitio comunica un relato potente de:
+
+Trayectoria histórica: Más de 80 años desde 1941
+
+Expansión internacional: De empresa peruana a conglomerado regional
+
+Liderazgo de mercado: 83.1% en mercado lácteo peruano​
+
+Innovación sostenible: Planta fotovoltaica Yura (30% energía renovable)​
+
+Impacto social: Capacitación a 12,500 familias ganaderas​

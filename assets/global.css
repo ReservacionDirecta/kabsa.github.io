@@ -1,0 +1,60 @@
+/* Estilos globales centralizados para KABSA */
+
+/* Utilidades visuales */
+.text-shadow-lg { text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); }
+.sticky-shadow { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+
+/* Animaciones de aparición en scroll */
+.scroll-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.scroll-reveal.fade-in-up { opacity: 1; transform: translateY(0); }
+
+/* Tarjetas y botones */
+.card-hover { transition: all 0.3s ease; }
+.card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); }
+.btn-hover { transition: all 0.3s ease; }
+.btn-hover:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+
+/* Imágenes */
+.img-hover { overflow: hidden; }
+.img-hover img { transition: transform 0.5s ease; }
+.img-hover:hover img { transform: scale(1.05); }
+
+/* Modales */
+.modal-animation { transition: opacity 0.3s ease, visibility 0.3s ease; }
+.modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
+.modal.active .modal-content { transform: scale(1); }
+
+/* Formularios */
+.form-input-focus { transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.form-input-focus:focus { border-color: #040872; box-shadow: 0 0 0 3px rgba(4, 8, 114, 0.2); outline: none; }
+
+/* Estados de carga (botones) */
+.is-loading { position: relative; pointer-events: none; opacity: 0.85; }
+.is-loading::after {
+  content: "";
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.6); border-top-color: #fff; border-radius: 50%;
+  animation: kabsa-spin 0.8s linear infinite;
+}
+@keyframes kabsa-spin { to { transform: translateY(-50%) rotate(360deg); } }
+
+/* Preferencia de usuario: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal, .img-hover img, .card-hover, .btn-hover { transition: none !important; }
+}
+
+
+/* Títulos y subtítulos de secciones: centrados por defecto */
+section h1, section h2, section h3 {
+  text-align: center;
+}
+
+/* Utilidad: justificar solo párrafos largos dentro de tarjetas/bloques específicos */
+.text-justify-all p {
+  text-align: justify !important;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+

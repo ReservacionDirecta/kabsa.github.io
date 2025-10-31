@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacto KABSA GROUP: formulario, WhatsApp, dirección y mapa.">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/global.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kabsa-blue': '#040872',
+                        'kabsa-dark-gray': '#333333',
+                        'kabsa-gray': '#F0F2F5',
+                        'whatsapp-green': '#25D366'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'ui-sans-serif', 'system-ui']
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9729T47');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHMJRY1TXM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CHMJRY1TXM');
+    </script>
+
+</head>
+<body class="font-[Poppins] text-[#333] antialiased overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9729T47"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div data-include="partials/navbar.html"></div>
+
+    <main>
+        <section class="bg-[#040872] text-white py-20">
+            <div class="container mx-auto px-4 lg:px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-3">Contacto</h1>
+                <p class="text-lg opacity-90">Conversemos sobre tu próximo proyecto. Respondemos en menos de 24 horas.</p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 lg:px-6 grid md:grid-cols-2 gap-10">
+                <form id="contact-form" class="space-y-4">
+                    <input id="name" type="text" placeholder="Nombre completo" required class="w-full border rounded-lg px-4 py-3">
+                    <input id="email" type="email" placeholder="Correo" required class="w-full border rounded-lg px-4 py-3">
+                    <input id="subject" type="text" placeholder="Asunto" required class="w-full border rounded-lg px-4 py-3">
+                    <textarea id="message" rows="5" placeholder="Mensaje" required class="w-full border rounded-lg px-4 py-3"></textarea>
+                    <label class="flex items-center gap-2 text-sm text-gray-600"><input id="privacy-policy" type="checkbox" required> Acepto la política de privacidad</label>
+                    <div id="form-success" class="hidden text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3">Gracias, hemos recibido tu mensaje.</div>
+                    <div id="form-error" class="hidden text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">Revisa los campos marcados.</div>
+                    <button type="submit" class="bg-[#040872] text-white font-semibold px-6 py-3 rounded-lg">Enviar</button>
+                </form>
+                <div class="space-y-4">
+                    <div>
+                        <div class="font-semibold text-[#040872]">Oficina</div>
+                        <div class="text-gray-700">Lima, Perú</div>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-[#040872]">Teléfono</div>
+                        <div class="text-gray-700">+51 991 690 103</div>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-[#040872]">Correo</div>
+                        <div class="text-gray-700">info@kabsagroup.com</div>
+                    </div>
+                    <a href="https://wa.me/51991690103" target="_blank" class="inline-flex items-center bg-[#25D366] text-white px-5 py-2 rounded-full font-semibold">Contactar por WhatsApp</a>
+                    <div class="h-64 bg-[#F0F2F5] rounded-lg flex items-center justify-center text-gray-500">Mapa de ubicación</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/main.js"></script>
+</body>
+</html>
+
+
+

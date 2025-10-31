@@ -1,0 +1,93 @@
+He realizado un mapeo detallado de la página web de Grupo IMCESA (https://grupoimcesa.com.pe/) como solicitaste. A continuación, te presento el análisis completo de su estructura y componentes principales:
+
+Mapeo Estructural Grupo IMCESA
+Resumen Ejecutivo
+Grupo IMCESA es una empresa peruana con más de 15 años de experiencia especializada en diseño arquitectónico, ingeniería civil, construcción, diseño de interiores, modelado 3D, y fabricación de letreros y vinilos decorativos. Su enfoque está en soluciones integrales, personalizadas, innovadoras, sostenibles y de alta calidad, con un equipo profesional comprometido con la excelencia y la puntualidad.
+
+Arquitectura de Navegación Principal y Secciones
+Inicio (Home)
+Página principal con descripción del enfoque en construcción de calidad y arquitectura moderna.
+
+Presentación de servicios clave y valores.
+
+Invitación a contacto y cotización.
+
+Nosotros
+Información institucional: historia, misión, visión, valores (Calidad, Innovación, Compromiso, Sostenibilidad, Integridad).
+
+Trayectoria de la empresa (más de 15 años).
+
+Destaca proyectos realizados y clientes satisfechos.
+
+Sección de preguntas frecuentes (servicios, tiempo de ejecución, materiales, asesorías, proyectos fuera de Lima, garantías).
+
+Servicios
+Descripción de los servicios principales:
+
+Diseño arquitectónico en 2D y 3D.
+
+Construcción civil con materiales modernos (drywall, melamina).
+
+Diseño de interiores personalizados.
+
+Fabricación e instalación de letreros, vinilos, y gigantografías.
+
+Obras en drywall, estructuras metálicas, electricidad y gasfitería.
+
+Diseño y construcción de stands publicitarios y letreros.
+
+Enfoque en calidad, innovación y cumplimiento de plazos.
+
+Arquitectura y Diseño
+Detalla el proceso de creación y planificación de espacios funcionales y estéticos.
+
+Ofrecen servicios para viviendas, complejos comerciales y proyectos industriales.
+
+Uso de planos detallados y modelos tridimensionales.
+
+Contacto y Cotización
+Formularios para ingresar datos, solicitar consultas y cotizaciones.
+
+Atención personalizada y asesoría especializada.
+
+Componentes de Diseño Web
+Header
+Logo Grupo IMCESA.
+
+Menú de navegación horizontal con las principales secciones (Inicio, Nosotros, Servicios, Arquitectura y Diseño, Contacto).
+
+Elementos de llamada a la acción para cotización y diseño personalizado.
+
+Contenido Visual
+Imágenes de construcciones modernas, equipos de trabajo y proyectos realizados.
+
+Uso de iconografía para destacar servicios.
+
+Presentación de materiales modernos empleados (drywall, melamina, acrílico).
+
+Elementos Interactivos
+Formularios para contacto, cotización y consultas.
+
+Posible integración de modelos 3D o renderizados arquitectónicos (según descripción).
+
+Secciones FAQ para facilitar la información al usuario.
+
+Footer
+Información corporativa básica.
+
+Enlaces rápidos y contacto.
+
+Estrategia Digital y UX
+Sitio orientado a clientes empresariales y particulares que buscan servicios profesionales en arquitectura y construcción.
+
+Lenguaje claro y profesional, con énfasis en reputación y calidad.
+
+Navegación sencilla y segmentada en servicios y presentación institucional.
+
+Enfoque en mostrar confianza, experiencia y personalización del servicio.
+
+Diseño adaptable para contacto directo y solicitud de presupuestos.
+
+Este análisis de la estructura de Grupo IMCESA permitirá tener un contexto claro para diseñar o mejorar un sitio web similar, considerando la importancia de mostrar experiencia, ofrecer servicios detallados y facilitar la interacción para clientes potenciales.
+
+Si deseas, puedo ayudarte también a complementar con un inventario de URLs o un desglose más detallado de cada sección.

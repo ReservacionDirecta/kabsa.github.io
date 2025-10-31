@@ -1,0 +1,386 @@
+Excelente punto de partida 👏 Te armaré la estructura base y contenido preliminar de la página web del Grupo KABSA, inspirada en el modelo de Grupo Gloria, pero adaptada al contexto y necesidades de un grupo constructor peruano que reúne tres empresas bajo una misma marca matriz.
+
+⸻
+
+🧭 PROPUESTA DE ESTRUCTURA WEB Y CONTENIDO BASE
+
+KABSA GROUP – Grupo Empresarial de Construcción e Infraestructura
+
+⸻
+
+🧩 1. MAPEO ESTRUCTURAL DEL SITIO WEB
+
+Tipo de sitio:
+Sitio institucional corporativo (B2B + B2G)
+Enfoque: Presentar al grupo, sus empresas, su trayectoria, y facilitar el contacto directo con clientes y entidades públicas.
+Duración estimada para versión preliminar: 7 días hábiles
+
+⸻
+
+NIVEL 1 – MENÚ PRINCIPAL (6 SECCIONES)
+	1.	Inicio
+	2.	El Grupo KABSA
+	3.	Empresas del Grupo
+	4.	Proyectos Realizados
+	5.	Noticias y Actualidad
+	6.	Contacto
+
+⸻
+
+🏠 2. SECCIÓN: INICIO
+
+Objetivo: Presentar la identidad del grupo y su liderazgo en construcción e infraestructura.
+
+Contenido sugerido:
+
+Hero Section:
+	•	Imagen o video panorámico de obras en ejecución (carreteras, edificios, obras civiles).
+	•	Título:
+“Construimos confianza. Construimos futuro.”
+	•	Subtítulo:
+Más de una década desarrollando proyectos de ingeniería y construcción con excelencia técnica y compromiso social.
+	•	Botón principal: “Conoce al Grupo KABSA”
+	•	Botón secundario: “Contáctanos por WhatsApp”
+
+Bloque de presentación rápida:
+	•	“3 empresas especializadas, un solo grupo con visión integral.”
+Cards con logos y breve descripción de cada empresa:
+	•	KABSA Ingeniería y Construcción: obras civiles, proyectos públicos, infraestructura.
+	•	KABSA Proyectos & Servicios: planificación, estudios técnicos, consultoría de obras.
+	•	KABSA Equipos & Logística: maquinaria pesada, transporte y suministro industrial.
+
+Sección de confianza:
+	•	“Aliados del desarrollo nacional.”
+Logos de entidades con las que han trabajado: Provías, Gobiernos Regionales, Municipalidades, empresas privadas (sin logos oficiales si no los hay, pero con íconos tipo).
+
+CTA final:
+
+“Hablemos sobre tu próximo proyecto.”
+Botón: Contactar por WhatsApp
+
+⸻
+
+🏗️ 3. SECCIÓN: EL GRUPO KABSA
+
+Objetivo: Comunicar la historia, valores y visión del conglomerado.
+
+Estructura:
+	•	Historia:
+“KABSA Group nace de la unión de tres empresas comprometidas con la excelencia técnica, la innovación y la responsabilidad en el sector construcción. Nuestro propósito es ofrecer soluciones integrales que generen valor para nuestros clientes, colaboradores y comunidades.”
+	•	Misión:
+Desarrollar proyectos de ingeniería y construcción con calidad, seguridad y cumplimiento, contribuyendo al desarrollo sostenible del país.
+	•	Visión:
+Ser un grupo líder a nivel nacional en soluciones constructivas, reconocido por su compromiso, transparencia y resultados.
+	•	Valores:
+Integridad | Responsabilidad | Eficiencia | Innovación | Trabajo en equipo
+	•	Pilares estratégicos:
+	1.	Cumplimiento y calidad en cada obra.
+	2.	Innovación tecnológica y sostenibilidad.
+	3.	Compromiso social y ambiental.
+
+⸻
+
+🧱 4. SECCIÓN: EMPRESAS DEL GRUPO
+
+Objetivo: Mostrar las tres empresas del grupo de manera clara, dentro del mismo dominio.
+
+Diseño sugerido:
+
+Cards con imágenes, logos y botones a subpáginas internas (ancladas en la misma web).
+
+1. KABSA Ingeniería y Construcción
+
+Especialistas en ejecución de obras públicas y privadas.
+Infraestructura vial, edificaciones, saneamiento y obras civiles integrales.
+Botón: Ver más
+
+2. KABSA Proyectos & Servicios
+
+Consultoría técnica, diseño estructural y supervisión de obras.
+Planificación integral y estudios de impacto.
+Botón: Ver más
+
+3. KABSA Equipos & Logística
+
+Gestión de maquinaria pesada, transporte y suministro de materiales.
+Soluciones eficientes para grandes proyectos.
+Botón: Ver más
+
+⸻
+
+🏗️ 5. SECCIÓN: PROYECTOS REALIZADOS
+
+Objetivo: Generar credibilidad mostrando resultados.
+
+Estructura:
+	•	Galería tipo masonry con fotos y descripciones breves.
+	•	Cada proyecto incluye:
+	•	Nombre del proyecto
+	•	Ubicación
+	•	Cliente (Municipalidad, Ministerio, empresa privada)
+	•	Monto de inversión (opcional)
+	•	Estado: Ejecutado / En curso
+
+CTA: “¿Quieres que tu proyecto sea el próximo?”
+Botón: “Solicitar propuesta”
+
+⸻
+
+📰 6. SECCIÓN: NOTICIAS Y ACTUALIDAD
+
+Objetivo: Mostrar movimiento corporativo y proyectos recientes.
+
+Contenido:
+	•	Publicaciones de:
+	•	Nuevas adjudicaciones de obras.
+	•	Avances de construcción.
+	•	Participación en licitaciones o ferias.
+	•	Compromisos sociales y ambientales.
+
+⸻
+
+📞 7. SECCIÓN: CONTACTO
+
+Objetivo: Facilitar comunicación directa.
+
+Contenido:
+	•	Formulario de contacto.
+	•	Botón de WhatsApp fijo visible en toda la web.
+	•	Dirección física, teléfonos y correo corporativo.
+	•	Mapa de ubicación (Google Maps embed).
+
+CTA:
+
+“Conversemos sobre tu próximo proyecto. Nuestro equipo responderá en menos de 24 horas.”
+
+⸻
+
+🎨 8. IDENTIDAD VISUAL SUGERIDA
+	•	Colores base: Azul oscuro (confianza y técnica) + gris cemento + blanco limpio.
+	•	Tipografía: Sans-serif moderna (Poppins / Montserrat).
+	•	Estilo: Corporativo, sobrio, con fotografías reales de obras y personal técnico.
+	•	Estructura: Una sola web (tipo one page con subanclas internas), optimizada para carga rápida.
+
+⸻
+
+💡 9. OPTIMIZACIÓN Y FUNCIONALIDAD
+	•	Estructura SEO inicial (meta titles + URLs limpias).
+	•	WhatsApp API con enlace directo a atención comercial.
+	•	Google Analytics para métricas.
+	•	Integración con Google My Business (para visibilidad local).
+	•	Formulario de contacto con envío automático al correo principal.
+
+⸻
+
+Perfecto 👏
+Aquí tienes el maquetado estructural (wireframe textual y visual jerárquico) para la página principal del Grupo KABSA, listo para entregar al diseñador o desarrollador web.
+Está pensado para una web corporativa moderna, con estructura one-page modular (secciones que también pueden abrir subpáginas internas si se desea escalar).
+
+⸻
+
+🏗️ MAQUETADO PÁGINA PRINCIPAL – GRUPO KABSA
+
+⸻
+
+🧱 ESTRUCTURA GENERAL
+
+Formato: One Page
+Secciones:
+	1.	Header fijo
+	2.	Hero principal
+	3.	Sobre el grupo
+	4.	Empresas del grupo
+	5.	Proyectos destacados
+	6.	Noticias / Actualidad
+	7.	CTA final
+	8.	Footer
+
+⸻
+
+🧩 1. HEADER (Fijo arriba)
+
+Diseño: Barra superior con fondo blanco o azul oscuro.
+Elementos:
+
+[Logo KABSA Group]          [Inicio] [El Grupo] [Empresas] [Proyectos] [Noticias] [Contacto]     [Botón WhatsApp verde]
+
+Extras:
+	•	Botón de WhatsApp flotante en todas las secciones.
+	•	Efecto sticky (se mantiene al hacer scroll).
+
+⸻
+
+🌇 2. HERO SECTION (Portada principal)
+
+Fondo:
+Video o imagen panorámica aérea de una obra (carretera, maquinaria, construcción).
+
+Superposición con color degradado oscuro para contraste.
+
+Contenido centrado:
+
+TÍTULO: “Construimos confianza. Construimos futuro.”
+SUBTÍTULO: “Tres empresas unidas bajo una sola visión: ingeniería, innovación y compromiso.”
+[Botón 1: Conoce al Grupo]     [Botón 2: Contáctanos]
+
+Elementos adicionales:
+	•	Logo del grupo en grande al inicio.
+	•	Sutil animación de entrada (fade-in).
+
+⸻
+
+🏗️ 3. SECCIÓN: SOBRE EL GRUPO KABSA
+
+Diseño: Fondo blanco con texto y fotografía institucional (personal, maquinaria o equipo técnico).
+
+Bloque textual en dos columnas:
+
+Columna izquierda:
+- Título: "Quiénes somos"
+- Texto: 
+  “KABSA Group es un conglomerado peruano conformado por tres empresas especializadas en el sector construcción. 
+  Nacemos con el propósito de desarrollar proyectos que impulsen el progreso del país, con calidad, cumplimiento y responsabilidad social.”
+
+Columna derecha:
+- Tarjetas con datos rápidos:
+  - +10 años de experiencia
+  - +50 proyectos ejecutados
+  - Cobertura nacional
+
+CTA inferior:
+
+[Conoce nuestra historia]
+
+⸻
+
+🧱 4. SECCIÓN: EMPRESAS DEL GRUPO
+
+Diseño: Fondo gris claro con cards animadas (hover).
+Título: “Tres empresas, una sola visión.”
+Subtítulo: “Cada una con especialización propia, trabajando de forma integrada.”
+
+Estructura tipo 3 columnas:
+
+[Card 1]
+Logo: KABSA Ingeniería y Construcción
+Texto: Obras públicas y privadas. Infraestructura vial, saneamiento, edificaciones.
+Botón: Ver más →
+
+[Card 2]
+Logo: KABSA Proyectos & Servicios
+Texto: Consultoría, diseño estructural y supervisión técnica.
+Botón: Ver más →
+
+[Card 3]
+Logo: KABSA Equipos & Logística
+Texto: Maquinaria pesada, transporte y soluciones integrales.
+Botón: Ver más →
+
+
+⸻
+
+🏗️ 5. SECCIÓN: PROYECTOS DESTACADOS
+
+Diseño: Galería de imágenes tipo grid / masonry.
+
+Título: “Proyectos que hablan por nosotros.”
+
+Estructura visual:
+
+┌─────────────────────────────────────┐
+│  [Foto Proyecto 1]  [Foto Proyecto 2]  [Foto Proyecto 3]  │
+│  [Foto Proyecto 4]  [Foto Proyecto 5]  [Foto Proyecto 6]  │
+└─────────────────────────────────────┘
+
+Cada imagen abre un pop-up o subpágina con:
+	•	Nombre del proyecto
+	•	Ubicación
+	•	Cliente (ej. Provías, GORE Amazonas)
+	•	Estado: Ejecutado / En curso
+	•	Descripción breve (3 líneas)
+
+Botón inferior:
+
+[Ver todos los proyectos]
+
+⸻
+
+📰 6. SECCIÓN: NOTICIAS Y ACTUALIDAD
+
+Diseño: Fondo blanco con cards estilo blog (3 columnas).
+
+Título: “Noticias y Actualidad”
+Subtítulo: “Últimos avances y novedades del grupo.”
+
+Cards ejemplo:
+
+[Imagen] 
+Título: KABSA Group ejecuta nueva obra de saneamiento en Piura
+Extracto: La empresa continúa consolidando su presencia en el norte del país...
+Botón: Leer más →
+
+[Imagen]
+Título: Adjudicación de proyecto vial con Gobierno Regional de Cajamarca
+Extracto: El grupo liderará la construcción del tramo San Marcos – Pedro Gálvez...
+Botón: Leer más →
+
+CTA:
+
+[Ver todas las noticias]
+
+⸻
+
+📞 7. CTA FINAL
+
+Diseño: Fondo azul oscuro, texto blanco.
+Contenido centrado:
+
+TÍTULO: “¿Listo para iniciar tu próximo proyecto?”
+SUBTÍTULO: “Conversemos y diseñemos juntos la mejor solución.”
+[Botón grande: Contáctanos]
+
+
+⸻
+
+⚙️ 8. FOOTER
+
+Diseño: Fondo gris oscuro con tres columnas.
+
+Columna 1:
+Logo KABSA Group
+Texto: “Grupo empresarial peruano especializado en ingeniería, construcción y servicios técnicos.”
+
+Columna 2:
+Enlaces rápidos:
+- Inicio
+- El Grupo
+- Empresas
+- Proyectos
+- Noticias
+- Contacto
+
+Columna 3:
+Contacto:
+📍 Dirección: Lima, Perú
+📞 Teléfono: +51 999 000 000
+✉️ Email: contacto@kabsagroup.com
+🌐 www.kabsagroup.com
+
+Línea inferior:
+
+© 2025 KABSA Group. Todos los derechos reservados.
+Desarrollado por Chambadigital.la
+
+
+⸻
+
+🧠 FUNCIONALIDADES TÉCNICAS
+	•	Diseño responsive (adaptado a móviles y tablets).
+	•	Animaciones suaves al hacer scroll (reveal).
+	•	Botón WhatsApp fijo (posición inferior derecha).
+	•	Optimización SEO: títulos, meta-descripciones y URL amigables.
+	•	Carga rápida (imágenes optimizadas y hosting eficiente).
+
+⸻
+
+Crea el HTML, css, js
