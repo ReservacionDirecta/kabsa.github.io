@@ -70,7 +70,7 @@ Proyecto de sitio institucional corporativo para KABSA Group (conglomerado perua
 
 ### Información proporcionada por el cliente (Formulario)
 - **Representante**: Martin Delgado Herrera (Administrador)
-- **Contacto**: `info@kabsagroup.com` · WhatsApp: `+51 991 690 103`
+- **Contacto**: `info@kabsa.pe` · WhatsApp: `+51 991 690 103`
 - **Inicio previsto**: 28-OCT-2025
 - **Dominio**: sin dominio actual; preferencia TLD: `.pe`
 - **Hosting**: requiere provisión por Chamba Digital
@@ -107,10 +107,11 @@ Proyecto de sitio institucional corporativo para KABSA Group (conglomerado perua
   - Web/Redes: sin sitio web
 
 - **Empresa 3: BRONTES CONSTRUCTORA S.A.**
-  - Fundada: 10/06/2014
-  - Descripción: ver brochure
-  - Servicios: consultoría de proyectos integrales, financiamiento y dirección técnica de obras y proyectos
-  - Slogan: “Diseñamos tus ideas Construimos tus sueños”
+  - Fundada: 2015
+  - Descripción: Planificación integral, estructuración y financiamiento de proyectos
+  - Servicios: Diseño y consultoría técnica, metodología BIM, financiamiento de proyectos
+  - Slogan: "Diseñamos tus ideas Construimos tus sueños"
+  - Rol en el grupo: Brazo de diseño y planificación
   - Proyectos: por completar
   - Cobertura: Lima – nivel nacional
   - Responsable: Martin Delgado

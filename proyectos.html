@@ -71,13 +71,30 @@
             </div>
         </section>
 
-        <section class="py-16 bg-white">
+        <!-- Navegación de categorías (sticky) -->
+        <div class="bg-white sticky top-0 z-40 border-b border-gray-200 shadow-sm">
+            <div class="container mx-auto px-4 lg:px-6 py-4">
+                <div class="flex gap-3 flex-wrap justify-center">
+                    <a href="#ejecucion" class="px-6 py-3 bg-[#040872] text-white rounded-full font-semibold hover:bg-blue-600 transition-colors text-sm sm:text-base">Ejecución de Obras</a>
+                    <a href="#consultoria" class="px-6 py-3 bg-[#040872] text-white rounded-full font-semibold hover:bg-blue-600 transition-colors text-sm sm:text-base">Consultoría Técnica</a>
+                    <a href="#bienes" class="px-6 py-3 bg-[#040872] text-white rounded-full font-semibold hover:bg-blue-600 transition-colors text-sm sm:text-base">Proveedores de Bienes</a>
+                    <a href="#topografia" class="px-6 py-3 bg-[#040872] text-white rounded-full font-semibold hover:bg-blue-600 transition-colors text-sm sm:text-base">Topografía Especializada</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 1: EJECUCIÓN DE OBRAS -->
+        <section id="ejecucion" class="py-16 bg-white scroll-mt-20">
             <div class="container mx-auto px-4 lg:px-6">
-                <div class="flex gap-3 mb-8">
-                    <button class="px-4 py-2 bg-[#F0F2F5] rounded-full">Todos</button>
-                    <button class="px-4 py-2 bg-[#F0F2F5] rounded-full">Infraestructura vial</button>
-                    <button class="px-4 py-2 bg-[#F0F2F5] rounded-full">Saneamiento</button>
-                    <button class="px-4 py-2 bg-[#F0F2F5] rounded-full">Edificaciones</button>
+                <div class="text-center mb-10">
+                    <div class="inline-block bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        <svg class="w-4 h-4 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path>
+                        </svg>
+                        KATSUMOTO - Empresa Ejecutora
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#040872] mb-3">Ejecución de Obras</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Proyectos de infraestructura vial, obras eléctricas, saneamiento y edificaciones</p>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Proyecto 1 -->
@@ -149,6 +166,160 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECCIÓN 2: CONSULTORÍA TÉCNICA -->
+        <section id="consultoria" class="py-16 bg-[#F8FAFC] scroll-mt-20">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="text-center mb-10">
+                    <div class="inline-block bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        <svg class="w-4 h-4 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                        </svg>
+                        BRONTES - Diseño y Planificación
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#040872] mb-3">Consultoría Técnica</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Diseño BIM, expedientes técnicos, supervisión y estructuración de proyectos</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Proyecto Consultoría 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer" onclick="openModal('modal-consultoria-1')">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop" alt="Diseño BIM" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <div class="font-semibold text-[#040872] text-lg mb-1">Modelado BIM - Hospital Regional</div>
+                            <div class="text-sm text-gray-600 mb-2">Puno • Completado</div>
+                            <div class="text-sm text-[#040872] font-medium">Click para ver detalles →</div>
+                        </div>
+                    </div>
+                    <!-- Proyecto Consultoría 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer" onclick="openModal('modal-consultoria-2')">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop" alt="Supervisión" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <div class="font-semibold text-[#040872] text-lg mb-1">Supervisión de Obra Vial</div>
+                            <div class="text-sm text-gray-600 mb-2">Cusco • En curso</div>
+                            <div class="text-sm text-[#040872] font-medium">Click para ver detalles →</div>
+                        </div>
+                    </div>
+                    <!-- Proyecto Consultoría 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer" onclick="openModal('modal-consultoria-3')">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=600&auto=format&fit=crop" alt="Expediente Técnico" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <div class="font-semibold text-[#040872] text-lg mb-1">Expediente Técnico - Puente</div>
+                            <div class="text-sm text-gray-600 mb-2">Ayacucho • Completado</div>
+                            <div class="text-sm text-[#040872] font-medium">Click para ver detalles →</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: PROVEEDORES DE BIENES -->
+        <section id="bienes" class="py-16 bg-white scroll-mt-20">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="text-center mb-10">
+                    <div class="inline-block bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        <svg class="w-4 h-4 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                            <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path>
+                        </svg>
+                        ARGOS - Servicios y Bienes
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#040872] mb-3">Proveedores de Bienes</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Provisión de maquinaria, equipos especializados y consultoría complementaria</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Proyecto Bienes 1 -->
+                    <div class="bg-[#F8FAFC] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer" onclick="openModal('modal-bienes-1')">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?q=80&w=600&auto=format&fit=crop" alt="Maquinaria" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <div class="font-semibold text-[#040872] text-lg mb-1">Provisión de Maquinaria Pesada</div>
+                            <div class="text-sm text-gray-600 mb-2">Arequipa • Ejecutado</div>
+                            <div class="text-sm text-[#040872] font-medium">Click para ver detalles →</div>
+                        </div>
+                    </div>
+                    <!-- Proyecto Bienes 2 -->
+                    <div class="bg-[#F8FAFC] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer" onclick="openModal('modal-bienes-2')">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=600&auto=format&fit=crop" alt="Instalación Eléctrica" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <div class="font-semibold text-[#040872] text-lg mb-1">Instalación de Sistema Eléctrico</div>
+                            <div class="text-sm text-gray-600 mb-2">Lima • En curso</div>
+                            <div class="text-sm text-[#040872] font-medium">Click para ver detalles →</div>
+                        </div>
+                    </div>
+                    <!-- Proyecto Bienes 3 -->
+                    <div class="bg-[#F8FAFC] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer" onclick="openModal('modal-bienes-3')">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=600&auto=format&fit=crop" alt="Equipos" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <div class="font-semibold text-[#040872] text-lg mb-1">Suministro de Equipos Especializados</div>
+                            <div class="text-sm text-gray-600 mb-2">Trujillo • Completado</div>
+                            <div class="text-sm text-[#040872] font-medium">Click para ver detalles →</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: TOPOGRAFÍA ESPECIALIZADA -->
+        <section id="topografia" class="py-16 bg-[#F8FAFC] scroll-mt-20">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="text-center mb-10">
+                    <div class="inline-block bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        <svg class="w-4 h-4 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                        </svg>
+                        Topografía y Geodesia
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#040872] mb-3">Topografía Especializada</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Levantamientos topográficos, drones, fotogrametría y modelamiento 3D del terreno</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Proyecto Topografía 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer" onclick="openModal('modal-topografia-1')">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=600&auto=format&fit=crop" alt="Levantamiento Topográfico" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <div class="font-semibold text-[#040872] text-lg mb-1">Levantamiento Topográfico - Carretera</div>
+                            <div class="text-sm text-gray-600 mb-2">Huánuco • Completado</div>
+                            <div class="text-sm text-[#040872] font-medium">Click para ver detalles →</div>
+                        </div>
+                    </div>
+                    <!-- Proyecto Topografía 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer" onclick="openModal('modal-topografia-2')">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1578010734144-60fa2f18171c?q=80&w=600&auto=format&fit=crop" alt="Drones" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <div class="font-semibold text-[#040872] text-lg mb-1">Fotogrametría con Drones</div>
+                            <div class="text-sm text-gray-600 mb-2">Madre de Dios • En curso</div>
+                            <div class="text-sm text-[#040872] font-medium">Click para ver detalles →</div>
+                        </div>
+                    </div>
+                    <!-- Proyecto Topografía 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer" onclick="openModal('modal-topografia-3')">
+                        <div class="h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=600&auto=format&fit=crop" alt="Modelamiento 3D" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5">
+                            <div class="font-semibold text-[#040872] text-lg mb-1">Modelamiento 3D del Terreno</div>
+                            <div class="text-sm text-gray-600 mb-2">Junín • Completado</div>
+                            <div class="text-sm text-[#040872] font-medium">Click para ver detalles →</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <div data-include="partials/footer.html"></div>
@@ -157,7 +328,7 @@
     <!-- Modal Proyecto 1 -->
     <div id="modal-proyecto-1" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
-            <div class="p-6 sm:p-8">
+            <div class="p-6 sm:p-8 text-justify-all">
                 <div class="flex justify-between items-start mb-6">
                     <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Proyecto Vial Tramo 1</h2>
                     <button onclick="closeModal('modal-proyecto-1')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
@@ -199,7 +370,7 @@
     <!-- Modal Proyecto 2 -->
     <div id="modal-proyecto-2" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
-            <div class="p-6 sm:p-8">
+            <div class="p-6 sm:p-8 text-justify-all">
                 <div class="flex justify-between items-start mb-6">
                     <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Saneamiento Piura</h2>
                     <button onclick="closeModal('modal-proyecto-2')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
@@ -241,7 +412,7 @@
     <!-- Modal Proyecto 3 -->
     <div id="modal-proyecto-3" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
-            <div class="p-6 sm:p-8">
+            <div class="p-6 sm:p-8 text-justify-all">
                 <div class="flex justify-between items-start mb-6">
                     <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Edificio Corporativo</h2>
                     <button onclick="closeModal('modal-proyecto-3')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
@@ -283,7 +454,7 @@
     <!-- Modal Proyecto 4 -->
     <div id="modal-proyecto-4" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
-            <div class="p-6 sm:p-8">
+            <div class="p-6 sm:p-8 text-justify-all">
                 <div class="flex justify-between items-start mb-6">
                     <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Infraestructura Urbana</h2>
                     <button onclick="closeModal('modal-proyecto-4')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
@@ -325,7 +496,7 @@
     <!-- Modal Proyecto 5 -->
     <div id="modal-proyecto-5" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
-            <div class="p-6 sm:p-8">
+            <div class="p-6 sm:p-8 text-justify-all">
                 <div class="flex justify-between items-start mb-6">
                     <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Obras Hidráulicas</h2>
                     <button onclick="closeModal('modal-proyecto-5')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
@@ -367,7 +538,7 @@
     <!-- Modal Proyecto 6 -->
     <div id="modal-proyecto-6" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
         <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
-            <div class="p-6 sm:p-8">
+            <div class="p-6 sm:p-8 text-justify-all">
                 <div class="flex justify-between items-start mb-6">
                     <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Puente San Marcos</h2>
                     <button onclick="closeModal('modal-proyecto-6')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
@@ -468,6 +639,393 @@
     </script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- MODALES DE CONSULTORÍA -->
+    <!-- Modal Consultoría 1 -->
+    <div id="modal-consultoria-1" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-8 text-justify-all">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Modelado BIM - Hospital Regional</h2>
+                    <button onclick="closeModal('modal-consultoria-1')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Modelado BIM" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-semibold">Cliente:</span> Gobierno Regional de Puno</div>
+                        <div><span class="font-semibold">Ubicación:</span> Puno</div>
+                        <div><span class="font-semibold">Duración:</span> 6 meses</div>
+                        <div><span class="font-semibold">Estado:</span> <span class="text-green-600 font-semibold">Completado</span></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Descripción</h3>
+                        <p class="text-gray-700">Desarrollo completo del modelo BIM 5D para hospital regional de 120 camas. Incluye arquitectura, estructuras, instalaciones eléctricas, sanitarias y mecánicas con metodología colaborativa y estándares ISO 19650.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Alcance</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>Modelado arquitectónico y estructural BIM</li>
+                            <li>Coordinación MEP (mecánico, eléctrico, plomería)</li>
+                            <li>Detección de interferencias y soluciones</li>
+                            <li>Extracción de metrados y presupuestos</li>
+                            <li>Planificación 4D y estimación de costos 5D</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Consultoría 2 -->
+    <div id="modal-consultoria-2" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-8 text-justify-all">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Supervisión de Obra Vial</h2>
+                    <button onclick="closeModal('modal-consultoria-2')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" alt="Supervisión" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-semibold">Cliente:</span> Provías Descentralizado</div>
+                        <div><span class="font-semibold">Ubicación:</span> Cusco</div>
+                        <div><span class="font-semibold">Duración:</span> 20 meses</div>
+                        <div><span class="font-semibold">Estado:</span> <span class="text-blue-600 font-semibold">En curso (45%)</span></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Descripción</h3>
+                        <p class="text-gray-700">Supervisión técnica integral de construcción de carretera de 45 km con pavimento flexible, incluyendo control de calidad de materiales, avance de obra, cumplimiento de especificaciones técnicas y seguridad en obra.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Servicios</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>Control topográfico y geométrico</li>
+                            <li>Ensayos de laboratorio de suelos y materiales</li>
+                            <li>Verificación de especificaciones técnicas</li>
+                            <li>Gestión de valorizaciones y adicionales</li>
+                            <li>Control de seguridad y medio ambiente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Consultoría 3 -->
+    <div id="modal-consultoria-3" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-8 text-justify-all">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Expediente Técnico - Puente</h2>
+                    <button onclick="closeModal('modal-consultoria-3')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop" alt="Expediente Técnico" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-semibold">Cliente:</span> Municipalidad Provincial de Huamanga</div>
+                        <div><span class="font-semibold">Ubicación:</span> Ayacucho</div>
+                        <div><span class="font-semibold">Duración:</span> 5 meses</div>
+                        <div><span class="font-semibold">Estado:</span> <span class="text-green-600 font-semibold">Completado</span></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Descripción</h3>
+                        <p class="text-gray-700">Elaboración de expediente técnico completo para puente vehicular de 80 metros de luz, estructura de concreto armado con 2 carriles, incluyendo estudios básicos, diseño estructural, hidrología y presupuesto detallado.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Entregables</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>Levantamiento topográfico y batimetría</li>
+                            <li>Estudio de mecánica de suelos</li>
+                            <li>Diseño hidráulico e hidrológico</li>
+                            <li>Diseño estructural y cálculo sísmico</li>
+                            <li>Planos de construcción y especificaciones</li>
+                            <li>Presupuesto, cronograma y análisis de precios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALES DE BIENES -->
+    <!-- Modal Bienes 1 -->
+    <div id="modal-bienes-1" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-8 text-justify-all">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Provisión de Maquinaria Pesada</h2>
+                    <button onclick="closeModal('modal-bienes-1')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?q=80&w=1200&auto=format&fit=crop" alt="Maquinaria" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-semibold">Cliente:</span> Consorcio Vial Majes</div>
+                        <div><span class="font-semibold">Ubicación:</span> Arequipa</div>
+                        <div><span class="font-semibold">Duración:</span> 12 meses</div>
+                        <div><span class="font-semibold">Estado:</span> <span class="text-green-600 font-semibold">Ejecutado</span></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Descripción</h3>
+                        <p class="text-gray-700">Suministro e instalación de flota de maquinaria pesada para movimiento de tierras en proyecto vial de gran envergadura. Incluye operadores certificados, mantenimiento preventivo y correctivo, y soporte técnico 24/7.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Equipos Provistos</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>4 Excavadoras de orugas (CAT 320D)</li>
+                            <li>3 Cargadores frontales (CAT 950H)</li>
+                            <li>6 Volquetes de 15 m³</li>
+                            <li>2 Motoniveladoras (CAT 140K)</li>
+                            <li>2 Rodillos compactadores vibratorios</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bienes 2 -->
+    <div id="modal-bienes-2" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-8 text-justify-all">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Instalación de Sistema Eléctrico</h2>
+                    <button onclick="closeModal('modal-bienes-2')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1200&auto=format&fit=crop" alt="Sistema Eléctrico" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-semibold">Cliente:</span> Centro Comercial Plaza Norte</div>
+                        <div><span class="font-semibold">Ubicación:</span> Lima - Independencia</div>
+                        <div><span class="font-semibold">Duración:</span> 8 meses</div>
+                        <div><span class="font-semibold">Estado:</span> <span class="text-blue-600 font-semibold">En curso (60%)</span></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Descripción</h3>
+                        <p class="text-gray-700">Provisión e instalación completa de sistema eléctrico de media y baja tensión para ampliación de centro comercial. Incluye subestación, tableros de distribución, iluminación LED, sistema de emergencia y automatización.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Alcance del Proyecto</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>Subestación eléctrica de 1000 KVA</li>
+                            <li>Tableros generales y de distribución</li>
+                            <li>Cableado estructurado y bandejas</li>
+                            <li>Iluminación LED de bajo consumo</li>
+                            <li>Sistema de respaldo con grupo electrógeno</li>
+                            <li>Sistema de automatización y control</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bienes 3 -->
+    <div id="modal-bienes-3" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-8 text-justify-all">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Suministro de Equipos Especializados</h2>
+                    <button onclick="closeModal('modal-bienes-3')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=1200&auto=format&fit=crop" alt="Equipos Especializados" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-semibold">Cliente:</span> Minera del Norte S.A.</div>
+                        <div><span class="font-semibold">Ubicación:</span> La Libertad - Trujillo</div>
+                        <div><span class="font-semibold">Duración:</span> 4 meses</div>
+                        <div><span class="font-semibold">Estado:</span> <span class="text-green-600 font-semibold">Completado</span></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Descripción</h3>
+                        <p class="text-gray-700">Provisión de equipos especializados para planta de procesamiento minero, incluyendo bombas centrífugas de alta presión, compresores industriales, equipos de seguridad y sistemas de monitoreo ambiental con instalación y puesta en marcha.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Equipos Suministrados</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>Bombas centrífugas de proceso (6 unidades)</li>
+                            <li>Compresores de aire de alta capacidad</li>
+                            <li>Equipos de seguridad industrial certificados</li>
+                            <li>Sistema de monitoreo ambiental continuo</li>
+                            <li>Válvulas de control automatizadas</li>
+                            <li>Capacitación técnica y manuales de operación</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALES DE TOPOGRAFÍA -->
+    <!-- Modal Topografía 1 -->
+    <div id="modal-topografia-1" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-8 text-justify-all">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Levantamiento Topográfico - Carretera</h2>
+                    <button onclick="closeModal('modal-topografia-1')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1200&auto=format&fit=crop" alt="Levantamiento Topográfico" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-semibold">Cliente:</span> Ministerio de Transportes</div>
+                        <div><span class="font-semibold">Ubicación:</span> Huánuco - Tingo María</div>
+                        <div><span class="font-semibold">Duración:</span> 3 meses</div>
+                        <div><span class="font-semibold">Estado:</span> <span class="text-green-600 font-semibold">Completado</span></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Descripción</h3>
+                        <p class="text-gray-700">Levantamiento topográfico de precisión para diseño de carretera de 32 km con tecnología GNSS/RTK y estación total. Incluye replanteo de eje, secciones transversales, curvas de nivel y puntos de control geodésico con precisión milimétrica.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Entregables</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>Planos topográficos a escala 1:1000</li>
+                            <li>Modelo digital del terreno (MDT)</li>
+                            <li>Secciones transversales cada 20 metros</li>
+                            <li>Puntos de control geodésico (BMs)</li>
+                            <li>Memoria descriptiva y cálculo de volúmenes</li>
+                            <li>Archivos CAD y GIS georreferenciados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Topografía 2 -->
+    <div id="modal-topografia-2" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-8 text-justify-all">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Fotogrametría con Drones</h2>
+                    <button onclick="closeModal('modal-topografia-2')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1578010734144-60fa2f18171c?q=80&w=1200&auto=format&fit=crop" alt="Drones" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-semibold">Cliente:</span> Empresa Forestal Amazónica</div>
+                        <div><span class="font-semibold">Ubicación:</span> Madre de Dios</div>
+                        <div><span class="font-semibold">Duración:</span> 6 meses</div>
+                        <div><span class="font-semibold">Estado:</span> <span class="text-blue-600 font-semibold">En curso (70%)</span></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Descripción</h3>
+                        <p class="text-gray-700">Relevamiento fotogramétrico con drones de alta precisión para monitoreo de 1,500 hectáreas de concesión forestal. Procesamiento de imágenes para obtención de ortomosaicos, modelos 3D y análisis multitemporal de cobertura vegetal.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Características del Proyecto</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>Vuelos con drones DJI Phantom 4 RTK</li>
+                            <li>Resolución de imagen: 2.74 cm/pixel</li>
+                            <li>Ortomosaicos georreferenciados</li>
+                            <li>Modelo digital de superficie (MDS)</li>
+                            <li>Análisis de vegetación con índices NDVI</li>
+                            <li>Reportes trimestrales de monitoreo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Topografía 3 -->
+    <div id="modal-topografia-3" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden bg-black bg-opacity-50 transition-opacity duration-300">
+        <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 opacity-0 translate-y-10">
+            <div class="p-6 sm:p-8 text-justify-all">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#040872]">Modelamiento 3D del Terreno</h2>
+                    <button onclick="closeModal('modal-topografia-3')" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mb-6">
+                    <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=1200&auto=format&fit=crop" alt="Modelamiento 3D" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div><span class="font-semibold">Cliente:</span> Hidroeléctrica del Centro</div>
+                        <div><span class="font-semibold">Ubicación:</span> Junín - Tarma</div>
+                        <div><span class="font-semibold">Duración:</span> 4 meses</div>
+                        <div><span class="font-semibold">Estado:</span> <span class="text-green-600 font-semibold">Completado</span></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Descripción</h3>
+                        <p class="text-gray-700">Desarrollo de modelo 3D de alta precisión del terreno para diseño de presa hidroeléctrica. Incluye batimetría del embalse, modelamiento del cauce del río y análisis de escorrentía con software especializado para optimizar el diseño hidráulico.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-[#040872] mb-2">Tecnologías Aplicadas</h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                            <li>Levantamiento con escáner láser terrestre</li>
+                            <li>Batimetría con ecosonda multihaz</li>
+                            <li>Procesamiento en software Civil 3D y HEC-RAS</li>
+                            <li>Modelo digital del terreno (MDT) de alta resolución</li>
+                            <li>Análisis hidráulico y simulación de caudales</li>
+                            <li>Entrega en formatos CAD, GIS y BIM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/main.js"></script>
 </body>
 </html>
