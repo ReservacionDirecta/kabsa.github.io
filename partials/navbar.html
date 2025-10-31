@@ -10,22 +10,59 @@
             <!-- Links de Navegación (Escritorio) -->
             <div class="flex items-center space-x-6 lg:space-x-8">
                 <a href="index.html#inicio" class="text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium">Inicio</a>
-                <!-- Dropdown: El Grupo -->
+                
+                <!-- Dropdown: Nosotros -->
                 <div class="relative" data-dropdown="group-menu">
+                    <button type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-toggle class="inline-flex items-center text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium focus:outline-none">
+                        Nosotros
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                    </button>
+                    <div data-dropdown-panel class="hidden absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-100 py-2 z-50">
+                        <a href="grupo.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Grupo KABSA</a>
+                        <a href="grupo.html#valores" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Valores Corporativos</a>
+                        <a href="proyectos.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Proyectos</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown: El Grupo -->
+                <div class="relative" data-dropdown="empresas-menu">
                     <button type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-toggle class="inline-flex items-center text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium focus:outline-none">
                         El Grupo
                         <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
                     </button>
-                    <div data-dropdown-panel class="hidden absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 py-2 z-50">
-                        <a href="grupo.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue">Grupo KABSA</a>
-                        <a href="empresas.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue">Empresas</a>
-                        <a href="grupo.html#estadisticas" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue">Estadísticas</a>
-                        <a href="staff.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue">Staff de Profesionales</a>
+                    <div data-dropdown-panel class="hidden absolute right-0 mt-2 w-72 bg-white rounded-md shadow-lg border border-gray-100 py-2 z-50">
+                        <a href="argos.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">ARGOS Corporation S.A.C.</a>
+                        <a href="brontes.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">BRONTES Constructora S.A.</a>
+                        <a href="katsumoto.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">KATSUMOTO Corporation S.A.C.</a>
                     </div>
                 </div>
-                <a href="proyectos.html" class="text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium">Proyectos</a>
-                <a href="noticias.html" class="text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium">Noticias</a>
-                <a href="contacto.html" class="text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium">Contacto</a>
+
+                <!-- Dropdown: Servicios -->
+                <div class="relative" data-dropdown="servicios-menu">
+                    <button type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-toggle class="inline-flex items-center text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium focus:outline-none">
+                        Servicios
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                    </button>
+                    <div data-dropdown-panel class="hidden absolute right-0 mt-2 w-52 bg-white rounded-md shadow-lg border border-gray-100 py-2 z-50">
+                        <a href="empresas.html#ejecucion" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Ejecución</a>
+                        <a href="empresas.html#consultoria" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Consultoría</a>
+                        <a href="empresas.html#bienes" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Bienes</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown: Conoce Más -->
+                <div class="relative" data-dropdown="conoce-menu">
+                    <button type="button" aria-haspopup="true" aria-expanded="false" data-dropdown-toggle class="inline-flex items-center text-gray-600 hover:text-kabsa-blue transition duration-300 font-medium focus:outline-none">
+                        Conoce Más
+                        <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                    </button>
+                    <div data-dropdown-panel class="hidden absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-100 py-2 z-50">
+                        <a href="contacto.html#proveedor" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Registro de Proveedor</a>
+                        <a href="contacto.html#empleo" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Trabaja con Nosotros</a>
+                        <a href="contacto.html#reclamaciones" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Libro de Reclamaciones</a>
+                        <a href="contacto.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-kabsa-blue whitespace-nowrap">Contacto</a>
+                    </div>
+                </div>
             </div>
 
             <!-- Botón WhatsApp (Escritorio) -->
@@ -42,20 +79,49 @@
     </nav>
 
     <!-- Menú Móvil (Oculto por defecto) -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-6 text-2xl z-40 transition-transform duration-300 transform -translate-x-full">
+    <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white flex flex-col items-center justify-center space-y-6 text-2xl z-40 transition-transform duration-300 transform -translate-x-full overflow-y-auto py-20">
         <a href="index.html#inicio" onclick="toggleMenu();" class="text-gray-800 hover:text-kabsa-blue">Inicio</a>
+        
+        <!-- Nosotros -->
+        <div class="text-center">
+            <div class="text-gray-800 font-semibold mb-2">Nosotros</div>
+            <div class="flex flex-col space-y-2 text-xl">
+                <a href="grupo.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Grupo KABSA</a>
+                <a href="grupo.html#valores" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Valores Corporativos</a>
+                <a href="proyectos.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Proyectos</a>
+            </div>
+        </div>
+
+        <!-- El Grupo -->
         <div class="text-center">
             <div class="text-gray-800 font-semibold mb-2">El Grupo</div>
             <div class="flex flex-col space-y-2 text-xl">
-                <a href="grupo.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Grupo KABSA</a>
-                <a href="empresas.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Empresas</a>
-                <a href="grupo.html#estadisticas" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Estadísticas</a>
-                        <a href="staff.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Staff</a>
+                <a href="argos.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">ARGOS</a>
+                <a href="brontes.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">BRONTES</a>
+                <a href="katsumoto.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">KATSUMOTO</a>
             </div>
         </div>
-        <a href="proyectos.html" onclick="toggleMenu();" class="text-gray-800 hover:text-kabsa-blue">Proyectos</a>
-        <a href="noticias.html" onclick="toggleMenu();" class="text-gray-800 hover:text-kabsa-blue">Noticias</a>
-        <a href="contacto.html" onclick="toggleMenu();" class="text-gray-800 hover:text-kabsa-blue">Contacto</a>
+
+        <!-- Servicios -->
+        <div class="text-center">
+            <div class="text-gray-800 font-semibold mb-2">Servicios</div>
+            <div class="flex flex-col space-y-2 text-xl">
+                <a href="empresas.html#ejecucion" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Ejecución</a>
+                <a href="empresas.html#consultoria" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Consultoría</a>
+                <a href="empresas.html#bienes" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Bienes</a>
+            </div>
+        </div>
+
+        <!-- Conoce Más -->
+        <div class="text-center">
+            <div class="text-gray-800 font-semibold mb-2">Conoce Más</div>
+            <div class="flex flex-col space-y-2 text-xl">
+                <a href="contacto.html#proveedor" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Registro de Proveedor</a>
+                <a href="contacto.html#empleo" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Trabaja con Nosotros</a>
+                <a href="contacto.html#reclamaciones" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Libro de Reclamaciones</a>
+                <a href="contacto.html" onclick="toggleMenu();" class="text-gray-700 hover:text-kabsa-blue">Contacto</a>
+            </div>
+        </div>
     </div>
 </header>
 

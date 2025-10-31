@@ -89,53 +89,55 @@ document.addEventListener('DOMContentLoaded', function () {
     menuBtn.addEventListener('click', window.toggleMenu);
   }
 
-  // Dropdown persistente (hover/click) para "El Grupo"
-  (function setupDropdown() {
-    const container = document.querySelector('[data-dropdown="group-menu"]');
-    if (!container) return;
-    const btn = container.querySelector('[data-dropdown-toggle]');
-    const panel = container.querySelector('[data-dropdown-panel]');
-    if (!btn || !panel) return;
+  // Dropdown persistente (hover/click) para todos los menús
+  (function setupDropdowns() {
+    const containers = document.querySelectorAll('[data-dropdown]');
+    
+    containers.forEach((container) => {
+      const btn = container.querySelector('[data-dropdown-toggle]');
+      const panel = container.querySelector('[data-dropdown-panel]');
+      if (!btn || !panel) return;
 
-    let isOpen = false;
-    let closeTimeoutId = null;
+      let isOpen = false;
+      let closeTimeoutId = null;
 
-    function open() {
-      if (closeTimeoutId) { clearTimeout(closeTimeoutId); closeTimeoutId = null; }
-      panel.classList.remove('hidden');
-      btn.setAttribute('aria-expanded', 'true');
-      isOpen = true;
-    }
-    function close() {
-      if (closeTimeoutId) { clearTimeout(closeTimeoutId); closeTimeoutId = null; }
-      panel.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-      isOpen = false;
-    }
-    function scheduleClose() {
-      if (closeTimeoutId) { clearTimeout(closeTimeoutId); }
-      closeTimeoutId = setTimeout(() => {
-        // cerrar solo si el mouse no volvió a entrar
-        if (!container.matches(':hover')) close();
-      }, 200);
-    }
+      function open() {
+        if (closeTimeoutId) { clearTimeout(closeTimeoutId); closeTimeoutId = null; }
+        panel.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        isOpen = true;
+      }
+      function close() {
+        if (closeTimeoutId) { clearTimeout(closeTimeoutId); closeTimeoutId = null; }
+        panel.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        isOpen = false;
+      }
+      function scheduleClose() {
+        if (closeTimeoutId) { clearTimeout(closeTimeoutId); }
+        closeTimeoutId = setTimeout(() => {
+          // cerrar solo si el mouse no volvió a entrar
+          if (!container.matches(':hover')) close();
+        }, 200);
+      }
 
-    // Abrir/cerrar por click
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (isOpen) close(); else open();
+      // Abrir/cerrar por click
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (isOpen) close(); else open();
+      });
+
+      // Mantener abierto al pasar del botón al panel (hover con tolerancia)
+      container.addEventListener('mouseenter', open);
+      container.addEventListener('mouseleave', scheduleClose);
+      panel.addEventListener('mouseenter', open);
+      panel.addEventListener('mouseleave', scheduleClose);
+      btn.addEventListener('mouseenter', open);
+      btn.addEventListener('mouseleave', scheduleClose);
+
+      // Cerrar al hacer click fuera
+      document.addEventListener('click', (e) => { if (!container.contains(e.target)) close(); });
     });
-
-    // Mantener abierto al pasar del botón al panel (hover con tolerancia)
-    container.addEventListener('mouseenter', open);
-    container.addEventListener('mouseleave', scheduleClose);
-    panel.addEventListener('mouseenter', open);
-    panel.addEventListener('mouseleave', scheduleClose);
-    btn.addEventListener('mouseenter', open);
-    btn.addEventListener('mouseleave', scheduleClose);
-
-    // Cerrar al hacer click fuera
-    document.addEventListener('click', (e) => { if (!container.contains(e.target)) close(); });
   })();
 
   // Funciones globales de modales reutilizables

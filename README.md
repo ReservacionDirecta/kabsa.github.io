@@ -134,3 +134,6 @@ Proyecto de sitio institucional corporativo para KABSA Group (conglomerado perua
 Este README resume el contexto y la arquitectura de contenido para la web de KABSA Group, basado en la documentación ubicada en `contexto/contexto.txt`.
 
 
+git add .
+git commit -m "Descripción de los cambios"
+git push
