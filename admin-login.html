@@ -82,34 +82,86 @@
 
     <script src="assets/cms/auth.js"></script>
     <script>
-        // Manejar el formulario de login
-        document.getElementById('loginForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+        // Esperar a que el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM cargado completamente');
             
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const errorDiv = document.getElementById('errorMessage');
-            const errorText = document.getElementById('errorText');
-            
-            // Ocultar error previo
-            errorDiv.classList.add('hidden');
-            
-            try {
-                const success = await window.CMSAuth.login(username, password);
-                
-                if (success) {
-                    // Redirigir al panel de administración
-                    window.location.href = 'admin.html';
+            // Función para verificar y esperar por el módulo
+            function waitForAuth(callback, maxAttempts = 50) {
+                if (typeof window.CMSAuth !== 'undefined') {
+                    console.log('Módulo CMSAuth encontrado');
+                    callback();
+                } else if (maxAttempts > 0) {
+                    console.log('Esperando por módulo CMSAuth...', maxAttempts);
+                    setTimeout(() => waitForAuth(callback, maxAttempts - 1), 100);
                 } else {
-                    // Mostrar error
-                    errorText.textContent = 'Usuario o contraseña incorrectos';
-                    errorDiv.classList.remove('hidden');
+                    console.error('Timeout: Módulo CMSAuth no se cargó');
+                    const errorDiv = document.getElementById('errorMessage');
+                    const errorText = document.getElementById('errorText');
+                    if (errorDiv && errorText) {
+                        errorText.textContent = 'Error: No se pudo cargar el sistema de autenticación. Por favor recarga la página.';
+                        errorDiv.classList.remove('hidden');
+                    }
                 }
-            } catch (error) {
-                errorText.textContent = 'Error de conexión. Intenta nuevamente.';
-                errorDiv.classList.remove('hidden');
-                console.error('Error de login:', error);
             }
+            
+            waitForAuth(function() {
+                const loginForm = document.getElementById('loginForm');
+                
+                if (!loginForm) {
+                    console.error('Formulario de login no encontrado');
+                    return;
+                }
+            
+            // Manejar el formulario de login
+            loginForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value;
+                const errorDiv = document.getElementById('errorMessage');
+                const errorText = document.getElementById('errorText');
+                
+                // Validar que los campos no estén vacíos
+                if (!username || !password) {
+                    errorText.textContent = 'Por favor completa todos los campos';
+                    errorDiv.classList.remove('hidden');
+                    return;
+                }
+                
+                // Ocultar error previo
+                errorDiv.classList.add('hidden');
+                
+                // Mostrar estado de carga
+                const submitButton = loginForm.querySelector('button[type="submit"]');
+                const originalText = submitButton.innerHTML;
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Iniciando sesión...';
+                
+                try {
+                    console.log('Intentando login con usuario:', username);
+                    const success = await window.CMSAuth.login(username, password);
+                    
+                    if (success) {
+                        console.log('Login exitoso, redirigiendo...');
+                        // Redirigir al panel de administración
+                        window.location.href = 'admin.html';
+                    } else {
+                        // Mostrar error
+                        errorText.textContent = 'Usuario o contraseña incorrectos';
+                        errorDiv.classList.remove('hidden');
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalText;
+                    }
+                } catch (error) {
+                    console.error('Error de login:', error);
+                    errorText.textContent = 'Error de conexión. Intenta nuevamente. ' + (error.message || '');
+                    errorDiv.classList.remove('hidden');
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalText;
+                }
+            });
+            }); // Cerrar callback de waitForAuth
         });
     </script>
 </body>

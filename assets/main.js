@@ -114,9 +114,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function afterPartialsInit() {
   // Render de íconos Lucide si está disponible - con delay para asegurar que el DOM esté listo
   setTimeout(() => {
-    if (window.lucide && typeof window.lucide.createIcons === 'function') {
-      window.lucide.createIcons();
-    }
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
   }, 100);
 
   if (window.AOS) {

@@ -1,6 +1,94 @@
+# robots.txt para KABSA GROUP
+# https://www.kabsa.pe/robots.txt
+
+# Permitir acceso a todos los bots principales
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+# Desactivar acceso a páginas administrativas y archivos sensibles
+Disallow: /admin.html
+Disallow: /admin-login.html
+Disallow: /assets/cms/
+Disallow: /assets/data/
+Disallow: /uploads/
+Disallow: /*.json$
+Disallow: /CMS-*.md
+Disallow: /CHECKLIST-*.md
+Disallow: /PLAN-*.md
+Disallow: /RESUMEN-*.md
+Disallow: /FASE-*.md
+Disallow: /ESTRUCTURA-*.md
+Disallow: /NGROK-*.md
+Disallow: /*.zip$
 
+# Desactivar acceso a archivos de configuración y desarrollo
+Disallow: /firebase.json
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /.env.local
 
+# Permitir acceso específico a archivos importantes
+Allow: /assets/*.css
+Allow: /assets/*.js
+Allow: /assets/*.png
+Allow: /assets/*.jpg
+Allow: /assets/*.jpeg
+Allow: /assets/*.gif
+Allow: /assets/*.svg
+Allow: /assets/*.webp
+Allow: /assets/*.ico
+Allow: /assets/*.pdf
+
+# Bots específicos - Configuraciones optimizadas
+
+# Googlebot (búsqueda y imágenes)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /contexto/
+Crawl-delay: 0
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Otros motores de búsqueda importantes
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Bloquear bots maliciosos o innecesarios
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Ubicación del sitemap
+Sitemap: https://www.kabsa.pe/sitemap.xml
+
+# Información adicional
+# Host: www.kabsa.pe (opcional, si se usa)

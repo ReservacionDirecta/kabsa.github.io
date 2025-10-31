@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - CMS KABSA GROUP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .sidebar {
+            width: 280px;
+            transition: transform 0.3s ease;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                position: fixed;
+                height: 100vh;
+                z-index: 50;
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Verificar autenticación al cargar -->
+    <script>
+        // Esperar a que el módulo auth se cargue antes de verificar
+        function checkAuth() {
+            if (typeof window.CMSAuth === 'undefined') {
+                console.error('Módulo de autenticación no cargado');
+                // Esperar un poco más si el módulo aún no está disponible
+                setTimeout(checkAuth, 100);
+                return;
+            }
+            
+            if (!window.CMSAuth.isAuthenticated()) {
+                console.log('Usuario no autenticado, redirigiendo...');
+                window.location.href = 'admin-login.html';
+            } else {
+                console.log('Usuario autenticado correctamente');
+            }
+        }
+        
+        // Verificar cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkAuth);
+        } else {
+            checkAuth();
+        }
+    </script>
+
+    <!-- Navbar Superior -->
+    <nav class="bg-[#040872] text-white shadow-lg">
+        <div class="flex items-center justify-between px-4 py-3">
+            <div class="flex items-center gap-4">
+                <button id="mobileMenuBtn" class="md:hidden text-white p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                <h1 class="text-xl font-bold">CMS KABSA GROUP</h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-sm hidden md:block" id="currentUser">
+                    <i class="fas fa-user-circle mr-2"></i>
+                    <span id="usernameDisplay">Administrador</span>
+                </span>
+                <button onclick="window.CMSAuth.logout()" class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-sign-out-alt mr-2"></i>
+                    Salir
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar bg-white shadow-lg h-screen sticky top-0">
+            <div class="p-4">
+                <nav class="space-y-2">
+                    <a href="#dashboard" class="nav-item flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#040872]/10 text-gray-700 hover:text-[#040872] transition-colors" onclick="showSection('dashboard')">
+                        <i class="fas fa-tachometer-alt w-5"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#pages" class="nav-item flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#040872]/10 text-gray-700 hover:text-[#040872] transition-colors" onclick="showSection('pages')">
+                        <i class="fas fa-file-alt w-5"></i>
+                        <span>Páginas</span>
+                    </a>
+                    <a href="#media" class="nav-item flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#040872]/10 text-gray-700 hover:text-[#040872] transition-colors" onclick="showSection('media')">
+                        <i class="fas fa-images w-5"></i>
+                        <span>Medios (Imágenes/Videos)</span>
+                    </a>
+                    <a href="#news" class="nav-item flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#040872]/10 text-gray-700 hover:text-[#040872] transition-colors" onclick="showSection('news')">
+                        <i class="fas fa-newspaper w-5"></i>
+                        <span>Noticias</span>
+                    </a>
+                    <a href="#navigation" class="nav-item flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#040872]/10 text-gray-700 hover:text-[#040872] transition-colors" onclick="showSection('navigation')">
+                        <i class="fas fa-sitemap w-5"></i>
+                        <span>Navegación</span>
+                    </a>
+                    <a href="#settings" class="nav-item flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[#040872]/10 text-gray-700 hover:text-[#040872] transition-colors" onclick="showSection('settings')">
+                        <i class="fas fa-cog w-5"></i>
+                        <span>Configuración</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="flex-1 p-6">
+            <!-- Sección Dashboard -->
+            <section id="section-dashboard" class="content-section">
+                <div class="bg-white rounded-lg shadow p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-[#040872] mb-4">
+                        <i class="fas fa-tachometer-alt mr-2"></i>
+                        Dashboard
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="text-sm text-gray-600 mb-1">Total de Páginas</h3>
+                            <p class="text-3xl font-bold text-blue-600" id="totalPages">14</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                            <h3 class="text-sm text-gray-600 mb-1">Última Edición</h3>
+                            <p class="text-lg font-semibold text-green-600" id="lastEdit">Hoy</p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                            <h3 class="text-sm text-gray-600 mb-1">Medios en Biblioteca</h3>
+                            <p class="text-3xl font-bold text-purple-600" id="totalMedia">0</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-2">Accesos Rápidos</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <button onclick="showSection('pages'); editPage('index.html')" class="bg-[#040872] text-white px-4 py-2 rounded-lg hover:bg-[#030561] transition-colors text-sm">
+                                Editar Inicio
+                            </button>
+                            <button onclick="showSection('pages'); editPage('empresas.html')" class="bg-[#040872] text-white px-4 py-2 rounded-lg hover:bg-[#030561] transition-colors text-sm">
+                                Editar Empresas
+                            </button>
+                            <button onclick="showSection('pages'); editPage('proyectos.html')" class="bg-[#040872] text-white px-4 py-2 rounded-lg hover:bg-[#030561] transition-colors text-sm">
+                                Editar Proyectos
+                            </button>
+                            <button onclick="showSection('media')" class="bg-[#040872] text-white px-4 py-2 rounded-lg hover:bg-[#030561] transition-colors text-sm">
+                                Subir Media
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Páginas -->
+            <section id="section-pages" class="content-section hidden">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-[#040872]">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            Gestión de Páginas
+                        </h2>
+                        <select id="pageSelector" class="border-2 border-gray-300 rounded-lg px-4 py-2 focus:border-[#040872] focus:outline-none">
+                            <option value="">Selecciona una página...</option>
+                            <option value="index.html">Inicio (index.html)</option>
+                            <option value="grupo.html">El Grupo (grupo.html)</option>
+                            <option value="empresas.html">Empresas (empresas.html)</option>
+                            <option value="katsumoto.html">Katsumoto (katsumoto.html)</option>
+                            <option value="brontes.html">Brontes (brontes.html)</option>
+                            <option value="argos.html">Argos (argos.html)</option>
+                            <option value="proyectos.html">Proyectos (proyectos.html)</option>
+                            <option value="noticias.html">Noticias (noticias.html)</option>
+                            <option value="contacto.html">Contacto (contacto.html)</option>
+                            <option value="staff.html">Staff (staff.html)</option>
+                            <option value="proveedor.html">Registro Proveedor (proveedor.html)</option>
+                            <option value="empleo.html">Trabaja con Nosotros (empleo.html)</option>
+                            <option value="reclamaciones.html">Reclamaciones (reclamaciones.html)</option>
+                        </select>
+                    </div>
+                    <div id="pageEditorContainer">
+                        <p class="text-gray-500 text-center py-8">Selecciona una página para comenzar a editar</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Medios -->
+            <section id="section-media" class="content-section hidden">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-2xl font-bold text-[#040872] mb-4">
+                        <i class="fas fa-images mr-2"></i>
+                        Gestor de Medios
+                    </h2>
+                    
+                    <!-- Pestañas -->
+                    <div class="border-b mb-4">
+                        <button onclick="showMediaTab('images')" class="media-tab active px-4 py-2 border-b-2 border-[#040872] text-[#040872] font-semibold">
+                            Imágenes
+                        </button>
+                        <button onclick="showMediaTab('videos')" class="media-tab px-4 py-2 text-gray-600 hover:text-[#040872]">
+                            Videos
+                        </button>
+                    </div>
+
+                    <!-- Upload -->
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <h3 class="font-semibold mb-3">Subir Nuevo Archivo</h3>
+                        <input type="file" id="mediaUpload" accept="image/*,video/*" class="mb-3">
+                        <button onclick="uploadMedia()" class="bg-[#040872] text-white px-6 py-2 rounded-lg hover:bg-[#030561] transition-colors">
+                            <i class="fas fa-upload mr-2"></i>
+                            Subir
+                        </button>
+                    </div>
+
+                    <!-- Galería -->
+                    <div id="mediaGallery" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <!-- Se llenará dinámicamente -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Noticias -->
+            <section id="section-news" class="content-section hidden">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-2xl font-bold text-[#040872] mb-4">
+                        <i class="fas fa-newspaper mr-2"></i>
+                        Gestión de Noticias
+                    </h2>
+                    <p class="text-gray-600 mb-4">Crea, edita y gestiona las noticias del sitio web</p>
+                    <div id="newsEditor">
+                        <div class="text-center py-8">
+                            <i class="fas fa-spinner fa-spin text-3xl text-[#040872] mb-4"></i>
+                            <p>Cargando editor de noticias...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Navegación -->
+            <section id="section-navigation" class="content-section hidden">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-2xl font-bold text-[#040872] mb-4">
+                        <i class="fas fa-sitemap mr-2"></i>
+                        Gestión de Navegación
+                    </h2>
+                    <p class="text-gray-600 mb-4">Edita el menú de navegación principal, logo y botones</p>
+                    <div id="navigationEditor">
+                        <div class="text-center py-8">
+                            <i class="fas fa-spinner fa-spin text-3xl text-[#040872] mb-4"></i>
+                            <p>Cargando editor de navegación...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Configuración -->
+            <section id="section-settings" class="content-section hidden">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-2xl font-bold text-[#040872] mb-4">
+                        <i class="fas fa-cog mr-2"></i>
+                        Configuración
+                    </h2>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block font-semibold mb-2">Credenciales de Acceso</label>
+                            <button onclick="changeCredentials()" class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600">
+                                Cambiar Usuario/Contraseña
+                            </button>
+                        </div>
+                        <div>
+                            <label class="block font-semibold mb-2">Backup y Restauración</label>
+                            <div class="flex gap-3">
+                                <button onclick="exportContent()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+                                    <i class="fas fa-download mr-2"></i>
+                                    Exportar Contenido
+                                </button>
+                                <button onclick="importContent()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                                    <i class="fas fa-upload mr-2"></i>
+                                    Importar Contenido
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/cms/auth.js"></script>
+    <script src="assets/cms/admin.js"></script>
+    <script src="assets/cms/editor.js"></script>
+    <script src="assets/cms/media-manager.js"></script>
+    <script src="assets/cms/news-manager.js"></script>
+    <script src="assets/cms/navigation-editor.js"></script>
+    <script src="assets/cms/api.js"></script>
+    
+    <script>
+        // Esperar a que todos los módulos se carguen
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar que el módulo auth esté cargado
+            if (typeof window.CMSAuth === 'undefined') {
+                console.error('Error: Módulo de autenticación no encontrado');
+                alert('Error: No se pudo cargar el sistema. Por favor recarga la página.');
+                return;
+            }
+            
+            // Mostrar usuario actual
+            const user = window.CMSAuth.getCurrentUser();
+            if (user) {
+                const usernameDisplay = document.getElementById('usernameDisplay');
+                if (usernameDisplay) {
+                    usernameDisplay.textContent = user.username;
+                }
+            }
+
+            // Menú móvil
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    const sidebar = document.getElementById('sidebar');
+                    if (sidebar) {
+                        sidebar.classList.toggle('open');
+                    }
+                });
+            }
+
+            // Hacer showSection accesible globalmente
+            window.showSection = showSection;
+            
+            // Observer para cargar editores cuando se muestran las secciones
+            const sectionObserver = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        const target = mutation.target;
+                        const isVisible = !target.classList.contains('hidden');
+                        
+                        if (isVisible) {
+                            // Sección de navegación
+                            if (target.id === 'section-navigation') {
+                                setTimeout(() => {
+                                    const editorContainer = document.getElementById('navigationEditor');
+                                    if (editorContainer && window.CMSNavigation) {
+                                        const content = editorContainer.innerHTML.trim();
+                                        if (content.includes('Cargando') || content === '') {
+                                            console.log('Cargando editor de navegación...');
+                                            window.CMSNavigation.renderEditor().catch(err => {
+                                                console.error('Error al renderizar navegación:', err);
+                                                editorContainer.innerHTML = `
+                                                    <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                                                        <p class="text-red-700">Error: ${err.message}</p>
+                                                        <button onclick="window.CMSNavigation.renderEditor()" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">
+                                                            Reintentar
+                                                        </button>
+                                                    </div>
+                                                `;
+                                            });
+                                        }
+                                    }
+                                }, 100);
+                            }
+                            
+                            // Sección de noticias
+                            if (target.id === 'section-news') {
+                                setTimeout(() => {
+                                    const editorContainer = document.getElementById('newsEditor');
+                                    if (editorContainer && window.CMSNews) {
+                                        const content = editorContainer.innerHTML.trim();
+                                        if (content.includes('Cargando') || content === '') {
+                                            window.CMSNews.renderEditor().catch(err => {
+                                                console.error('Error al renderizar noticias:', err);
+                                            });
+                                        }
+                                    }
+                                }, 100);
+                            }
+                        }
+                    }
+                });
+            });
+            
+            // Observar cambios en todas las secciones
+            document.querySelectorAll('.content-section').forEach(section => {
+                sectionObserver.observe(section, { attributes: true, attributeFilter: ['class'] });
+            });
+        });
+    </script>
+</body>
+</html>
+

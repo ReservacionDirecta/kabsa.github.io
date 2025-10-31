@@ -14,6 +14,10 @@
     <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
     <link rel="shortcut icon" href="assets/favicon.ico">
+    <link rel="canonical" href="https://www.kabsa.pe/">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
     <title>KABSA GROUP – Construcción e Infraestructura</title>
     
     <!-- Cargar Tailwind CSS -->
@@ -118,6 +122,17 @@
                 border-color: #040872;
                 box-shadow: 0 0 0 3px rgba(13, 43, 79, 0.2);
                 outline: none;
+            }
+            /* Cambio de color en textos al hacer hover en tarjetas */
+            #empresas.has-card-hover #badge-servicios {
+                background-color: rgba(255, 255, 255, 0.2) !important;
+                color: white !important;
+            }
+            #empresas.has-card-hover #badge-servicios svg {
+                color: white !important;
+            }
+            #empresas.has-card-hover #section-title {
+                color: white !important;
             }
         }
     </style>
@@ -235,40 +250,41 @@
             </section>
 
             <!-- 4. SECCIÓN: NUESTROS SERVICIOS INTEGRADOS -->
-            <section id="empresas" class="py-24 bg-kabsa-gray" data-aos="fade-up">
-                <div class="container mx-auto px-4 lg:px-6 text-center">
-                    <div class="inline-flex items-center gap-2 bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <section id="empresas" class="py-24 bg-kabsa-gray transition-all duration-500 relative" data-aos="fade-up" style="background-image: none; background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <div class="absolute inset-0 bg-black/0 transition-opacity duration-500 z-0" id="section-overlay"></div>
+                <div class="container mx-auto px-4 lg:px-6 text-center relative z-10">
+                    <div class="inline-flex items-center gap-2 bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-6 transition-colors duration-500" id="badge-servicios">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10 3.5a1.5 1.5 0 013 0V4a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-.5a1.5 1.5 0 000 3h.5a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-.5a1.5 1.5 0 00-3 0v.5a1 1 0 01-1 1H6a1 1 0 01-1-1v-3a1 1 0 00-1-1h-.5a1.5 1.5 0 010-3H4a1 1 0 001-1V6a1 1 0 011-1h3a1 1 0 001-1v-.5z"></path>
                         </svg>
                         Servicios Integrados
                     </div>
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue mb-5">Soluciones completas para tu proyecto</h2>
-                    <p class="text-xl text-gray-700 mb-16 max-w-3xl mx-auto scroll-reveal" data-delay="200">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-kabsa-blue mb-5 transition-colors duration-500" id="section-title">Soluciones completas para tu proyecto</h2>
+                    <p class="text-xl text-gray-700 mb-16 max-w-3xl mx-auto scroll-reveal transition-colors duration-500" data-delay="200" id="section-subtitle">
                         Desde el diseño hasta la ejecución, ofrecemos servicios especializados que cubren todo el ciclo constructivo
                     </p>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        <!-- Card 1: Ejecución de Obras -->
-                        <div class="group bg-white p-6 sm:p-10 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 scroll-reveal flex flex-col" data-delay="400">
-                            <!-- Imagen - Altura fija -->
-                            <div class="relative h-44 w-full rounded-lg overflow-hidden mb-5 flex-shrink-0">
+                        <!-- Card 1: Ejecución de Obras - KATSUMOTO -->
+                        <div class="group company-card bg-white p-6 sm:p-10 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 scroll-reveal flex flex-col" data-delay="400" data-bg-image="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1920&auto=format&fit=crop">
+                            <!-- 1. Imagen - Altura fija -->
+                            <div class="relative h-44 w-full rounded-lg overflow-hidden mb-6 flex-shrink-0">
                                 <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Construcción de infraestructura" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0">
                                 <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop" alt="Ejecución de obras viales" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100">
                             </div>
                             
-                            <!-- Título Principal -->
-                            <div class="mb-4 flex-shrink-0">
-                                <h3 class="text-2xl sm:text-3xl font-bold text-kabsa-blue text-center mb-2">Ejecución de Obras</h3>
+                            <!-- 2. Logo - 70% ancho, altura fija -->
+                            <div class="flex justify-center mb-5 flex-shrink-0 h-10">
+                                <img src="assets/logokatsumoto.png" alt="KATSUMOTO" class="w-[70%] h-10 object-contain opacity-40 group-hover:opacity-70 transition-opacity">
+                            </div>
+                            
+                            <!-- 3. Título y Subtítulo - Altura fija -->
+                            <div class="mb-6 flex-shrink-0 h-20">
+                                <h3 class="text-xl sm:text-2xl font-bold text-kabsa-blue text-center mb-2 leading-tight">Ejecución de Obras</h3>
                                 <p class="text-sm text-gray-500 text-center uppercase tracking-wide">Infraestructura y Construcción</p>
                             </div>
                             
-                            <!-- Logo pequeño y discreto -->
-                            <div class="flex justify-center mb-4 flex-shrink-0">
-                                <img src="assets/logokatsumoto.png" alt="KATSUMOTO" class="h-8 opacity-40 group-hover:opacity-70 transition-opacity">
-                            </div>
-                            
-                            <!-- Servicios clave -->
-                            <div class="mb-6 flex-shrink-0">
+                            <!-- 4. Bullets - Altura fija -->
+                            <div class="mb-6 flex-shrink-0 h-32">
                                 <ul class="text-sm text-gray-700 space-y-2">
                                     <li class="flex items-start">
                                         <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -289,100 +305,42 @@
                                 </ul>
                             </div>
                             
-                            <!-- Certificaciones ISO - KATSUMOTO -->
-                            <div class="flex flex-wrap gap-2 justify-center mb-6 flex-shrink-0">
-                                <a href="katsumoto.html" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300" title="Ver certificación en la página de Katsumoto">ISO 9001</a>
-                                <a href="katsumoto.html" class="border-2 border-green-600 text-green-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300" title="Ver certificación en la página de Katsumoto">ISO 14001</a>
-                                <a href="katsumoto.html" class="border-2 border-orange-600 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-orange-600 hover:text-white transition-colors duration-300" title="Ver certificación en la página de Katsumoto">ISO 45001</a>
+                            <!-- 5. Certificaciones ISO - Altura fija, alineadas arriba -->
+                            <div class="flex flex-wrap gap-2 justify-center items-start mb-6 flex-shrink-0 h-16">
+                                <a href="katsumoto.html" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Katsumoto">ISO 9001</a>
+                                <a href="katsumoto.html" class="border-2 border-green-600 text-green-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Katsumoto">ISO 14001</a>
+                                <a href="katsumoto.html" class="border-2 border-orange-600 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-orange-600 hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Katsumoto">ISO 45001</a>
                             </div>
                             
-                            <!-- Botón - Empujado al final -->
-                            <div class="mt-auto pt-4 border-t border-gray-100">
+                            <!-- 6. Botón CTA - Empujado al final -->
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex-shrink-0">
                                 <a href="katsumoto.html" class="font-semibold text-kabsa-blue text-lg hover:underline flex items-center justify-center group-hover:gap-2 transition-all">
                                     <span>Conocer más</span>
                                     <svg class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                                 </a>
                             </div>
                         </div>
-                        <!-- Card 2: Servicios y Bienes -->
-                        <div class="group bg-white p-6 sm:p-10 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 scroll-reveal flex flex-col" data-delay="600">
-                            <!-- Imagen - Altura fija -->
-                            <div class="relative h-44 w-full rounded-lg overflow-hidden mb-5 flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="Maquinaria y equipos" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0">
-                                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop" alt="Servicios especializados" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-                            </div>
-                            
-                            <!-- Título Principal -->
-                            <div class="mb-4 flex-shrink-0">
-                                <h3 class="text-2xl sm:text-3xl font-bold text-kabsa-blue text-center mb-2">Servicios y Bienes</h3>
-                                <p class="text-sm text-gray-500 text-center uppercase tracking-wide">Provisión y Equipamiento</p>
-                            </div>
-                            
-                            <!-- Logo pequeño y discreto -->
-                            <div class="flex justify-center mb-4 flex-shrink-0">
-                                <img src="assets/logo argos.png" alt="ARGOS" class="h-8 opacity-40 group-hover:opacity-70 transition-opacity">
-                            </div>
-                            
-                            <!-- Servicios clave -->
-                            <div class="mb-6 flex-shrink-0">
-                                <ul class="text-sm text-gray-700 space-y-2">
-                                    <li class="flex items-start">
-                                        <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                        <span>Provisión de maquinaria pesada</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                        <span>Obras eléctricas e infraestructura</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                        <span>Consultoría técnica complementaria</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                                        <span>Logística y transporte</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                            <!-- Certificaciones ISO - ARGOS -->
-                            <div class="flex flex-wrap gap-2 justify-center mb-6 flex-shrink-0">
-                                <a href="argos.html" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300" title="Ver certificación en la página de Argos">ISO 9001</a>
-                                <a href="argos.html" class="border-2 border-green-600 text-green-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300" title="Ver certificación en la página de Argos">ISO 14001</a>
-                                <a href="argos.html" class="border-2 border-orange-600 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-orange-600 hover:text-white transition-colors duration-300" title="Ver certificación en la página de Argos">ISO 45001</a>
-                                <a href="argos.html" class="border-2 border-purple-600 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-purple-600 hover:text-white transition-colors duration-300" title="Ver certificación en la página de Argos">ISO 37001</a>
-                                <a href="argos.html" class="border-2 border-teal-600 text-teal-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-teal-600 hover:text-white transition-colors duration-300" title="Ver certificación en la página de Argos">SA 8000</a>
-                            </div>
-                            
-                            <!-- Botón - Empujado al final -->
-                            <div class="mt-auto pt-4 border-t border-gray-100">
-                                <a href="argos.html" class="font-semibold text-kabsa-blue text-lg hover:underline flex items-center justify-center group-hover:gap-2 transition-all">
-                                    <span>Conocer más</span>
-                                    <svg class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Card 3: Diseño y Planificación -->
-                        <div class="group bg-white p-6 sm:p-10 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 scroll-reveal flex flex-col" data-delay="800">
-                            <!-- Imagen - Altura fija -->
-                            <div class="relative h-44 w-full rounded-lg overflow-hidden mb-5 flex-shrink-0">
+                        <!-- Card 2: Diseño y Planificación - BRONTES -->
+                        <div class="group company-card bg-white p-6 sm:p-10 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 scroll-reveal flex flex-col" data-delay="500" data-bg-image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1920&auto=format&fit=crop">
+                            <!-- 1. Imagen - Altura fija -->
+                            <div class="relative h-44 w-full rounded-lg overflow-hidden mb-6 flex-shrink-0">
                                 <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop" alt="Diseño BIM" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0">
-                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop" alt="Planificación de proyectos" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Planificación de proyectos" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100">
                             </div>
                             
-                            <!-- Título Principal -->
-                            <div class="mb-4 flex-shrink-0">
-                                <h3 class="text-2xl sm:text-3xl font-bold text-kabsa-blue text-center mb-2">Diseño y Planificación</h3>
+                            <!-- 2. Logo - 70% ancho, altura fija -->
+                            <div class="flex justify-center mb-5 flex-shrink-0 h-10">
+                                <img src="contexto/logo brontes - 2025.png" alt="BRONTES" class="w-[70%] h-10 object-contain opacity-40 group-hover:opacity-70 transition-opacity">
+                            </div>
+                            
+                            <!-- 3. Título y Subtítulo - Altura fija -->
+                            <div class="mb-6 flex-shrink-0 h-20">
+                                <h3 class="text-xl sm:text-2xl font-bold text-kabsa-blue text-center mb-2 leading-tight">Diseño y Planificación</h3>
                                 <p class="text-sm text-gray-500 text-center uppercase tracking-wide">Consultoría y Metodología BIM</p>
                             </div>
                             
-                            <!-- Logo pequeño y discreto -->
-                            <div class="flex justify-center mb-4 flex-shrink-0">
-                                <img src="contexto/logo brontes - 2025.png" alt="BRONTES" class="h-8 opacity-40 group-hover:opacity-70 transition-opacity">
-                            </div>
-                            
-                            <!-- Servicios clave -->
-                            <div class="mb-6 flex-shrink-0">
+                            <!-- 4. Bullets - Altura fija -->
+                            <div class="mb-6 flex-shrink-0 h-32">
                                 <ul class="text-sm text-gray-700 space-y-2">
                                     <li class="flex items-start">
                                         <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -403,17 +361,75 @@
                                 </ul>
                             </div>
                             
-                            <!-- Certificaciones ISO - BRONTES -->
-                            <div class="flex flex-wrap gap-2 justify-center mb-6 flex-shrink-0">
-                                <a href="brontes.html" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300" title="Ver certificación en la página de Brontes">ISO 9001</a>
-                                <a href="brontes.html" class="border-2 border-green-600 text-green-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300" title="Ver certificación en la página de Brontes">ISO 14001</a>
-                                <a href="brontes.html" class="border-2 border-orange-600 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-orange-600 hover:text-white transition-colors duration-300" title="Ver certificación en la página de Brontes">ISO 45001</a>
-                                <a href="brontes.html" class="border-2 border-purple-600 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-purple-600 hover:text-white transition-colors duration-300" title="Ver certificación en la página de Brontes">ISO 37001</a>
+                            <!-- 5. Certificaciones ISO - Altura fija, alineadas arriba -->
+                            <div class="flex flex-wrap gap-2 justify-center items-start mb-6 flex-shrink-0 h-16">
+                                <a href="brontes.html" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Brontes">ISO 9001</a>
+                                <a href="brontes.html" class="border-2 border-green-600 text-green-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Brontes">ISO 14001</a>
+                                <a href="brontes.html" class="border-2 border-orange-600 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-orange-600 hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Brontes">ISO 45001</a>
+                                <a href="brontes.html" class="border-2 border-purple-600 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-purple-600 hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Brontes">ISO 37001</a>
                             </div>
                             
-                            <!-- Botón - Empujado al final -->
-                            <div class="mt-auto pt-4 border-t border-gray-100">
+                            <!-- 6. Botón CTA - Empujado al final -->
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex-shrink-0">
                                 <a href="brontes.html" class="font-semibold text-kabsa-blue text-lg hover:underline flex items-center justify-center group-hover:gap-2 transition-all">
+                                    <span>Conocer más</span>
+                                    <svg class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Card 3: Servicios y Bienes - ARGOS -->
+                        <div class="group company-card bg-white p-6 sm:p-10 rounded-lg shadow-xl transform hover:-translate-y-2 transition-transform duration-300 scroll-reveal flex flex-col" data-delay="600" data-bg-image="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1920&auto=format&fit=crop">
+                            <!-- 1. Imagen - Altura fija -->
+                            <div class="relative h-44 w-full rounded-lg overflow-hidden mb-6 flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="Maquinaria y equipos" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0">
+                                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop" alt="Servicios especializados" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+                            </div>
+                            
+                            <!-- 2. Logo - 70% ancho, altura fija -->
+                            <div class="flex justify-center mb-5 flex-shrink-0 h-10">
+                                <img src="assets/logo argos.png" alt="ARGOS" class="w-[70%] h-10 object-contain opacity-40 group-hover:opacity-70 transition-opacity">
+                            </div>
+                            
+                            <!-- 3. Título y Subtítulo - Altura fija -->
+                            <div class="mb-6 flex-shrink-0 h-20">
+                                <h3 class="text-xl sm:text-2xl font-bold text-kabsa-blue text-center mb-2 leading-tight">Servicios y Bienes</h3>
+                                <p class="text-sm text-gray-500 text-center uppercase tracking-wide">Provisión y Equipamiento</p>
+                            </div>
+                            
+                            <!-- 4. Bullets - Altura fija -->
+                            <div class="mb-6 flex-shrink-0 h-32">
+                                <ul class="text-sm text-gray-700 space-y-2">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                        <span>Provisión de maquinaria pesada</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                        <span>Obras eléctricas e infraestructura</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                        <span>Consultoría técnica complementaria</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-kabsa-blue mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                        <span>Logística y transporte</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <!-- 5. Certificaciones ISO - Altura fija, alineadas arriba -->
+                            <div class="flex flex-wrap gap-2 justify-center items-start mb-6 flex-shrink-0 h-16">
+                                <a href="argos.html" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Argos">ISO 9001</a>
+                                <a href="argos.html" class="border-2 border-green-600 text-green-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Argos">ISO 14001</a>
+                                <a href="argos.html" class="border-2 border-orange-600 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-orange-600 hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Argos">ISO 45001</a>
+                                <a href="argos.html" class="border-2 border-purple-600 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-purple-600 hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Argos">ISO 37001</a>
+                                <a href="argos.html" class="border-2 border-teal-600 text-teal-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-teal-600 hover:text-white transition-colors duration-300 flex-shrink-0 h-7" title="Ver certificación en la página de Argos">SA 8000</a>
+                            </div>
+                            
+                            <!-- 6. Botón CTA - Empujado al final -->
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex-shrink-0">
+                                <a href="argos.html" class="font-semibold text-kabsa-blue text-lg hover:underline flex items-center justify-center group-hover:gap-2 transition-all">
                                     <span>Conocer más</span>
                                     <svg class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                                 </a>
@@ -1153,6 +1169,22 @@
             lucide.createIcons(); // Re-renderizar icono
         };
         menuBtn.addEventListener('click', toggleMenu);
+
+
+        // --- Lógica de cambio de color en textos al hacer hover en tarjetas de empresas ---
+        const empresasSection = document.getElementById('empresas');
+        const companyCards = document.querySelectorAll('.company-card');
+        
+        if (empresasSection && companyCards.length > 0) {
+            companyCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    empresasSection.classList.add('has-card-hover');
+                });
+                card.addEventListener('mouseleave', function() {
+                    empresasSection.classList.remove('has-card-hover');
+                });
+            });
+        }
 
 
         // --- Lógica de Navegación (SPA) ---

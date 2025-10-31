@@ -73,7 +73,53 @@
         </section>
 
         <section class="py-16 bg-white">
-            <div class="container mx-auto px-4 lg:px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="container mx-auto px-4 lg:px-6">
+                <!-- Botón de edición (solo visible si hay sesión de admin) -->
+                <div id="admin-edit-controls" class="hidden mb-6 text-right">
+                    <a href="admin.html#news" class="inline-flex items-center gap-2 bg-[#040872] text-white px-4 py-2 rounded-lg hover:bg-[#030561] transition-colors text-sm">
+                        <i class="fas fa-edit"></i>
+                        Editar Noticias
+                    </a>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="news-container">
+                    <!-- Las noticias se cargarán dinámicamente desde localStorage -->
+                    <div class="col-span-full text-center py-8">
+                        <i class="fas fa-spinner fa-spin text-3xl text-[#040872] mb-4"></i>
+                        <p class="text-gray-600">Cargando noticias...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/main.js"></script>
+    <script src="assets/cms/news-manager.js"></script>
+    <script>
+        // Cargar noticias cuando la página esté lista
+        document.addEventListener('DOMContentLoaded', async function() {
+            const container = document.getElementById('news-container');
+            
+            // Mostrar botón de edición si hay sesión de admin
+            if (typeof window.CMSAuth !== 'undefined' && window.CMSAuth.isAuthenticated && window.CMSAuth.isAuthenticated()) {
+                const adminControls = document.getElementById('admin-edit-controls');
+                if (adminControls) {
+                    adminControls.classList.remove('hidden');
+                }
+            }
+            
+            if (container && window.CMSNews) {
+                try {
+                    await window.CMSNews.loadNews();
+                    const newsHTML = window.CMSNews.generateNewsHTML();
+                    
+                    if (newsHTML && newsHTML.trim().length > 0) {
+                        container.innerHTML = newsHTML;
+                    } else {
+                        // Si no hay noticias, mostrar las noticias por defecto
+                        container.innerHTML = `
                 <article class="bg-[#F8FAFC] rounded-xl overflow-hidden">
                     <img src="https://images.unsplash.com/photo-1574103188526-4fabd2623804?q=80&w=1200&auto=format&fit=crop" alt="Saneamiento Piura" class="w-full h-44 object-cover">
                     <div class="p-5">
@@ -98,13 +144,19 @@
                         <p class="text-gray-700 mt-2">Apoyo a comunidades altoandinas con kits de abrigo y salud.</p>
                     </div>
                 </article>
+                        `;
+                    }
+                } catch (error) {
+                    console.error('Error al cargar noticias:', error);
+                    container.innerHTML = `
+                        <div class="col-span-full text-center py-8">
+                            <p class="text-red-600">Error al cargar las noticias. Por favor recarga la página.</p>
             </div>
-        </section>
-    </main>
-
-    <div data-include="partials/footer.html"></div>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="assets/main.js"></script>
+                    `;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
 
