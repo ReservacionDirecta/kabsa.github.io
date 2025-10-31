@@ -50,83 +50,313 @@
     <div data-include="partials/navbar.html"></div>
 
     <main>
-        <!-- Header -->
-        <section class="bg-kabsa-blue text-white py-20">
-            <div class="container mx-auto px-4 lg:px-6 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-3">Nuestro Staff</h1>
-                <p class="text-lg opacity-90">Equipo directivo y profesionales que lideran nuestros proyectos</p>
+        <!-- Breadcrumb -->
+        <section class="bg-gray-100 py-4">
+            <div class="container mx-auto px-4 lg:px-6">
+                <nav class="flex items-center space-x-2 text-sm">
+                    <a href="index.html" class="text-kabsa-blue hover:underline">Inicio</a>
+                    <span class="text-gray-500">/</span>
+                    <a href="grupo.html" class="text-kabsa-blue hover:underline">El Grupo</a>
+                    <span class="text-gray-500">/</span>
+                    <span class="text-gray-700">Staff</span>
+                </nav>
             </div>
         </section>
 
-        <!-- Staff Grid -->
+        <!-- Header -->
+        <section class="bg-kabsa-blue text-white py-20">
+            <div class="container mx-auto px-4 lg:px-6 text-center">
+                <div class="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                    </svg>
+                    Equipo Profesional
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-3">Nuestro Staff de Especialistas</h1>
+                <p class="text-lg opacity-90 max-w-2xl mx-auto">Equipo directivo y profesionales que lideran los proyectos del Grupo KABSA</p>
+            </div>
+        </section>
+
+        <!-- Dirección General -->
         <section class="py-16 bg-white">
             <div class="container mx-auto px-4 lg:px-6">
-                <div id="staff-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Especialistas -->
-                    <!-- 13 -->
-                    <div class="bg-[#F8FAFC] rounded-xl p-6 shadow hover:shadow-lg transition-shadow text-center">
-                        <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-white">
-                            <img src="https://placehold.co/256x256" alt="Óscar Morales" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="text-lg font-semibold text-kabsa-blue">Óscar Morales</h3>
-                        <p class="text-sm text-gray-600">Residente de Obra</p>
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-2 bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                        </svg>
+                        Dirección General
                     </div>
-                    <!-- 14 -->
-                    <div class="bg-[#F8FAFC] rounded-xl p-6 shadow hover:shadow-lg transition-shadow text-center">
-                        <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-white">
-                            <img src="https://placehold.co/256x256" alt="Daniela Ruiz" class="w-full h-full object-cover">
+                    <h2 class="text-3xl md:text-4xl font-bold text-kabsa-blue">Gerencia del Grupo</h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Gerente General ARGOS & BRONTES -->
+                    <div class="bg-gradient-to-br from-[#040872] to-blue-700 rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 w-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white shadow-lg">
+                            <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                                <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-semibold text-kabsa-blue">Daniela Ruiz</h3>
-                        <p class="text-sm text-gray-600">Ingeniera Sanitaria</p>
-                    </div>
-                    <!-- 15 -->
-                    <div class="bg-[#F8FAFC] rounded-xl p-6 shadow hover:shadow-lg transition-shadow text-center">
-                        <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-white">
-                            <img src="https://placehold.co/256x256" alt="Fernando Quispe" class="w-full h-full object-cover">
+                        <h3 class="text-2xl font-bold text-center mb-2">Humberto Toro Villalovos</h3>
+                        <p class="text-center text-blue-100 mb-2">Gerente General</p>
+                        <p class="text-center text-sm text-blue-200">ARGOS Corporation S.A.C. & BRONTES Constructora S.A.</p>
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-xs text-blue-100 text-center">Lidera la estrategia de provisión de servicios y el diseño de proyectos del grupo</p>
                         </div>
-                        <h3 class="text-lg font-semibold text-kabsa-blue">Fernando Quispe</h3>
-                        <p class="text-sm text-gray-600">Topógrafo Senior</p>
                     </div>
-                    <!-- 16 -->
-                    <div class="bg-[#F8FAFC] rounded-xl p-6 shadow hover:shadow-lg transition-shadow text-center">
-                        <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-white">
-                            <img src="https://placehold.co/256x256" alt="Claudia Navarro" class="w-full h-full object-cover">
+
+                    <!-- Gerente General KATSUMOTO -->
+                    <div class="bg-gradient-to-br from-[#040872] to-blue-700 rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                        <div class="h-48 w-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white shadow-lg">
+                            <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                                <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-semibold text-kabsa-blue">Claudia Navarro</h3>
-                        <p class="text-sm text-gray-600">Especialista BIM</p>
-                    </div>
-                    <!-- 17 -->
-                    <div class="bg-[#F8FAFC] rounded-xl p-6 shadow hover:shadow-lg transition-shadow text-center">
-                        <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-white">
-                            <img src="https://placehold.co/256x256" alt="Miguel Álvarez" class="w-full h-full object-cover">
+                        <h3 class="text-2xl font-bold text-center mb-2">Edwin Roy Toro Tarrillo</h3>
+                        <p class="text-center text-blue-100 mb-2">Gerente General</p>
+                        <p class="text-center text-sm text-blue-200">CORPORACION KATSUMOTO S.A.C.</p>
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-xs text-blue-100 text-center">Dirige la ejecución de obras de infraestructura del grupo</p>
                         </div>
-                        <h3 class="text-lg font-semibold text-kabsa-blue">Miguel Álvarez</h3>
-                        <p class="text-sm text-gray-600">Ingeniero Civil</p>
                     </div>
-                    <!-- 18 -->
-                    <div class="bg-[#F8FAFC] rounded-xl p-6 shadow hover:shadow-lg transition-shadow text-center">
-                        <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-white">
-                            <img src="https://placehold.co/256x256" alt="Laura Campos" class="w-full h-full object-cover">
+
+                    <!-- Director Grupo KABSA -->
+                    <div class="bg-gradient-to-br from-[#040872] to-blue-700 rounded-2xl p-8 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
+                        <div class="h-48 w-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white shadow-lg">
+                            <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                                <svg class="w-24 h-24 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-semibold text-kabsa-blue">Laura Campos</h3>
-                        <p class="text-sm text-gray-600">Prevención de Riesgos</p>
-                    </div>
-                    <!-- 19 -->
-                    <div class="bg-[#F8FAFC] rounded-xl p-6 shadow hover:shadow-lg transition-shadow text-center">
-                        <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-white">
-                            <img src="https://placehold.co/256x256" alt="Santiago Ponce" class="w-full h-full object-cover">
+                        <h3 class="text-2xl font-bold text-center mb-2">Director Ejecutivo</h3>
+                        <p class="text-center text-blue-100 mb-2">Grupo KABSA</p>
+                        <p class="text-center text-sm text-blue-200">Coordinación Estratégica</p>
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-xs text-blue-100 text-center">Coordinación y sinergia entre las tres empresas del grupo</p>
                         </div>
-                        <h3 class="text-lg font-semibold text-kabsa-blue">Santiago Ponce</h3>
-                        <p class="text-sm text-gray-600">Abastecimiento y Logística</p>
                     </div>
-                    <!-- 20 -->
-                    <div class="bg-[#F8FAFC] rounded-xl p-6 shadow hover:shadow-lg transition-shadow text-center">
-                        <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-white">
-                            <img src="https://placehold.co/256x256" alt="Elena Rojas" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Staff por Empresa -->
+        <section class="py-16 bg-[#F8FAFC]">
+            <div class="container mx-auto px-4 lg:px-6">
+                <!-- KATSUMOTO Staff -->
+                <div class="mb-16">
+                    <div class="text-center mb-10">
+                        <div class="flex items-center justify-center mb-4">
+                            <img src="assets/logokatsumoto.png" alt="KATSUMOTO" class="h-12 opacity-70">
                         </div>
-                        <h3 class="text-lg font-semibold text-kabsa-blue">Elena Rojas</h3>
-                        <p class="text-sm text-gray-600">Administración de Contratos</p>
+                        <h3 class="text-2xl font-bold text-kabsa-blue mb-2">Equipo KATSUMOTO</h3>
+                        <p class="text-gray-600">Ejecución de Obras</p>
                     </div>
+                    <div id="staff-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Especialista 1 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Óscar Morales</h3>
+                            <p class="text-sm text-gray-600">Residente de Obra</p>
+                            <p class="text-xs text-gray-500 mt-2">Ing. Civil • +12 años</p>
+                        </div>
+                        
+                        <!-- Especialista 2 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Miguel Álvarez</h3>
+                            <p class="text-sm text-gray-600">Ingeniero de Proyectos</p>
+                            <p class="text-xs text-gray-500 mt-2">Ing. Civil • +15 años</p>
+                        </div>
+                        
+                        <!-- Especialista 3 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Daniela Ruiz</h3>
+                            <p class="text-sm text-gray-600">Ingeniera Sanitaria</p>
+                            <p class="text-xs text-gray-500 mt-2">Ing. Sanitaria • +10 años</p>
+                        </div>
+                        
+                        <!-- Especialista 4 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Laura Campos</h3>
+                            <p class="text-sm text-gray-600">Prevención de Riesgos</p>
+                            <p class="text-xs text-gray-500 mt-2">Ing. Industrial • +8 años</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BRONTES Staff -->
+                <div class="mb-16">
+                    <div class="text-center mb-10">
+                        <div class="flex items-center justify-center mb-4">
+                            <img src="assets/logo brontes - 2025.png" alt="BRONTES" class="h-12 opacity-70">
+                        </div>
+                        <h3 class="text-2xl font-bold text-kabsa-blue mb-2">Equipo BRONTES</h3>
+                        <p class="text-gray-600">Diseño y Planificación</p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Especialista 1 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Claudia Navarro</h3>
+                            <p class="text-sm text-gray-600">Especialista BIM</p>
+                            <p class="text-xs text-gray-500 mt-2">Arquitecta • +12 años</p>
+                        </div>
+                        
+                        <!-- Especialista 2 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Fernando Quispe</h3>
+                            <p class="text-sm text-gray-600">Topógrafo Senior</p>
+                            <p class="text-xs text-gray-500 mt-2">Ing. Civil • +14 años</p>
+                        </div>
+                        
+                        <!-- Especialista 3 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Ricardo Vargas</h3>
+                            <p class="text-sm text-gray-600">Ingeniero Estructural</p>
+                            <p class="text-xs text-gray-500 mt-2">Ing. Civil • +15 años</p>
+                        </div>
+                        
+                        <!-- Especialista 4 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Andrea Flores</h3>
+                            <p class="text-sm text-gray-600">Coordinadora de Proyectos</p>
+                            <p class="text-xs text-gray-500 mt-2">Arquitecta • +10 años</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ARGOS Staff -->
+                <div>
+                    <div class="text-center mb-10">
+                        <div class="flex items-center justify-center mb-4">
+                            <img src="assets/logo argos.png" alt="ARGOS" class="h-12 opacity-70">
+                        </div>
+                        <h3 class="text-2xl font-bold text-kabsa-blue mb-2">Equipo ARGOS</h3>
+                        <p class="text-gray-600">Servicios y Bienes</p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Especialista 1 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Santiago Ponce</h3>
+                            <p class="text-sm text-gray-600">Jefe de Logística</p>
+                            <p class="text-xs text-gray-500 mt-2">Administración • +10 años</p>
+                        </div>
+                        
+                        <!-- Especialista 2 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Elena Rojas</h3>
+                            <p class="text-sm text-gray-600">Administración de Contratos</p>
+                            <p class="text-xs text-gray-500 mt-2">Derecho • +8 años</p>
+                        </div>
+                        
+                        <!-- Especialista 3 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Roberto Mendoza</h3>
+                            <p class="text-sm text-gray-600">Coordinador Técnico</p>
+                            <p class="text-xs text-gray-500 mt-2">Ing. Eléctrico • +10 años</p>
+                        </div>
+                        
+                        <!-- Especialista 4 -->
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow text-center cursor-pointer">
+                            <div class="h-32 w-32 mx-auto rounded-full overflow-hidden mb-4 bg-gradient-to-br from-[#040872] to-blue-600">
+                                <div class="w-full h-full flex items-center justify-center">
+                                    <svg class="w-16 h-16 text-white opacity-50" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-kabsa-blue">Patricia Salazar</h3>
+                            <p class="text-sm text-gray-600">Jefa de Almacén</p>
+                            <p class="text-xs text-gray-500 mt-2">Técnico • +8 años</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nota informativa -->
+                <div class="mt-12 bg-blue-50 border-l-4 border-kabsa-blue p-6 rounded-lg">
+                    <p class="text-sm text-gray-700">
+                        <strong class="text-kabsa-blue">Nota:</strong> Las fotografías y perfiles completos del staff están en proceso de actualización. Esta página muestra la estructura actual del equipo profesional del Grupo KABSA.
+                    </p>
                 </div>
             </div>
         </section>
@@ -172,25 +402,36 @@
     <script src="assets/main.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const grid = document.getElementById('staff-grid');
-        if (!grid) return;
         const nameEl = document.getElementById('staff-name');
         const roleEl = document.getElementById('staff-role');
         const photoEl = document.getElementById('staff-photo');
         const bioEl = document.getElementById('staff-bio');
         const cvEl = document.getElementById('staff-cv');
 
-        Array.from(grid.children).forEach(card => {
-            card.style.cursor = 'pointer';
+        // Seleccionar todas las tarjetas de staff de todas las empresas
+        const allCards = document.querySelectorAll('.cursor-pointer');
+        
+        allCards.forEach(card => {
             card.addEventListener('click', () => {
                 const name = card.querySelector('h3')?.textContent?.trim() || '';
-                const role = card.querySelector('p')?.textContent?.trim() || '';
-                const img = card.querySelector('img')?.getAttribute('src') || '';
+                const roleParagraphs = card.querySelectorAll('p');
+                const role = roleParagraphs[0]?.textContent?.trim() || '';
+                const experience = roleParagraphs[1]?.textContent?.trim() || '';
+                
+                // Determinar la empresa basándose en el contenedor padre
+                let empresa = 'Grupo KABSA';
+                const parentSection = card.closest('[class*="mb-16"]') || card.closest('[class*="grid"]')?.parentElement;
+                if (parentSection) {
+                    const logo = parentSection.querySelector('img');
+                    if (logo?.alt === 'KATSUMOTO') empresa = 'KATSUMOTO';
+                    else if (logo?.alt === 'ARGOS') empresa = 'ARGOS';
+                    else if (logo?.alt === 'BRONTES') empresa = 'BRONTES';
+                }
 
                 nameEl.textContent = name;
-                roleEl.textContent = role;
-                if (img) photoEl.src = img;
-                bioEl.textContent = `Perfil profesional de ${name}. Experiencia destacada en ${role.toLowerCase()}.`;
+                roleEl.textContent = `${role} • ${empresa}`;
+                photoEl.src = 'https://placehold.co/256x256';
+                bioEl.textContent = `Profesional con ${experience} en ${role.toLowerCase()}. Experiencia destacada en proyectos de infraestructura y construcción del Grupo KABSA.`;
                 cvEl.href = '#';
 
                 openModal('modal-staff');

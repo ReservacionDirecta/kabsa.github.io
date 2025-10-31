@@ -1,3 +1,81 @@
+// Función para inicializar dropdowns - disponible globalmente desde el inicio
+function setupDropdownsNow() {
+  const containers = document.querySelectorAll('[data-dropdown]');
+  
+  if (containers.length === 0) {
+    // Si no hay contenedores, intentar de nuevo en 100ms (navbar puede estar cargándose)
+    setTimeout(setupDropdownsNow, 100);
+    return;
+  }
+  
+  containers.forEach((container) => {
+    // Evitar inicialización múltiple verificando si ya tiene un data-initialized
+    if (container.dataset.initialized === 'true') {
+      return;
+    }
+    
+    const btn = container.querySelector('[data-dropdown-toggle]');
+    const panel = container.querySelector('[data-dropdown-panel]');
+    
+    if (!btn || !panel) {
+      return;
+    }
+
+    // Marcar como inicializado
+    container.dataset.initialized = 'true';
+
+    let isOpen = false;
+    let closeTimeoutId = null;
+
+    function open() {
+      if (closeTimeoutId) { clearTimeout(closeTimeoutId); closeTimeoutId = null; }
+      panel.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      isOpen = true;
+    }
+    function close() {
+      if (closeTimeoutId) { clearTimeout(closeTimeoutId); closeTimeoutId = null; }
+      panel.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      isOpen = false;
+    }
+    function scheduleClose() {
+      if (closeTimeoutId) { clearTimeout(closeTimeoutId); }
+      closeTimeoutId = setTimeout(() => {
+        // cerrar solo si el mouse no volvió a entrar
+        if (!container.matches(':hover')) close();
+      }, 200);
+    }
+
+    // Abrir/cerrar por click
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (isOpen) close(); else open();
+    });
+
+    // Mantener abierto al pasar del botón al panel (hover con tolerancia)
+    container.addEventListener('mouseenter', open);
+    container.addEventListener('mouseleave', scheduleClose);
+    panel.addEventListener('mouseenter', open);
+    panel.addEventListener('mouseleave', scheduleClose);
+    btn.addEventListener('mouseenter', open);
+    btn.addEventListener('mouseleave', scheduleClose);
+
+    // Cerrar al hacer click fuera - usando una función nombrada para poder removerla
+    function handleOutsideClick(e) { 
+      if (!container.contains(e.target)) close(); 
+    }
+    document.addEventListener('click', handleOutsideClick);
+
+    // Asegurar que el panel esté cerrado inicialmente
+    close();
+  });
+}
+
+// Hacer la función accesible globalmente
+window.setupDropdownsNow = setupDropdownsNow;
+
 // Inicialización de AOS si está disponible
 document.addEventListener('DOMContentLoaded', function () {
   // Cargar parciales (navbar/footer) si hay contenedores data-include
@@ -13,6 +91,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const res = await fetch(url, { cache: 'no-cache' });
         const html = await res.text();
         el.outerHTML = html; // reemplazar el contenedor por el contenido
+        
+        // Si es el navbar, inicializar dropdowns después de que se cargue
+        if (url.includes('navbar')) {
+          setTimeout(() => {
+            if (window.setupDropdownsNow) {
+              window.setupDropdownsNow();
+            }
+            // Reinicializar iconos de Lucide después de cargar navbar
+            if (window.lucide && typeof window.lucide.createIcons === 'function') {
+              window.lucide.createIcons();
+            }
+          }, 50);
+        }
       } catch (e) {
         console.error('No se pudo cargar parcial:', url, e);
       }
@@ -21,10 +112,13 @@ document.addEventListener('DOMContentLoaded', function () {
   })();
 
   function afterPartialsInit() {
-  // Render de íconos Lucide si está disponible
-  if (window.lucide && typeof window.lucide.createIcons === 'function') {
-    window.lucide.createIcons();
-  }
+  // Render de íconos Lucide si está disponible - con delay para asegurar que el DOM esté listo
+  setTimeout(() => {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+  }, 100);
+
   if (window.AOS) {
     AOS.init({
       duration: 800,
@@ -35,6 +129,11 @@ document.addEventListener('DOMContentLoaded', function () {
       disable: 'mobile'
     });
   }
+
+  // Asegurar que los dropdowns se inicialicen después de que el DOM esté completamente listo
+  setTimeout(() => {
+    setupDropdownsNow();
+  }, 150);
 
   // Estados de carga en formularios: deshabilita botón y muestra spinner
   const forms = document.querySelectorAll('form');
@@ -89,56 +188,13 @@ document.addEventListener('DOMContentLoaded', function () {
     menuBtn.addEventListener('click', window.toggleMenu);
   }
 
-  // Dropdown persistente (hover/click) para todos los menús
-  (function setupDropdowns() {
-    const containers = document.querySelectorAll('[data-dropdown]');
-    
-    containers.forEach((container) => {
-      const btn = container.querySelector('[data-dropdown-toggle]');
-      const panel = container.querySelector('[data-dropdown-panel]');
-      if (!btn || !panel) return;
-
-      let isOpen = false;
-      let closeTimeoutId = null;
-
-      function open() {
-        if (closeTimeoutId) { clearTimeout(closeTimeoutId); closeTimeoutId = null; }
-        panel.classList.remove('hidden');
-        btn.setAttribute('aria-expanded', 'true');
-        isOpen = true;
-      }
-      function close() {
-        if (closeTimeoutId) { clearTimeout(closeTimeoutId); closeTimeoutId = null; }
-        panel.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-        isOpen = false;
-      }
-      function scheduleClose() {
-        if (closeTimeoutId) { clearTimeout(closeTimeoutId); }
-        closeTimeoutId = setTimeout(() => {
-          // cerrar solo si el mouse no volvió a entrar
-          if (!container.matches(':hover')) close();
-        }, 200);
-      }
-
-      // Abrir/cerrar por click
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (isOpen) close(); else open();
-      });
-
-      // Mantener abierto al pasar del botón al panel (hover con tolerancia)
-      container.addEventListener('mouseenter', open);
-      container.addEventListener('mouseleave', scheduleClose);
-      panel.addEventListener('mouseenter', open);
-      panel.addEventListener('mouseleave', scheduleClose);
-      btn.addEventListener('mouseenter', open);
-      btn.addEventListener('mouseleave', scheduleClose);
-
-      // Cerrar al hacer click fuera
-      document.addEventListener('click', (e) => { if (!container.contains(e.target)) close(); });
-    });
-  })();
+  // Inicializar dropdowns inmediatamente si el navbar ya está cargado
+  setupDropdownsNow();
+  
+  // También intentar después de que el DOM esté completamente listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupDropdownsNow);
+  }
 
   // Funciones globales de modales reutilizables
   if (!window.openModal) {

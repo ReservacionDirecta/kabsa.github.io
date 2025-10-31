@@ -64,8 +64,9 @@
     <div data-include="partials/navbar.html"></div>
 
     <main>
-        <section class="bg-[#040872] text-white py-20">
-            <div class="container mx-auto px-4 lg:px-6 text-center">
+        <section class="relative py-20 text-white" style="background-image: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1920&auto=format&fit=crop'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="container mx-auto px-4 lg:px-6 text-center relative z-10">
                 <h1 class="text-4xl md:text-5xl font-bold mb-3">Empresas del Grupo</h1>
                 <p class="text-lg opacity-90">Empresas especializadas, una visión integrada.</p>
             </div>
@@ -87,25 +88,27 @@
                         <h3 class="text-xl font-semibold text-[#040872] text-center mb-4 leading-tight h-14 flex items-center justify-center">CORPORACION KATSUMOTO S.A.C.</h3>
                         
                         <!-- Descripción - Altura fija -->
-                        <p class="text-gray-700 text-center mb-6 text-sm leading-relaxed h-16">Empresa ejecutora del grupo. Construcción especializada en infraestructura vial, obras eléctricas y edificaciones.</p>
-                        
-                        <!-- Lista de servicios - Altura fija -->
-                        <ul class="text-sm text-gray-600 space-y-2 mb-6 text-center h-24">
-                            <li class="flex items-center justify-center">
-                                <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
-                                Ingeniería vial y pavimentación
-                            </li>
-                            <li class="flex items-center justify-center">
-                                <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
-                                Obras eléctricas y caminos vecinales
-                            </li>
-                            <li class="flex items-center justify-center">
-                                <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
-                                Saneamiento y descolmataciones
-                            </li>
-                        </ul>
+                        <div class="text-justify-all mb-6 h-16">
+                            <p class="text-gray-700 text-sm leading-relaxed">Empresa ejecutora especializada en construcción de infraestructura vial, obras eléctricas, saneamiento y edificaciones con certificación ISO.</p>
                     </div>
                     
+                        <!-- Lista de servicios - Altura fija -->
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6 text-center h-24">
+                                <li class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
+                                Ingeniería vial y pavimentación
+                                </li>
+                                <li class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
+                                Obras eléctricas estructurales
+                                </li>
+                                <li class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
+                                Saneamiento y movimiento de tierras
+                                </li>
+                            </ul>
+                        </div>
+                        
                     <!-- Certificaciones - Altura fija -->
                     <div class="flex flex-wrap gap-2 justify-center mb-6 h-16 items-start flex-shrink-0">
                         <a href="katsumoto.html" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300" title="Ver certificación en la página de Katsumoto">ISO 9001</a>
@@ -116,6 +119,54 @@
                     <!-- Footer con botón -->
                     <div class="text-center mt-auto">
                         <a href="katsumoto.html" class="inline-block bg-[#040872] text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">Ver más →</a>
+                    </div>
+                </div>
+
+                <!-- Brontes -->
+                <div class="bg-[#F0F2F5] rounded-xl p-6 flex flex-col h-full">
+                    <!-- Contenido superior con altura fija total -->
+                    <div class="flex-shrink-0">
+                        <!-- Header con logo - Altura fija -->
+                        <div class="flex justify-center items-center h-24 mb-6">
+                            <img src="assets/logo brontes - 2025.png" alt="Logo Brontes" class="h-20 w-auto object-contain">
+                        </div>
+                        
+                        <!-- Título - Altura fija -->
+                        <h3 class="text-xl font-semibold text-[#040872] text-center mb-4 leading-tight h-14 flex items-center justify-center">BRONTES CONSTRUCTORA S.A.</h3>
+                        
+                        <!-- Descripción - Altura fija -->
+                        <div class="text-justify-all mb-6 h-16">
+                            <p class="text-gray-700 text-sm leading-relaxed">Especialista en planificación integral, estructuración y financiamiento. Metodología BIM, consultoría técnica y desarrollo de expedientes técnicos.</p>
+                    </div>
+                    
+                        <!-- Lista de servicios - Altura fija -->
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6 text-center h-24">
+                                <li class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
+                                Modelado BIM y expedientes técnicos
+                                </li>
+                                <li class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
+                                Consultoría técnica integral
+                                </li>
+                                <li class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
+                                Estructuración y financiamiento
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    <!-- Certificaciones - Altura fija -->
+                    <div class="flex flex-wrap gap-2 justify-center mb-6 h-16 items-start flex-shrink-0">
+                        <a href="assets/ISO 9001_BRONTES CONSTRUCTORA S.A..pdf" target="_blank" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300" title="Abrir ISO 9001">ISO 9001</a>
+                        <a href="assets/QEO-14K-NO. CCL-EMS-F-20251010-07- Rev. 0- Rev. 0-BRONTES CONSTRUCTORA S.A.-LOS OLIVOS-LIMA--PERU.pdf" target="_blank" class="border-2 border-green-600 text-green-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300" title="Abrir ISO 14001">ISO 14001</a>
+                        <a href="assets/ISO 45001_BRONTES CONSTRUCTORA S.A..pdf" target="_blank" class="border-2 border-orange-600 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-orange-600 hover:text-white transition-colors duration-300" title="Abrir ISO 45001">ISO 45001</a>
+                        <a href="assets/ISO 37001_BRONTES CONSTRUCTORA S.A..pdf" target="_blank" class="border-2 border-purple-600 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-purple-600 hover:text-white transition-colors duration-300" title="Abrir ISO 37001">ISO 37001</a>
+                    </div>
+                    
+                    <!-- Footer con botón -->
+                    <div class="text-center mt-auto">
+                        <a href="brontes.html" class="inline-block bg-[#040872] text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">Ver más →</a>
                     </div>
                 </div>
 
@@ -132,25 +183,27 @@
                         <h3 class="text-xl font-semibold text-[#040872] text-center mb-4 leading-tight h-14 flex items-center justify-center">ARGOS CORPORATION S.A.C.</h3>
                         
                         <!-- Descripción - Altura fija -->
-                        <p class="text-gray-700 text-center mb-6 text-sm leading-relaxed h-16">Servicios y bienes para construcción. Provisión de maquinaria, obras eléctricas y consultoría complementaria.</p>
-                        
-                        <!-- Lista de servicios - Altura fija -->
-                        <ul class="text-sm text-gray-600 space-y-2 mb-6 text-center h-24">
-                            <li class="flex items-center justify-center">
-                                <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
-                                Obras de agua y desagüe
-                            </li>
-                            <li class="flex items-center justify-center">
-                                <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
-                                Pavimentación asfáltica y pavimento rígido
-                            </li>
-                            <li class="flex items-center justify-center">
-                                <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
-                                Veredas, muros de contención y canales de irrigación
-                            </li>
-                        </ul>
+                        <div class="text-justify-all mb-6 h-16">
+                            <p class="text-gray-700 text-sm leading-relaxed">Empresa de servicios y bienes. Provisión de maquinaria pesada, equipos especializados, obras eléctricas e infraestructura complementaria.</p>
                     </div>
                     
+                        <!-- Lista de servicios - Altura fija -->
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6 text-center h-24">
+                                <li class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
+                                Provisión de maquinaria pesada
+                                </li>
+                                <li class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
+                                Obras eléctricas e infraestructura
+                                </li>
+                                <li class="flex items-center justify-center">
+                                    <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
+                                Consultoría técnica complementaria
+                                </li>
+                            </ul>
+                        </div>
+                        
                     <!-- Certificaciones - Altura fija -->
                     <div class="flex flex-wrap gap-2 justify-center mb-6 h-16 items-start flex-shrink-0">
                         <a href="assets/ISO 9001_ARGOS.pdf" target="_blank" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300" title="Abrir ISO 9001">ISO 9001</a>
@@ -165,120 +218,64 @@
                         <a href="argos.html" class="inline-block bg-[#040872] text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">Ver más →</a>
                     </div>
                 </div>
-
-                <!-- Brontes -->
-                <div class="bg-[#F0F2F5] rounded-xl p-6 flex flex-col h-full">
-                    <!-- Contenido superior con altura fija total -->
-                    <div class="flex-shrink-0">
-                        <!-- Header con logo - Altura fija -->
-                        <div class="flex justify-center items-center h-24 mb-6">
-                            <img src="contexto/logo brontes - 2025.png" alt="Logo Brontes" class="h-20 w-auto object-contain">
-                        </div>
-                        
-                        <!-- Título - Altura fija -->
-                        <h3 class="text-xl font-semibold text-[#040872] text-center mb-4 leading-tight h-14 flex items-center justify-center">BRONTES CONSTRUCTORA S.A.</h3>
-                        
-                        <!-- Descripción - Altura fija -->
-                        <p class="text-gray-700 text-center mb-6 text-sm leading-relaxed h-16">Planificación integral y estructuración. Especialistas en metodología BIM, consultoría técnica y financiamiento.</p>
-                        
-                        <!-- Lista de servicios - Altura fija -->
-                        <ul class="text-sm text-gray-600 space-y-2 mb-6 text-center h-24">
-                            <li class="flex items-center justify-center">
-                                <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
-                                Diseño BIM y expedientes técnicos
-                            </li>
-                            <li class="flex items-center justify-center">
-                                <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
-                                Consultoría técnica y supervisión
-                            </li>
-                            <li class="flex items-center justify-center">
-                                <span class="w-2 h-2 bg-[#040872] rounded-full mr-3 flex-shrink-0"></span>
-                                Estructuración y financiamiento
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Certificaciones - Altura fija -->
-                    <div class="flex flex-wrap gap-2 justify-center mb-6 h-16 items-start flex-shrink-0">
-                        <a href="assets/ISO 9001_BRONTES CONSTRUCTORA S.A..pdf" target="_blank" class="border-2 border-[#040872] text-[#040872] text-xs font-semibold px-3 py-1 rounded-full hover:bg-[#040872] hover:text-white transition-colors duration-300" title="Abrir ISO 9001">ISO 9001</a>
-                        <a href="assets/QEO-14K-NO. CCL-EMS-F-20251010-07- Rev. 0- Rev. 0-BRONTES CONSTRUCTORA S.A.-LOS OLIVOS-LIMA--PERU.pdf" target="_blank" class="border-2 border-green-600 text-green-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-green-600 hover:text-white transition-colors duration-300" title="Abrir ISO 14001">ISO 14001</a>
-                        <a href="assets/ISO 45001_BRONTES CONSTRUCTORA S.A..pdf" target="_blank" class="border-2 border-orange-600 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-orange-600 hover:text-white transition-colors duration-300" title="Abrir ISO 45001">ISO 45001</a>
-                        <a href="assets/ISO 37001_BRONTES CONSTRUCTORA S.A..pdf" target="_blank" class="border-2 border-purple-600 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full hover:bg-purple-600 hover:text-white transition-colors duration-300" title="Abrir ISO 37001">ISO 37001</a>
-                    </div>
-                    
-                    <!-- Footer con botón -->
-                    <div class="text-center mt-auto">
-                        <a href="brontes.html" class="inline-block bg-[#040872] text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">Ver más →</a>
-                    </div>
-                </div>
             </div>
         </section>
         
-
-        <!-- Visión del Grupo -->
-        <section class="py-16 bg-white">
+        <!-- Introducción Técnica del Grupo -->
+        <section class="py-16 bg-gradient-to-br from-[#F8FAFC] to-white">
             <div class="container mx-auto px-4 lg:px-6">
-                <div class="text-justify-all max-w-4xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#040872] mb-4">Nuestra visión</h2>
-                    <p class="text-gray-700 leading-relaxed text-lg">
-                        En KABSA GROUP impulsamos el desarrollo del país integrando empresas especializadas que operan como un solo equipo. 
-                        Alineamos diseño y planificación, ejecución técnica y gestión de proyectos para entregar soluciones de alto impacto, 
-                        con calidad, cumplimiento y seguridad. Nuestra visión es consolidar un ecosistema empresarial que eleve el estándar 
-                        técnico del sector construcción, promoviendo innovación, sostenibilidad y relaciones de largo plazo con el Estado y la empresa privada.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Noticias y Actualidad -->
-        <section class="py-16 bg-[#F8FAFC]">
-            <div class="container mx-auto px-4 lg:px-6">
-                <div class="text-center mb-10">
-                    <div class="inline-flex items-center gap-2 bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h7l1 1h4a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm3 3h10v6H5V9z" clip-rule="evenodd"></path></svg>
-                        Noticias del Grupo
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-12">
+                        <div class="inline-flex items-center gap-2 bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                            </svg>
+                            Modelo Operativo Integrado
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#040872] mb-4">Arquitectura Empresarial del Grupo</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tres empresas especializadas trabajando en conjunto para cubrir el ciclo completo de proyectos de infraestructura</p>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#040872]">Actualidad y Proyectos</h2>
-                    <p class="text-gray-600 mt-2">Conoce lo más reciente del Grupo KABSA y sus empresas</p>
-                </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition-shadow overflow-hidden">
-                        <div class="h-48 w-full overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Ingeniería y planificación vial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#040872] mb-2">Fase 2: Ejecución Técnica</h3>
+                            <p class="text-sm text-gray-600 mb-3 font-semibold">CORPORACION KATSUMOTO S.A.C.</p>
+                            <p class="text-sm text-gray-600 text-justify-all">Construcción de infraestructura vial, obras eléctricas estructurales, saneamiento, movimiento de tierras y edificaciones con certificación ISO.</p>
                         </div>
-                        <div class="p-5">
-                            <div class="text-xs font-semibold text-[#040872] mb-2">KATSUMOTO · Ingeniería</div>
-                            <h3 class="text-lg font-semibold text-[#040872] mb-2">Nuevo expediente técnico para obra vial</h3>
-                            <p class="text-gray-600 text-sm">Se culminó el diseño y planificación para la mejora integral de la vía principal del distrito.</p>
-                        </div>
-                    </article>
 
-                    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition-shadow overflow-hidden">
-                        <div class="h-48 w-full overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="Pavimentación y obras viales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#040872] mb-2">Fase 1: Diseño y Planificación</h3>
+                            <p class="text-sm text-gray-600 mb-3 font-semibold">BRONTES CONSTRUCTORA S.A.</p>
+                            <p class="text-sm text-gray-600 text-justify-all">Desarrollo de expedientes técnicos, modelado BIM, consultoría técnica, estructuración financiera y planificación integral de proyectos.</p>
                         </div>
-                        <div class="p-5">
-                            <div class="text-xs font-semibold text-[#040872] mb-2">ARGOS · Obras públicas</div>
-                            <h3 class="text-lg font-semibold text-[#040872] mb-2">Inicio de pavimentación y veredas</h3>
-                            <p class="text-gray-600 text-sm">Comienza la ejecución de obras lineales con enfoque en seguridad peatonal y vehicular.</p>
-                        </div>
-                    </article>
 
-                    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition-shadow overflow-hidden">
-                        <div class="h-48 w-full overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop" alt="Infraestructura y saneamiento" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#040872] mb-2">Fase 3: Servicios y Bienes</h3>
+                            <p class="text-sm text-gray-600 mb-3 font-semibold">ARGOS CORPORATION S.A.C.</p>
+                            <p class="text-sm text-gray-600 text-justify-all">Provisión de maquinaria pesada, equipos especializados, obras eléctricas complementarias, logística y consultoría técnica de soporte.</p>
                         </div>
-                        <div class="p-5">
-                            <div class="text-xs font-semibold text-[#040872] mb-2">BRONTES · Ejecución técnica</div>
-                            <h3 class="text-lg font-semibold text-[#040872] mb-2">Fabricación de componentes con control de calidad</h3>
-                            <p class="text-gray-600 text-sm">Se implementan mejoras de control en taller para elevar la durabilidad de los componentes.</p>
-                        </div>
-                    </article>
-                </div>
+                    </div>
 
-                <div class="text-center mt-10">
-                    <a href="noticias.html" class="inline-block bg-[#040872] text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">Ver todas las noticias →</a>
+                    <div class="bg-blue-50 border-l-4 border-[#040872] p-6 rounded-lg text-justify-all">
+                        <p class="text-sm text-gray-700">
+                            <strong class="text-[#040872]">Enfoque Integrado:</strong> Cada empresa aporta su especialidad técnica al ciclo constructivo, garantizando cobertura completa desde la planificación hasta la ejecución, con soporte continuo de servicios y bienes. Este modelo permite optimización de recursos, control de calidad integral y cumplimiento de normativas técnicas peruanas e internacionales.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -295,13 +292,13 @@
                     </div>
                     <h2 class="text-4xl sm:text-5xl font-bold text-[#040872] mb-6">Ejecución de Obras</h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Construcción y ejecución especializada de proyectos de infraestructura en todo el Perú
+                        Ejecución especializada de proyectos de infraestructura vial, obras eléctricas, saneamiento y edificaciones con metodología técnica certificada
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Card 1 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -312,7 +309,7 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
@@ -323,7 +320,7 @@
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
@@ -334,7 +331,7 @@
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"></path>
@@ -345,7 +342,7 @@
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
@@ -356,7 +353,7 @@
                     </div>
 
                     <!-- Card 6 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -382,13 +379,13 @@
                     </div>
                     <h2 class="text-4xl sm:text-5xl font-bold text-[#040872] mb-6">Consultoría y Diseño</h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Desarrollo integral de proyectos: planificación BIM, ejecución especializada y provisión de servicios
+                        Consultoría técnica integral, diseño BIM, estructuración financiera y desarrollo de expedientes técnicos para proyectos de infraestructura
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Card 1 -->
-                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
@@ -399,7 +396,7 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
@@ -410,7 +407,7 @@
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
@@ -421,7 +418,7 @@
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -432,7 +429,7 @@
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -444,7 +441,7 @@
                     </div>
 
                     <!-- Card 6 -->
-                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path>
@@ -469,13 +466,13 @@
                     </div>
                     <h2 class="text-4xl sm:text-5xl font-bold text-[#040872] mb-6">Bienes y Equipamiento</h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Alquiler de maquinaria, equipos especializados y comercialización de materiales de construcción
+                        Provisión de maquinaria pesada, equipos especializados, obras eléctricas complementarias y servicios logísticos para construcción
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Card 1 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
@@ -486,7 +483,7 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -497,7 +494,7 @@
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
@@ -508,7 +505,7 @@
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
@@ -519,7 +516,7 @@
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -530,7 +527,7 @@
                     </div>
 
                     <!-- Card 6 -->
-                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="bg-gradient-to-br from-[#F8FAFC] to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 text-justify-all">
                         <div class="w-14 h-14 bg-gradient-to-br from-[#040872] to-blue-600 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -539,6 +536,86 @@
                         <h3 class="text-xl font-semibold text-[#040872] mb-3">Logística y Transporte</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">Servicio de transporte especializado de carga pesada, movilización de equipos, almacenamiento temporal y gestión logística integral para proyectos de construcción en todo el territorio nacional.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visión Estratégica -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="text-justify-all max-w-4xl mx-auto">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center gap-2 bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            Visión Estratégica
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#040872] mb-4">Compromiso con la Excelencia Técnica</h2>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        KABSA GROUP impulsa el desarrollo del país mediante la integración de empresas especializadas que operan como un ecosistema técnico unificado. 
+                        Alineamos diseño y planificación (BRONTES), ejecución técnica especializada (KATSUMOTO) y provisión de servicios y bienes (ARGOS) para 
+                        entregar soluciones de infraestructura con el más alto estándar de calidad, cumplimiento normativo y seguridad. 
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-lg mt-4">
+                        Nuestra visión es consolidar un grupo empresarial líder que eleve el estándar técnico del sector construcción en Perú, 
+                        promoviendo innovación tecnológica (metodología BIM), sostenibilidad ambiental (ISO 14001) y relaciones estratégicas 
+                        de largo plazo con instituciones públicas y privadas, aportando valor agregado en cada fase del ciclo constructivo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Noticias del Grupo -->
+        <section class="py-16 bg-[#F8FAFC]">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="text-center mb-10">
+                    <div class="inline-flex items-center gap-2 bg-[#040872]/10 text-[#040872] px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h7l1 1h4a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm3 3h10v6H5V9z" clip-rule="evenodd"></path></svg>
+                        Noticias del Grupo
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#040872]">Actualidad y Proyectos</h2>
+                    <p class="text-gray-600 mt-2">Conoce lo más reciente del Grupo KABSA y sus empresas</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition-shadow overflow-hidden">
+                        <div class="h-48 w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Ingeniería y planificación vial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5 text-justify-all">
+                            <div class="text-xs font-semibold text-[#040872] mb-2">KATSUMOTO · Ingeniería</div>
+                            <h3 class="text-lg font-semibold text-[#040872] mb-2">Nuevo expediente técnico para obra vial</h3>
+                            <p class="text-gray-600 text-sm">Se culminó el diseño y planificación para la mejora integral de la vía principal del distrito.</p>
+                        </div>
+                    </article>
+
+                    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition-shadow overflow-hidden">
+                        <div class="h-48 w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" alt="Pavimentación y obras viales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5 text-justify-all">
+                            <div class="text-xs font-semibold text-[#040872] mb-2">ARGOS · Obras públicas</div>
+                            <h3 class="text-lg font-semibold text-[#040872] mb-2">Inicio de pavimentación y veredas</h3>
+                            <p class="text-gray-600 text-sm">Comienza la ejecución de obras lineales con enfoque en seguridad peatonal y vehicular.</p>
+                        </div>
+                    </article>
+
+                    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition-shadow overflow-hidden">
+                        <div class="h-48 w-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop" alt="Infraestructura y saneamiento" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5 text-justify-all">
+                            <div class="text-xs font-semibold text-[#040872] mb-2">BRONTES · Ejecución técnica</div>
+                            <h3 class="text-lg font-semibold text-[#040872] mb-2">Fabricación de componentes con control de calidad</h3>
+                            <p class="text-gray-600 text-sm">Se implementan mejoras de control en taller para elevar la durabilidad de los componentes.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-10">
+                    <a href="noticias.html" class="inline-block bg-[#040872] text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">Ver todas las noticias →</a>
                 </div>
             </div>
         </section>
