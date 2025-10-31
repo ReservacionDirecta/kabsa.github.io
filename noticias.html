@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Noticias y actualidad de KABSA GROUP.">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <title>Noticias</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/global.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kabsa-blue': '#040872',
+                        'kabsa-dark-gray': '#333333',
+                        'kabsa-gray': '#F0F2F5',
+                        'whatsapp-green': '#25D366'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'ui-sans-serif', 'system-ui']
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9729T47');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHMJRY1TXM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CHMJRY1TXM');
+    </script>
+
+</head>
+<body class="font-[Poppins] text-[#333] antialiased overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9729T47"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div data-include="partials/navbar.html"></div>
+
+    <main>
+        <section class="bg-[#040872] text-white py-20">
+            <div class="container mx-auto px-4 lg:px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-3">Noticias y Actualidad</h1>
+                <p class="text-lg opacity-90">Últimos avances y novedades del grupo.</p>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 lg:px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="bg-[#F8FAFC] rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1574103188526-4fabd2623804?q=80&w=1200&auto=format&fit=crop" alt="Saneamiento Piura" class="w-full h-44 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-[#040872]">KABSA ejecuta obra de saneamiento en Piura</h3>
+                        <p class="text-sm text-gray-600 mt-1">15 Mar 2025</p>
+                        <p class="text-gray-700 mt-2">Proyecto integral que beneficiará a más de 30,000 habitantes.</p>
+                    </div>
+                </article>
+                <article class="bg-[#F8FAFC] rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=1200&auto=format&fit=crop" alt="Proyecto Vial" class="w-full h-44 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-[#040872]">Adjudicación de proyecto vial</h3>
+                        <p class="text-sm text-gray-600 mt-1">28 Feb 2025</p>
+                        <p class="text-gray-700 mt-2">Tramo San Marcos – Pedro Gálvez en Cajamarca.</p>
+                    </div>
+                </article>
+                <article class="bg-[#F8FAFC] rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1200&auto=format&fit=crop" alt="Compromiso Social" class="w-full h-44 object-cover">
+                    <div class="p-5">
+                        <h3 class="font-semibold text-[#040872]">Campaña de Invierno 2025</h3>
+                        <p class="text-sm text-gray-600 mt-1">10 Ene 2025</p>
+                        <p class="text-gray-700 mt-2">Apoyo a comunidades altoandinas con kits de abrigo y salud.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/main.js"></script>
+</body>
+</html>
+
+
+
