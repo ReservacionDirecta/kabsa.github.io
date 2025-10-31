@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Libro de Reclamaciones KABSA GROUP - Tu opinión es importante para nosotros.">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <title>Libro de Reclamaciones - KABSA GROUP</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/global.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kabsa-blue': '#040872',
+                        'kabsa-dark-gray': '#333333',
+                        'kabsa-gray': '#F0F2F5',
+                        'whatsapp-green': '#25D366'
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'ui-sans-serif', 'system-ui']
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M9729T47');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CHMJRY1TXM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CHMJRY1TXM');
+    </script>
+
+</head>
+<body class="font-[Poppins] text-[#333] antialiased overflow-x-hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9729T47"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div data-include="partials/navbar.html"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-[#040872] to-blue-900 text-white py-20">
+            <div class="container mx-auto px-4 lg:px-6 text-center">
+                <div class="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    Tu opinión es importante
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-5">Libro de Reclamaciones</h1>
+                <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+                    Conforme al Código de Protección y Defensa del Consumidor, ponemos a tu disposición nuestro Libro de Reclamaciones. Tu queja o reclamo será atendido en un plazo máximo de 30 días calendario.
+                </p>
+            </div>
+        </section>
+
+        <!-- Formulario Section -->
+        <section class="py-20 bg-gradient-to-br from-[#F8FAFC] to-white">
+            <div class="container mx-auto px-4 lg:px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+                        <form class="space-y-6">
+                            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                                <h3 class="font-semibold text-[#040872] mb-2">Tipo de Solicitud *</h3>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="tipo" value="reclamo" required class="mr-3 text-[#040872] focus:ring-[#040872]">
+                                        <div>
+                                            <span class="font-semibold text-[#040872]">Reclamo:</span>
+                                            <span class="text-gray-600 text-sm"> Disconformidad con el servicio o producto</span>
+                                        </div>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="tipo" value="queja" required class="mr-3 text-[#040872] focus:ring-[#040872]">
+                                        <div>
+                                            <span class="font-semibold text-[#040872]">Queja:</span>
+                                            <span class="text-gray-600 text-sm"> Malestar con la atención al cliente</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-[#040872] border-b pb-2">Datos del Reclamante</h3>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-[#040872] font-semibold mb-2">Nombres y Apellidos *</label>
+                                    <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent" placeholder="Nombre completo">
+                                </div>
+                                <div>
+                                    <label class="block text-[#040872] font-semibold mb-2">Documento de Identidad *</label>
+                                    <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent" placeholder="DNI / RUC / CE">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-[#040872] font-semibold mb-2">Correo Electrónico *</label>
+                                    <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent" placeholder="correo@ejemplo.com">
+                                </div>
+                                <div>
+                                    <label class="block text-[#040872] font-semibold mb-2">Teléfono *</label>
+                                    <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent" placeholder="+51 999 999 999">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[#040872] font-semibold mb-2">Dirección *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent" placeholder="Dirección completa">
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-[#040872] border-b pb-2 mt-8">Detalle del Reclamo / Queja</h3>
+
+                            <div>
+                                <label class="block text-[#040872] font-semibold mb-2">Empresa del Grupo *</label>
+                                <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent">
+                                    <option value="">Seleccione la empresa</option>
+                                    <option value="argos">ARGOS Corporation S.A.C.</option>
+                                    <option value="brontes">BRONTES Constructora S.A.</option>
+                                    <option value="katsumoto">KATSUMOTO Corporation S.A.C.</option>
+                                    <option value="grupo">KABSA GROUP</option>
+                                </select>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-[#040872] font-semibold mb-2">Servicio/Producto Contratado *</label>
+                                    <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent" placeholder="Nombre del servicio o producto">
+                                </div>
+                                <div>
+                                    <label class="block text-[#040872] font-semibold mb-2">Fecha del Incidente</label>
+                                    <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[#040872] font-semibold mb-2">Detalle del Reclamo o Queja *</label>
+                                <textarea required rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent" placeholder="Describa de manera clara y detallada el motivo de su reclamo o queja..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-[#040872] font-semibold mb-2">Pedido del Consumidor *</label>
+                                <textarea required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent" placeholder="Indique qué solución o acción espera de KABSA GROUP..."></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-[#040872] font-semibold mb-2">Adjuntar Documentos (Opcional)</label>
+                                <input type="file" id="reclamaciones-files" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#040872] focus:border-transparent">
+                                <p class="text-sm text-gray-500 mt-2">Máximo 5 archivos. Puede adjuntar facturas, contratos, fotos u otros documentos de respaldo. Formatos: PDF, JPG, PNG, DOC, DOCX. Tamaño máximo: 15MB por archivo.</p>
+                                
+                                <!-- Contenedor de errores -->
+                                <div id="reclamaciones-file-error" class="hidden mt-3 text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3 text-sm"></div>
+                                
+                                <!-- Lista de archivos seleccionados -->
+                                <div id="reclamaciones-file-list" class="hidden"></div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <input type="checkbox" required class="mt-1 mr-3 w-4 h-4 text-[#040872] border-gray-300 rounded focus:ring-[#040872]">
+                                <label class="text-sm text-gray-600">Declaro que la información proporcionada es verídica y acepto el tratamiento de mis datos conforme a la Ley de Protección de Datos Personales.</label>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="bg-[#040872] text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 transition-colors duration-300 shadow-lg">
+                                    Enviar Reclamo
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="mt-8 bg-amber-50 border border-amber-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-[#040872] mb-3">Información Importante:</h3>
+                        <ul class="space-y-2 text-gray-700 text-sm">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                                La empresa responderá su reclamo en un plazo no mayor a 30 días calendario.
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                                Recibirá una copia de su reclamo al correo electrónico registrado.
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                                </svg>
+                                Si no está satisfecho con la respuesta, puede acudir a INDECOPI.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div data-include="partials/footer.html"></div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/main.js"></script>
+    <script src="assets/file-upload.js"></script>
+</body>
+</html>
+
