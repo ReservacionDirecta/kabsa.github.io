@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CMS - KABSA GROUP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h1 class="text-3xl font-bold text-[#040872] mb-6">🧪 Prueba del Sistema CMS</h1>
+        
+        <div class="space-y-6">
+            <!-- Test 1: Verificar módulos cargados -->
+            <div class="border rounded-lg p-4">
+                <h2 class="text-xl font-semibold mb-3">1. Verificar Módulos CMS</h2>
+                <div id="module-test" class="space-y-2">
+                    <p class="text-gray-600">Cargando...</p>
+                </div>
+            </div>
+            
+            <!-- Test 2: Prueba de guardado -->
+            <div class="border rounded-lg p-4">
+                <h2 class="text-xl font-semibold mb-3">2. Prueba de Guardado</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Texto de Prueba:</label>
+                        <input type="text" id="test-text" value="Texto de prueba CMS" class="w-full border rounded p-2">
+                    </div>
+                    <button onclick="testSave()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                        Guardar en localStorage
+                    </button>
+                    <div id="save-result" class="mt-2 text-sm"></div>
+                </div>
+            </div>
+            
+            <!-- Test 3: Prueba de lectura -->
+            <div class="border rounded-lg p-4">
+                <h2 class="text-xl font-semibold mb-3">3. Prueba de Lectura</h2>
+                <button onclick="testRead()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Leer desde localStorage
+                </button>
+                <div id="read-result" class="mt-2 text-sm p-3 bg-gray-50 rounded"></div>
+            </div>
+            
+            <!-- Test 4: Prueba de aplicación -->
+            <div class="border rounded-lg p-4">
+                <h2 class="text-xl font-semibold mb-3">4. Prueba de Aplicación de Cambios</h2>
+                <p class="text-sm text-gray-600 mb-2">Este texto debería cambiar cuando se apliquen los cambios:</p>
+                <p id="test-element" class="p-3 bg-blue-50 rounded text-lg font-semibold">
+                    Este es el texto original que se cambiará
+                </p>
+                <button onclick="testApply()" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 mt-2">
+                    Aplicar Cambios al Elemento
+                </button>
+                <div id="apply-result" class="mt-2 text-sm"></div>
+            </div>
+            
+            <!-- Test 5: Ver localStorage completo -->
+            <div class="border rounded-lg p-4">
+                <h2 class="text-xl font-semibold mb-3">5. Ver Contenido de localStorage</h2>
+                <button onclick="viewLocalStorage()" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+                    Ver Todo el Contenido
+                </button>
+                <pre id="localStorage-content" class="mt-2 text-xs bg-gray-900 text-green-400 p-3 rounded overflow-auto max-h-60 hidden"></pre>
+            </div>
+            
+            <!-- Test 6: Limpiar localStorage -->
+            <div class="border rounded-lg p-4">
+                <h2 class="text-xl font-semibold mb-3">6. Limpiar Datos de Prueba</h2>
+                <button onclick="clearTestData()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                    Limpiar localStorage de CMS
+                </button>
+                <p class="text-xs text-gray-500 mt-2">⚠️ Esto eliminará todos los datos del CMS en localStorage</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/cms/api.js"></script>
+    <script src="assets/cms/editor.js"></script>
+    <script>
+        // Test 1: Verificar módulos
+        function testModules() {
+            const container = document.getElementById('module-test');
+            const modules = {
+                'CMSAPI': typeof window.CMSAPI !== 'undefined',
+                'CMSEditor': typeof window.CMSEditor !== 'undefined'
+            };
+            
+            let html = '';
+            Object.keys(modules).forEach(module => {
+                const status = modules[module];
+                html += `
+                    <div class="flex items-center gap-2">
+                        <span class="font-semibold">${module}:</span>
+                        <span class="px-2 py-1 rounded text-sm ${status ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                            ${status ? '✅ Cargado' : '❌ No encontrado'}
+                        </span>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // Test 2: Guardar
+        function testSave() {
+            const testText = document.getElementById('test-text').value;
+            const resultDiv = document.getElementById('save-result');
+            
+            try {
+                // Simular guardado como lo haría el CMS
+                const testData = {
+                    'test-page.html': {
+                        'test-element-0': {
+                            value: testText,
+                            type: 'text',
+                            selector: '#test-element'
+                        },
+                        lastModified: new Date().toISOString()
+                    }
+                };
+                
+                localStorage.setItem('cms_content_data', JSON.stringify(testData));
+                resultDiv.innerHTML = `<span class="text-green-600">✅ Guardado exitosamente!</span>`;
+            } catch (e) {
+                resultDiv.innerHTML = `<span class="text-red-600">❌ Error: ${e.message}</span>`;
+            }
+        }
+        
+        // Test 3: Leer
+        function testRead() {
+            const resultDiv = document.getElementById('read-result');
+            
+            try {
+                const stored = localStorage.getItem('cms_content_data');
+                if (stored) {
+                    const data = JSON.parse(stored);
+                    resultDiv.innerHTML = `<pre class="text-xs">${JSON.stringify(data, null, 2)}</pre>`;
+                } else {
+                    resultDiv.innerHTML = `<span class="text-gray-500">No hay datos guardados</span>`;
+                }
+            } catch (e) {
+                resultDiv.innerHTML = `<span class="text-red-600">❌ Error: ${e.message}</span>`;
+            }
+        }
+        
+        // Test 4: Aplicar cambios
+        function testApply() {
+            const resultDiv = document.getElementById('apply-result');
+            
+            try {
+                // Simular la aplicación de cambios como lo haría content-applier.js
+                const stored = localStorage.getItem('cms_content_data');
+                if (stored) {
+                    const allContent = JSON.parse(stored);
+                    const pageContent = allContent['test-page.html'];
+                    
+                    if (pageContent && pageContent['test-element-0']) {
+                        const edit = pageContent['test-element-0'];
+                        const element = document.querySelector(edit.selector);
+                        
+                        if (element) {
+                            element.textContent = edit.value;
+                            resultDiv.innerHTML = `<span class="text-green-600">✅ Cambio aplicado: "${edit.value}"</span>`;
+                        } else {
+                            resultDiv.innerHTML = `<span class="text-red-600">❌ Elemento no encontrado con selector: ${edit.selector}</span>`;
+                        }
+                    } else {
+                        resultDiv.innerHTML = `<span class="text-yellow-600">⚠️ No hay datos de prueba. Ejecuta primero el test de guardado.</span>`;
+                    }
+                } else {
+                    resultDiv.innerHTML = `<span class="text-yellow-600">⚠️ No hay datos guardados. Ejecuta primero el test de guardado.</span>`;
+                }
+            } catch (e) {
+                resultDiv.innerHTML = `<span class="text-red-600">❌ Error: ${e.message}</span>`;
+            }
+        }
+        
+        // Test 5: Ver localStorage
+        function viewLocalStorage() {
+            const container = document.getElementById('localStorage-content');
+            const stored = localStorage.getItem('cms_content_data');
+            
+            if (stored) {
+                try {
+                    const data = JSON.parse(stored);
+                    container.textContent = JSON.stringify(data, null, 2);
+                    container.classList.remove('hidden');
+                } catch (e) {
+                    container.textContent = 'Error al parsear: ' + e.message;
+                    container.classList.remove('hidden');
+                }
+            } else {
+                container.textContent = 'No hay datos en localStorage';
+                container.classList.remove('hidden');
+            }
+        }
+        
+        // Test 6: Limpiar
+        function clearTestData() {
+            if (confirm('¿Estás seguro de eliminar todos los datos del CMS en localStorage?')) {
+                localStorage.removeItem('cms_content_data');
+                alert('Datos eliminados. Recarga la página para ver los cambios.');
+                location.reload();
+            }
+        }
+        
+        // Ejecutar test de módulos al cargar
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(testModules, 500);
+        });
+    </script>
+</body>
+</html>
+

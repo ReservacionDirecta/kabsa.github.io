@@ -197,23 +197,30 @@
                     
                     <!-- Pestañas -->
                     <div class="border-b mb-4">
-                        <button onclick="showMediaTab('images')" class="media-tab active px-4 py-2 border-b-2 border-[#040872] text-[#040872] font-semibold">
+                        <button onclick="window.showMediaTab('images')" class="media-tab active px-4 py-2 border-b-2 border-[#040872] text-[#040872] font-semibold">
                             Imágenes
                         </button>
-                        <button onclick="showMediaTab('videos')" class="media-tab px-4 py-2 text-gray-600 hover:text-[#040872]">
+                        <button onclick="window.showMediaTab('videos')" class="media-tab px-4 py-2 text-gray-600 hover:text-[#040872]">
                             Videos
                         </button>
                     </div>
 
-                    <!-- Upload -->
-                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
-                        <h3 class="font-semibold mb-3">Subir Nuevo Archivo</h3>
-                        <input type="file" id="mediaUpload" accept="image/*,video/*" class="mb-3">
-                        <button onclick="uploadMedia()" class="bg-[#040872] text-white px-6 py-2 rounded-lg hover:bg-[#030561] transition-colors">
-                            <i class="fas fa-upload mr-2"></i>
-                            Subir
-                        </button>
-                    </div>
+                            <!-- Upload -->
+                            <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                                <h3 class="font-semibold mb-3">Subir Nuevo Archivo</h3>
+                                <input type="file" id="mediaUpload" accept="image/*,video/*" class="mb-3">
+                                <div class="flex gap-2">
+                                    <button onclick="window.uploadMedia()" class="bg-[#040872] text-white px-6 py-2 rounded-lg hover:bg-[#030561] transition-colors">
+                                        <i class="fas fa-upload mr-2"></i>
+                                        Subir
+                                    </button>
+                                    <button onclick="importLocalAssetsToLibrary()" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                                        <i class="fas fa-folder-open mr-2"></i>
+                                        Importar de Assets
+                                    </button>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2">Importa imágenes locales de la carpeta assets</p>
+                            </div>
 
                     <!-- Galería -->
                     <div id="mediaGallery" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -308,6 +315,22 @@
                 return;
             }
             
+            // Verificar que el módulo de medios esté cargado
+            if (typeof window.CMSMedia === 'undefined') {
+                console.error('Error: Módulo de medios no encontrado');
+                console.warn('Intentando esperar un poco más...');
+                // Intentar de nuevo después de un delay
+                setTimeout(() => {
+                    if (typeof window.CMSMedia === 'undefined') {
+                        console.error('Error: Módulo de medios aún no disponible');
+                    } else {
+                        console.log('CMSMedia ahora está disponible');
+                    }
+                }, 500);
+            } else {
+                console.log('CMSMedia está disponible');
+            }
+            
             // Mostrar usuario actual
             const user = window.CMSAuth.getCurrentUser();
             if (user) {
@@ -328,8 +351,26 @@
                 });
             }
 
-            // Hacer showSection accesible globalmente
-            window.showSection = showSection;
+            // Función para importar imágenes locales
+            window.importLocalAssetsToLibrary = function() {
+                function tryImport() {
+                    if (window.CMSMedia && window.CMSMedia.importLocalAssets) {
+                        const imported = window.CMSMedia.importLocalAssets();
+                        if (imported > 0) {
+                            alert(`✅ Se importaron ${imported} imagen(es) local(es) a la biblioteca.`);
+                            if (window.CMSMedia.loadMedia) {
+                                window.CMSMedia.loadMedia('images');
+                            }
+                        } else {
+                            alert('ℹ️ Todas las imágenes locales ya están en la biblioteca.');
+                        }
+                    } else {
+                        console.warn('CMSMedia no disponible, esperando...');
+                        setTimeout(tryImport, 100);
+                    }
+                }
+                tryImport();
+            };
             
             // Observer para cargar editores cuando se muestran las secciones
             const sectionObserver = new MutationObserver(function(mutations) {

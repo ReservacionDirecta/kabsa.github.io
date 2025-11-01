@@ -12,14 +12,54 @@ window.CMSEditor = (function() {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         
+        // Cargar contenido guardado desde localStorage
+        const savedContent = getSavedContent(pagePath);
+        
         // Mapear elementos editables
         const editableElements = findEditableElements(doc, pagePath);
+        
+        // Aplicar valores guardados a los elementos
+        editableElements.forEach(element => {
+            if (savedContent[element.id]) {
+                const saved = savedContent[element.id];
+                if (typeof saved === 'object') {
+                    // Si es un objeto, puede ser formato nuevo con value o formato de enlace con text/href
+                    if (saved.value !== undefined) {
+                        element.savedValue = saved.value;
+                    } else if (saved.text !== undefined || saved.href !== undefined) {
+                        // Formato de enlace
+                        element.savedValue = saved;
+                    } else {
+                        element.savedValue = saved;
+                    }
+                } else if (typeof saved === 'string') {
+                    element.savedValue = saved;
+                }
+            }
+        });
         
         // Agrupar elementos por sección
         const elementsBySection = groupElementsBySection(editableElements, doc);
         
         // Crear UI con acordeones por sección
         return createAccordionEditor(elementsBySection);
+    }
+    
+    /**
+     * Obtiene el contenido guardado para una página específica
+     */
+    function getSavedContent(pagePath) {
+        try {
+            const CONTENT_STORAGE_KEY = 'cms_content_data';
+            const stored = localStorage.getItem(CONTENT_STORAGE_KEY);
+            if (stored) {
+                const allContent = JSON.parse(stored);
+                return allContent[pagePath] || {};
+            }
+        } catch (e) {
+            console.warn('Error cargando contenido guardado:', e);
+        }
+        return {};
     }
 
     /**
@@ -209,6 +249,7 @@ window.CMSEditor = (function() {
         let html = '<div class="space-y-3">';
         
         // Ordenar secciones (Hero primero, luego por orden de aparición)
+        // Priorizar secciones con imágenes
         const sectionOrder = [
             'inicio', 'hero', 'quienes-somos', 'grupo', 'empresas',
             'mision-vision', 'mision', 'vision', 'valores',
@@ -219,18 +260,46 @@ window.CMSEditor = (function() {
             'organigrama', 'otros'
         ];
         
-        const sortedSections = Object.keys(sectionsByKey).sort((a, b) => {
-            const indexA = sectionOrder.indexOf(a);
-            const indexB = sectionOrder.indexOf(b);
-            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-            if (indexA !== -1) return -1;
-            if (indexB !== -1) return 1;
-            return a.localeCompare(b);
-        });
+        // Ordenar secciones: primero las que tienen imágenes, luego las demás
+        const sortedSectionsWithImages = Object.keys(sectionsByKey)
+            .filter(key => sectionsByKey[key].elements.some(el => el.type === 'image'))
+            .sort((a, b) => {
+                const indexA = sectionOrder.indexOf(a);
+                const indexB = sectionOrder.indexOf(b);
+                if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                if (indexA !== -1) return -1;
+                if (indexB !== -1) return 1;
+                return a.localeCompare(b);
+            });
+        
+        const sortedSectionsWithoutImages = Object.keys(sectionsByKey)
+            .filter(key => !sectionsByKey[key].elements.some(el => el.type === 'image'))
+            .sort((a, b) => {
+                const indexA = sectionOrder.indexOf(a);
+                const indexB = sectionOrder.indexOf(b);
+                if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                if (indexA !== -1) return -1;
+                if (indexB !== -1) return 1;
+                return a.localeCompare(b);
+            });
+        
+        // Combinar: primero las que tienen imágenes, luego las demás
+        const sortedSections = [...sortedSectionsWithImages, ...sortedSectionsWithoutImages];
         
         sortedSections.forEach((key, index) => {
             const section = sectionsByKey[key];
             const isFirst = index === 0; // Primera sección expandida por defecto
+            
+            // Contar imágenes y textos en la sección
+            const imageCount = section.elements.filter(el => el.type === 'image').length;
+            const textCount = section.elements.filter(el => el.type !== 'image').length;
+            const totalCount = section.elements.length;
+            
+            // Crear badge descriptivo
+            let badgeHTML = `<span class="text-xs font-normal text-gray-500 bg-gray-300 px-2 py-0.5 rounded-full flex-shrink-0">${totalCount}</span>`;
+            if (imageCount > 0) {
+                badgeHTML = `<span class="text-xs font-normal text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full flex-shrink-0" title="${imageCount} imagen(es), ${textCount} texto(s)">🖼️ ${imageCount} | 📝 ${textCount}</span>`;
+            }
             
             html += `
                 <div class="border border-gray-300 rounded-lg overflow-hidden">
@@ -243,9 +312,7 @@ window.CMSEditor = (function() {
                         <span class="flex items-center gap-2 flex-1 min-w-0">
                             <i class="fas fa-chevron-${isFirst ? 'down' : 'right'} transition-transform duration-200 text-xs flex-shrink-0" id="icon-section-${key}"></i>
                             <span class="text-sm truncate">${escapeHtml(section.name)}</span>
-                            <span class="text-xs font-normal text-gray-500 bg-gray-300 px-2 py-0.5 rounded-full flex-shrink-0">
-                                ${section.elements.length}
-                            </span>
+                            ${badgeHTML}
                         </span>
                     </button>
                     <div 
@@ -330,9 +397,251 @@ window.CMSEditor = (function() {
             }
         });
         
-        // 2. Detección automática de TODOS los elementos de texto
+        // 2. Detección automática de atributos data-bg-image (imágenes de fondo hover)
+        const dataBgImages = autoDetectDataBgImages(doc, usedIds);
+        elements.push(...dataBgImages);
+        
+        // 3. Detección automática de imágenes en estilos inline (background-image)
+        const inlineBgImages = autoDetectInlineBgImages(doc, usedIds);
+        elements.push(...inlineBgImages);
+        
+        // 4. Detección automática de TODAS las imágenes
+        const autoImages = autoDetectImages(doc, usedIds);
+        elements.push(...autoImages);
+        
+        // 5. Detección automática de TODOS los elementos de texto
         const autoElements = autoDetectTextElements(doc, usedIds);
         elements.push(...autoElements);
+        
+        return elements;
+    }
+    
+    /**
+     * Detecta atributos data-bg-image para imágenes de fondo hover
+     */
+    function autoDetectDataBgImages(doc, usedIds) {
+        const elements = [];
+        let counter = 0;
+        
+        // Buscar todos los elementos con data-bg-image
+        const allDataBg = doc.querySelectorAll('[data-bg-image]');
+        
+        allDataBg.forEach((element, index) => {
+            const bgImageUrl = element.getAttribute('data-bg-image');
+            
+            if (!bgImageUrl || bgImageUrl.trim() === '') {
+                return;
+            }
+            
+            // Crear un label descriptivo
+            let label = '🖼️ Imagen de Fondo Hover';
+            
+            // Intentar identificar el contexto
+            const parentCard = element.closest('.company-card, .card, [class*="card"]');
+            if (parentCard) {
+                const cardTitle = parentCard.querySelector('h2, h3, h4, .title');
+                if (cardTitle) {
+                    label = `🖼️ Fondo Hover: ${cardTitle.textContent.trim().substring(0, 30)}`;
+                }
+            }
+            
+            // Verificar si tiene clases o ID que identifiquen el elemento
+            const className = element.className || '';
+            const elementId = element.id || '';
+            
+            if (className.includes('company-card')) {
+                const title = element.querySelector('h3');
+                if (title) {
+                    label = `🖼️ Fondo Hover - ${title.textContent.trim().substring(0, 40)}`;
+                }
+            }
+            
+            // Generar selector único
+            const uniqueSelector = generateUniqueSelector(element);
+            
+            // Crear ID único
+            const elementId_editable = `data-bg-image-${counter++}`;
+            
+            if (!usedIds.has(elementId_editable)) {
+                elements.push({
+                    id: elementId_editable,
+                    type: 'data-bg-image',
+                    selector: uniqueSelector,
+                    index: index,
+                    originalHTML: element.outerHTML,
+                    label: label,
+                    node: element,
+                    attribute: 'data-bg-image'
+                });
+                usedIds.add(elementId_editable);
+            }
+        });
+        
+        return elements;
+    }
+    
+    /**
+     * Detecta imágenes en estilos inline (background-image)
+     */
+    function autoDetectInlineBgImages(doc, usedIds) {
+        const elements = [];
+        let counter = 0;
+        
+        // Buscar todos los elementos con estilos inline que contengan background-image
+        const allElements = doc.querySelectorAll('*');
+        
+        allElements.forEach((element, index) => {
+            const style = element.getAttribute('style');
+            
+            if (!style || !style.includes('background-image')) {
+                return;
+            }
+            
+            // Extraer URL de background-image
+            const urlMatch = style.match(/background-image\s*:\s*url\(['"]?([^'")]+)['"]?\)/i);
+            
+            if (!urlMatch || !urlMatch[1]) {
+                return;
+            }
+            
+            const bgImageUrl = urlMatch[1].trim();
+            
+            // Excluir imágenes de fondo de la sección principal (se manejan por data-bg-image)
+            const isSectionBg = element.id === 'empresas' || element.classList.contains('hero-slide');
+            
+            if (isSectionBg && !element.hasAttribute('data-bg-image')) {
+                // Ya se maneja por data-bg-image
+                return;
+            }
+            
+            // Crear un label descriptivo
+            let label = '🖼️ Imagen de Fondo';
+            
+            // Identificar contexto
+            const className = element.className || '';
+            const elementId = element.id || '';
+            
+            if (className.includes('hero-slide')) {
+                label = '🖼️ Slide Hero';
+            } else if (elementId) {
+                label = `🖼️ Fondo: ${elementId}`;
+            } else if (className) {
+                const classNames = className.split(' ').filter(c => c.length > 0 && !c.startsWith('opacity'));
+                if (classNames.length > 0) {
+                    label = `🖼️ Fondo: ${classNames[0]}`;
+                }
+            }
+            
+            // Generar selector único
+            const uniqueSelector = generateUniqueSelector(element);
+            
+            // Crear ID único
+            const elementId_editable = `inline-bg-image-${counter++}`;
+            
+            if (!usedIds.has(elementId_editable)) {
+                elements.push({
+                    id: elementId_editable,
+                    type: 'inline-bg-image',
+                    selector: uniqueSelector,
+                    index: index,
+                    originalHTML: element.outerHTML,
+                    label: label,
+                    node: element,
+                    styleAttribute: 'style'
+                });
+                usedIds.add(elementId_editable);
+            }
+        });
+        
+        return elements;
+    }
+    
+    /**
+     * Detecta automáticamente TODAS las imágenes editables
+     */
+    function autoDetectImages(doc, usedIds) {
+        const elements = [];
+        let counter = 0;
+        
+        // Buscar todas las imágenes, excluyendo las que están en partials, scripts, etc.
+        const allImages = doc.querySelectorAll('img');
+        
+        // Excluir imágenes de ciertos contextos
+        const excludeSelectors = [
+            'script img',
+            'style img',
+            'noscript img',
+            '[data-include] img',
+            'header img', // Imágenes del navbar (siempre se cargan dinámicamente)
+            'footer img'  // Imágenes del footer
+        ];
+        
+        allImages.forEach((img, index) => {
+            // Verificar que no esté en un contexto excluido
+            let shouldExclude = false;
+            
+            // Verificar si está dentro de un partial
+            const isInPartial = img.closest('[data-include]') || 
+                              (img.closest('header') && img.closest('header').querySelector('[data-include]')) ||
+                              (img.closest('footer') && img.closest('footer').querySelector('[data-include]'));
+            
+            // Verificar si está en un script o style
+            const isInScript = img.closest('script') || img.closest('style') || img.closest('noscript');
+            
+            // Verificar si ya fue agregada en el mapeo específico
+            const isAlreadyMapped = Array.from(usedIds).some(id => id.includes('image') || id.includes('img'));
+            
+            // Excluir imágenes muy pequeñas (probablemente iconos)
+            const hasSrc = img.src && img.src.trim() !== '';
+            const src = img.src || img.getAttribute('src') || '';
+            const isIcon = src.includes('icon') || src.includes('logo') && img.width && img.width < 100;
+            
+            if (shouldExclude || isInPartial || isInScript || !hasSrc) {
+                return; // Saltar esta imagen
+            }
+            
+            // Si ya fue mapeada específicamente, no agregarla automáticamente
+            const imgSrc = img.src || img.getAttribute('src') || '';
+            const imgAlt = img.alt || '';
+            
+            // Obtener contexto de la imagen
+            const context = getImageContext(img);
+            
+            // Crear un label descriptivo
+            let label = '🖼️ Imagen';
+            if (imgAlt && imgAlt.trim()) {
+                const altText = imgAlt.trim();
+                label = `🖼️ ${altText.substring(0, 50)}${altText.length > 50 ? '...' : ''}`;
+            } else if (imgSrc) {
+                // Extraer nombre del archivo
+                const fileName = imgSrc.split('/').pop().split('?')[0].split('.')[0];
+                label = `🖼️ ${fileName.substring(0, 40)}${fileName.length > 40 ? '...' : ''}`;
+            }
+            
+            // Agregar contexto al label si está disponible
+            if (context) {
+                label = `${label} (${context})`;
+            }
+            
+            // Generar selector único
+            const uniqueSelector = generateUniqueSelector(img);
+            
+            // Crear ID único
+            const elementId = `auto-image-${counter++}`;
+            
+            if (!usedIds.has(elementId)) {
+                elements.push({
+                    id: elementId,
+                    type: 'image',
+                    selector: uniqueSelector,
+                    index: index,
+                    originalHTML: img.outerHTML,
+                    label: label,
+                    node: img
+                });
+                usedIds.add(elementId);
+            }
+        });
         
         return elements;
     }
@@ -678,7 +987,7 @@ window.CMSEditor = (function() {
         const cleanSelector = lastSelector.length > 40 ? lastSelector.substring(0, 37) + '...' : lastSelector;
         
         let html = `
-            <div class="border rounded-lg p-3 bg-white mb-2" data-element-id="${element.id}">
+            <div class="border rounded-lg p-3 bg-white mb-2" data-element-id="${element.id}" data-selector="${escapeHtml(element.selector)}">
                 <label class="block font-semibold text-gray-700 mb-1.5 text-xs">
                     ${escapeHtml(shortLabel)}
                 </label>
@@ -686,7 +995,9 @@ window.CMSEditor = (function() {
         `;
         
         if (element.type === 'text' || element.type === 'auto-text') {
-            const text = getTextContent(element.originalHTML);
+            // Usar valor guardado si existe, sino el original
+            const originalText = getTextContent(element.originalHTML);
+            const text = element.savedValue !== undefined ? element.savedValue : originalText;
             const isLongText = text.length > 150;
             html += `
                 <textarea 
@@ -697,8 +1008,13 @@ window.CMSEditor = (function() {
                 >${escapeHtml(text)}</textarea>
             `;
         } else if (element.type === 'link') {
-            const text = getTextContent(element.originalHTML);
-            const href = getLinkHref(element.originalHTML);
+            // Usar valores guardados si existen
+            let text = getTextContent(element.originalHTML);
+            let href = getLinkHref(element.originalHTML);
+            if (element.savedValue && typeof element.savedValue === 'object') {
+                if (element.savedValue.text !== undefined) text = element.savedValue.text;
+                if (element.savedValue.href !== undefined) href = element.savedValue.href;
+            }
             html += `
                 <div class="space-y-2">
                     <label class="text-xs text-gray-600">Texto del enlace:</label>
@@ -721,34 +1037,195 @@ window.CMSEditor = (function() {
                     >
                 </div>
             `;
-        } else if (element.type === 'image') {
-            const src = getImageSrc(element.originalHTML);
+        } else if (element.type === 'data-bg-image') {
+            // Editor para atributos data-bg-image
+            const originalValue = element.node ? element.node.getAttribute('data-bg-image') : '';
+            const value = element.savedValue !== undefined ? (typeof element.savedValue === 'object' ? element.savedValue.value : element.savedValue) : originalValue;
+            
             html += `
-                <div class="flex gap-4">
-                    <img src="${src}" alt="Preview" class="w-32 h-32 object-cover rounded border" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27100%27 height=%27100%27%3E%3Crect fill=%27%23ddd%27 width=%27100%27 height=%27100%27/%3E%3Ctext x=%2750%27 y=%2750%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27%3EImagen%3C/text%3E%3C/svg%3E'">
-                    <div class="flex-1">
-                        <input 
-                            type="text" 
-                            class="w-full border rounded p-2 mb-2" 
-                            data-editor="${element.id}"
-                            data-type="image"
-                            value="${escapeHtml(src)}"
-                            placeholder="URL de la imagen o selecciona de la biblioteca"
-                        >
-                        <button onclick="window.CMSMedia.selectImage('${element.id}')" class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600">
-                            <i class="fas fa-image mr-1"></i> Seleccionar de Biblioteca
-                        </button>
+                <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0">
+                            <div class="relative group">
+                                <div 
+                                    class="w-24 h-24 rounded border-2 border-gray-300 bg-cover bg-center cursor-pointer"
+                                    style="background-image: url('${value || ''}')"
+                                    onclick="window.CMSMedia.selectImage('${element.id}')"
+                                    title="Clic para cambiar imagen de fondo"
+                                >
+                                    ${!value ? `<div class="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400 text-xs">Sin imagen</div>` : ''}
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity rounded flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                    <i class="fas fa-edit text-white text-lg"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 text-center">Fondo Hover</p>
+                        </div>
+                        <div class="flex-1 space-y-2">
+                            <input 
+                                type="text" 
+                                class="w-full border rounded px-3 py-2 text-sm" 
+                                data-editor="${element.id}"
+                                data-type="data-bg-image"
+                                data-attribute="data-bg-image"
+                                value="${escapeHtml(value)}"
+                                placeholder="URL de la imagen de fondo"
+                                onchange="const preview = document.querySelector('[data-preview=\\'${element.id}\\']'); if (preview) preview.style.backgroundImage = 'url(' + this.value + ')';"
+                            >
+                            <div class="flex gap-2">
+                                <button 
+                                    onclick="window.CMSMedia.selectImage('${element.id}')" 
+                                    class="flex-1 bg-blue-500 text-white px-3 py-2 rounded text-sm hover:bg-blue-600 transition-colors flex items-center justify-center gap-1"
+                                >
+                                    <i class="fas fa-image"></i>
+                                    <span>Biblioteca</span>
+                                </button>
+                                <button 
+                                    onclick="const input = document.querySelector('[data-editor=\\'${element.id}\\']'); if (input) input.value = ''; const preview = document.querySelector('[data-preview=\\'${element.id}\\']'); if (preview) preview.style.backgroundImage = 'none';" 
+                                    class="bg-gray-500 text-white px-3 py-2 rounded text-sm hover:bg-gray-600 transition-colors"
+                                    title="Limpiar imagen"
+                                >
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else if (element.type === 'inline-bg-image') {
+            // Editor para imágenes de fondo en estilos inline
+            const style = element.node ? element.node.getAttribute('style') : '';
+            let originalValue = '';
+            if (style) {
+                const urlMatch = style.match(/background-image\s*:\s*url\(['"]?([^'")]+)['"]?\)/i);
+                if (urlMatch && urlMatch[1]) {
+                    originalValue = urlMatch[1].trim();
+                }
+            }
+            const value = element.savedValue !== undefined ? (typeof element.savedValue === 'object' ? element.savedValue.value : element.savedValue) : originalValue;
+            
+            html += `
+                <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0">
+                            <div class="relative group">
+                                <div 
+                                    data-preview="${element.id}"
+                                    class="w-24 h-24 rounded border-2 border-gray-300 bg-cover bg-center cursor-pointer"
+                                    style="background-image: url('${value || ''}')"
+                                    onclick="window.CMSMedia.selectImage('${element.id}')"
+                                    title="Clic para cambiar imagen de fondo"
+                                >
+                                    ${!value ? `<div class="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400 text-xs">Sin imagen</div>` : ''}
+                                </div>
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity rounded flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                    <i class="fas fa-edit text-white text-lg"></i>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1 text-center">Fondo Inline</p>
+                        </div>
+                        <div class="flex-1 space-y-2">
+                            <input 
+                                type="text" 
+                                class="w-full border rounded px-3 py-2 text-sm" 
+                                data-editor="${element.id}"
+                                data-type="inline-bg-image"
+                                data-style-attribute="style"
+                                value="${escapeHtml(value)}"
+                                placeholder="URL de la imagen de fondo"
+                                onchange="const preview = document.querySelector('[data-preview=\\'${element.id}\\']'); if (preview) preview.style.backgroundImage = 'url(' + this.value + ')';"
+                            >
+                            <div class="flex gap-2">
+                                <button 
+                                    onclick="window.CMSMedia.selectImage('${element.id}')" 
+                                    class="flex-1 bg-blue-500 text-white px-3 py-2 rounded text-sm hover:bg-blue-600 transition-colors flex items-center justify-center gap-1"
+                                >
+                                    <i class="fas fa-image"></i>
+                                    <span>Biblioteca</span>
+                                </button>
+                                <button 
+                                    onclick="const input = document.querySelector('[data-editor=\\'${element.id}\\']'); if (input) input.value = ''; const preview = document.querySelector('[data-preview=\\'${element.id}\\']'); if (preview) preview.style.backgroundImage = 'none';" 
+                                    class="bg-gray-500 text-white px-3 py-2 rounded text-sm hover:bg-gray-600 transition-colors"
+                                    title="Limpiar imagen"
+                                >
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else if (element.type === 'image') {
+            // Usar valor guardado si existe
+            const originalSrc = getImageSrc(element.originalHTML);
+            const src = element.savedValue !== undefined ? (typeof element.savedValue === 'object' ? element.savedValue.value : element.savedValue) : originalSrc;
+            
+            // Obtener información adicional de la imagen para el label
+            const imgAlt = element.node ? (element.node.alt || '') : '';
+            const imgContext = getImageContext(element.node);
+            
+            html += `
+                <div class="space-y-2">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0">
+                            <div class="relative group">
+                                <img 
+                                    id="preview-${element.id}" 
+                                    src="${src}" 
+                                    alt="Preview" 
+                                    class="w-24 h-24 object-cover rounded border-2 border-gray-300 hover:border-blue-500 transition-colors cursor-pointer"
+                                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2796%27 height=%2796%27%3E%3Crect fill=%27%23ddd%27 width=%2796%27 height=%2796%27/%3E%3Ctext x=%2748%27 y=%2748%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27 font-size=%2712%27%3ESin imagen%3C/text%3E%3C/svg%3E'"
+                                    onclick="window.CMSMedia.selectImage('${element.id}')"
+                                    title="Clic para cambiar imagen"
+                                >
+                                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-opacity rounded flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                    <i class="fas fa-edit text-white text-lg"></i>
+                                </div>
+                            </div>
+                            ${imgContext ? `<p class="text-xs text-gray-500 mt-1 text-center max-w-[96px] truncate" title="${imgContext}">${imgContext}</p>` : ''}
+                        </div>
+                        <div class="flex-1 space-y-2">
+                            ${imgAlt ? `<p class="text-xs text-gray-600 italic">Alt: "${imgAlt}"</p>` : ''}
+                            <input 
+                                type="text" 
+                                class="w-full border rounded px-3 py-2 text-sm" 
+                                data-editor="${element.id}"
+                                data-type="image"
+                                value="${escapeHtml(src)}"
+                                placeholder="URL de la imagen"
+                                onchange="const preview = document.getElementById('preview-${element.id}'); if (preview) preview.src = this.value;"
+                            >
+                            <div class="flex gap-2">
+                                <button 
+                                    onclick="window.CMSMedia.selectImage('${element.id}')" 
+                                    class="flex-1 bg-blue-500 text-white px-3 py-2 rounded text-sm hover:bg-blue-600 transition-colors flex items-center justify-center gap-1"
+                                >
+                                    <i class="fas fa-image"></i>
+                                    <span>Biblioteca</span>
+                                </button>
+                                <button 
+                                    onclick="const input = document.querySelector('[data-editor=\\'${element.id}\\']'); if (input) input.value = ''; const preview = document.getElementById('preview-${element.id}'); if (preview) preview.src = 'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2796%27 height=%2796%27%3E%3Crect fill=%27%23ddd%27 width=%2796%27 height=%2796%27/%3E%3Ctext x=%2748%27 y=%2748%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27%23999%27 font-size=%2712%27%3ESin imagen%3C/text%3E%3C/svg%3E';" 
+                                    class="bg-gray-500 text-white px-3 py-2 rounded text-sm hover:bg-gray-600 transition-colors"
+                                    title="Limpiar imagen"
+                                >
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
         } else if (element.type === 'list') {
+            // Usar valor guardado si existe
+            const originalList = getListContent(element.originalHTML);
+            const listContent = element.savedValue !== undefined ? (typeof element.savedValue === 'object' ? element.savedValue.value : element.savedValue) : originalList;
             html += `
                 <textarea 
                     class="w-full border rounded p-2 min-h-[150px]" 
                     data-editor="${element.id}"
                     data-type="list"
                     placeholder="Cada línea será un elemento de la lista"
-                >${escapeHtml(getListContent(element.originalHTML))}</textarea>
+                >${escapeHtml(listContent)}</textarea>
             `;
         }
         
@@ -780,25 +1257,74 @@ window.CMSEditor = (function() {
      */
     function getContent(container) {
         const edits = {};
-        container.querySelectorAll('[data-editor]').forEach(input => {
+        const allInputs = container.querySelectorAll('[data-editor]');
+        console.log('🔍 getContent: Encontrados', allInputs.length, 'elementos editables');
+        
+        allInputs.forEach((input, index) => {
             const elementId = input.getAttribute('data-editor');
             const type = input.getAttribute('data-type') || 'text';
+            
+            // Obtener el selector del elemento desde el contenedor padre que tiene data-element-id
+            const elementContainer = input.closest('[data-element-id]');
+            const storedSelector = elementContainer ? elementContainer.getAttribute('data-selector') : null;
+            
+            // Log para debugging
+            if (index < 3) { // Solo log de los primeros 3 para no saturar
+                console.log(`📝 Elemento ${index + 1}:`, {
+                    id: elementId,
+                    type: type,
+                    selector: storedSelector,
+                    hasValue: !!input.value,
+                    valueLength: input.value ? input.value.length : 0
+                });
+            }
             
             if (type === 'link-text' || type === 'link-href') {
                 // Para enlaces, combinar texto y href
                 const baseId = elementId.replace('-text', '').replace('-href', '');
+                
+                // Obtener el selector desde el contenedor del elemento
+                // Ambos inputs (text y href) comparten el mismo contenedor padre
                 if (!edits[baseId]) {
-                    edits[baseId] = { type: 'link', text: '', href: '' };
+                    edits[baseId] = { 
+                        type: 'link', 
+                        text: '', 
+                        href: '',
+                        selector: storedSelector || ''
+                    };
+                } else {
+                    // Si ya existe, asegurarse de que tenga el selector
+                    if (!edits[baseId].selector && storedSelector) {
+                        edits[baseId].selector = storedSelector;
+                    }
                 }
+                
                 if (type === 'link-text') {
                     edits[baseId].text = input.value;
                 } else {
                     edits[baseId].href = input.value;
                 }
             } else {
-                edits[elementId] = input.value;
+                // Para textarea e input de texto, guardar siempre (incluso si está vacío)
+                // El valor puede ser vacío si el usuario quiere limpiar el contenido
+                const value = input.value || '';
+                
+                edits[elementId] = {
+                    value: value,
+                    type: type,
+                    selector: storedSelector || ''
+                };
+                
+                if (index < 3) {
+                    console.log(`💾 Guardando ${elementId}:`, {
+                        valuePreview: value.substring(0, 50) + (value.length > 50 ? '...' : ''),
+                        selector: storedSelector || 'SIN SELECTOR'
+                    });
+                }
             }
         });
+        
+        console.log('✅ getContent: Total de elementos a guardar:', Object.keys(edits).length);
         return edits;
     }
 
@@ -818,7 +1344,44 @@ window.CMSEditor = (function() {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const img = doc.querySelector('img');
-        return img ? img.src : '';
+        return img ? (img.src || img.getAttribute('src') || '') : '';
+    }
+    
+    /**
+     * Obtiene el contexto de una imagen para mostrar en el label
+     */
+    function getImageContext(imgNode) {
+        if (!imgNode) return '';
+        
+        // Buscar el elemento padre más relevante
+        let parent = imgNode.parentElement;
+        let depth = 0;
+        
+        while (parent && depth < 5) {
+            depth++;
+            
+            // Buscar IDs o clases que indiquen el contexto
+            const id = parent.id || '';
+            const className = parent.className || '';
+            
+            // Mapeo de contextos comunes
+            if (id.includes('hero') || className.includes('hero')) return 'Hero';
+            if (id.includes('card') || className.includes('card')) return 'Tarjeta';
+            if (id.includes('project') || className.includes('project')) return 'Proyecto';
+            if (id.includes('service') || className.includes('service')) return 'Servicio';
+            if (id.includes('section')) return 'Sección';
+            if (className.includes('bg-') || className.includes('background')) return 'Fondo';
+            if (parent.tagName === 'ARTICLE') return 'Artículo';
+            if (parent.tagName === 'SECTION') {
+                const sectionId = parent.id || '';
+                if (sectionId) return `Sección: ${sectionId}`;
+                return 'Sección';
+            }
+            
+            parent = parent.parentElement;
+        }
+        
+        return '';
     }
 
     /**

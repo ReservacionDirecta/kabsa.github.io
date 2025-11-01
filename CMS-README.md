@@ -118,11 +118,35 @@ Usuario → admin.html → Selecciona página → editor.js carga HTML
 
 ## 📝 Notas Importantes
 
+### Estado Actual del Sistema
+
+✅ **Funcionalidades Implementadas:**
+- ✅ Guardado de textos, imágenes, enlaces y listas con selectores CSS
+- ✅ Aplicación automática de cambios al cargar páginas
+- ✅ Editor muestra valores guardados previamente
+- ✅ Sistema de navegación editable
+- ✅ Sistema de noticias editable
+- ✅ Gestión de medios (imágenes y videos)
+
 ### Limitaciones Actuales
 - El almacenamiento en localStorage tiene límites de tamaño (~5-10MB)
 - Las imágenes en Base64 pueden ser muy grandes
 - No hay sistema de versiones implementado
-- Los cambios son solo en el navegador actual
+- Los cambios son solo en el navegador actual (localStorage)
+- Los cambios se aplican dinámicamente al DOM, no modifican archivos HTML físicos
+
+### Cómo Funciona
+
+1. **Guardado de Cambios:**
+   - Los cambios se guardan en `localStorage` con la clave `cms_content_data`
+   - Cada página tiene su propio objeto con las ediciones
+   - Cada edición incluye: selector CSS, valor, y tipo (text, image, link, list)
+
+2. **Aplicación de Cambios:**
+   - El script `assets/cms/content-applier.js` se ejecuta en cada página
+   - Busca contenido guardado para la página actual
+   - Aplica los cambios usando los selectores CSS guardados
+   - Los cambios se aplican automáticamente cuando se carga la página
 
 ### Mejoras Recomendadas para Producción
 
