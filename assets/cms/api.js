@@ -9,6 +9,102 @@ window.CMSAPI = (function() {
     const CONTENT_STORAGE_KEY = 'cms_content_data';
     
     /**
+     * Limpia imágenes base64 grandes que excedan el límite
+     */
+    function cleanLargeBase64Images(contentEdits) {
+        const MAX_BASE64_SIZE = 100000; // ~100KB en caracteres base64
+        const cleaned = {};
+        let removedCount = 0;
+        
+        for (const [key, value] of Object.entries(contentEdits)) {
+            if (value && typeof value === 'object' && value.value) {
+                const val = value.value;
+                // Detectar si es una imagen base64 grande
+                if (typeof val === 'string' && val.startsWith('data:image') && val.length > MAX_BASE64_SIZE) {
+                    console.warn(`⚠️ Imagen base64 demasiado grande ignorada: ${key} (${Math.round(val.length / 1024)}KB)`);
+                    removedCount++;
+                    // No guardar esta imagen
+                    continue;
+                }
+            }
+            cleaned[key] = value;
+        }
+        
+        if (removedCount > 0) {
+            console.log(`🧹 Se removieron ${removedCount} imagen(es) base64 grande(s) para evitar exceder el límite de almacenamiento`);
+        }
+        
+        return cleaned;
+    }
+    
+    /**
+     * Limpia contenido antiguo para liberar espacio
+     */
+    function cleanOldContent(allContent) {
+        const MAX_AGE_DAYS = 90; // Mantener contenido de los últimos 90 días
+        const now = Date.now();
+        const maxAge = MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
+        const cleaned = {};
+        
+        for (const [pagePath, pageContent] of Object.entries(allContent)) {
+            if (pageContent && pageContent.lastModified) {
+                const lastModified = new Date(pageContent.lastModified).getTime();
+                const age = now - lastModified;
+                
+                if (age < maxAge) {
+                    cleaned[pagePath] = pageContent;
+                } else {
+                    console.log(`🗑️ Limpiando contenido antiguo de: ${pagePath}`);
+                }
+            } else {
+                // Si no tiene fecha, mantenerlo (puede ser nuevo)
+                cleaned[pagePath] = pageContent;
+            }
+        }
+        
+        return cleaned;
+    }
+    
+    /**
+     * Calcula el tamaño aproximado de un objeto en bytes
+     */
+    function getStorageSize(obj) {
+        return new Blob([JSON.stringify(obj)]).size;
+    }
+    
+    /**
+     * Obtiene el espacio disponible en localStorage (estimación)
+     */
+    function getAvailableStorage() {
+        try {
+            // Calcular el espacio usado actualmente
+            let usedSize = 0;
+            try {
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key) {
+                        const value = localStorage.getItem(key);
+                        if (value) {
+                            usedSize += key.length + value.length;
+                        }
+                    }
+                }
+            } catch (e) {
+                console.warn('Error calculando espacio usado:', e);
+            }
+            
+            // localStorage típicamente tiene ~5-10MB de espacio
+            // Usar 4MB como límite seguro para dejar margen
+            const estimatedTotal = 4 * 1024 * 1024; // 4MB seguro
+            const available = Math.max(0, estimatedTotal - usedSize);
+            
+            return available;
+        } catch (e) {
+            return 0;
+        }
+    }
+    
+    /**
      * Guarda el contenido de una página
      */
     async function savePageContent(pagePath, contentEdits) {
@@ -17,8 +113,18 @@ window.CMSAPI = (function() {
                 console.log('💾 savePageContent: Guardando para', pagePath);
                 console.log('📦 Contenido a guardar:', Object.keys(contentEdits).length, 'elementos');
                 
+                // Limpiar imágenes base64 grandes
+                const cleanedEdits = cleanLargeBase64Images(contentEdits);
+                const removedImages = Object.keys(contentEdits).length - Object.keys(cleanedEdits).length;
+                if (removedImages > 0) {
+                    console.warn(`⚠️ Se removieron ${removedImages} imagen(es) base64 grande(s). Usa URLs de imágenes externas en su lugar.`);
+                }
+                
                 // Obtener contenido actual
-                const allContent = getAllContent();
+                let allContent = getAllContent();
+                
+                // Limpiar contenido antiguo antes de guardar
+                allContent = cleanOldContent(allContent);
                 
                 // Actualizar o crear entrada para esta página
                 if (!allContent[pagePath]) {
@@ -28,13 +134,81 @@ window.CMSAPI = (function() {
                 // Fusionar el contenido existente con las nuevas ediciones
                 allContent[pagePath] = {
                     ...allContent[pagePath],
-                    ...contentEdits,
+                    ...cleanedEdits,
                     lastModified: new Date().toISOString()
                 };
                 
-                // Guardar en localStorage (en producción, sería una petición al servidor)
+                // Verificar el tamaño antes de guardar
                 const jsonData = JSON.stringify(allContent);
-                localStorage.setItem(CONTENT_STORAGE_KEY, jsonData);
+                const dataSize = new Blob([jsonData]).size;
+                const availableSpace = getAvailableStorage();
+                
+                console.log(`📊 Tamaño de datos: ${Math.round(dataSize / 1024)}KB`);
+                console.log(`📊 Espacio disponible estimado: ${Math.round(availableSpace / 1024)}KB`);
+                
+                // Si los datos son demasiado grandes, intentar limpiar más
+                if (dataSize > availableSpace && dataSize > 3 * 1024 * 1024) { // Si es mayor a 3MB
+                    console.warn('⚠️ Datos muy grandes. Limpiando contenido no esencial...');
+                    
+                    // Remover todas las imágenes base64 de todas las páginas
+                    for (const [page, content] of Object.entries(allContent)) {
+                        if (page === pagePath) continue; // No limpiar la página actual
+                        
+                        for (const [key, value] of Object.entries(content)) {
+                            if (key === 'lastModified') continue;
+                            if (value && typeof value === 'object' && value.value) {
+                                const val = value.value;
+                                if (typeof val === 'string' && val.startsWith('data:image')) {
+                                    delete allContent[page][key];
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                // Intentar guardar
+                try {
+                    localStorage.setItem(CONTENT_STORAGE_KEY, JSON.stringify(allContent));
+                } catch (quotaError) {
+                    if (quotaError.name === 'QuotaExceededError') {
+                        // Si aún falla, intentar limpiar más espacio
+                        console.error('❌ Cuota excedida. Limpiando espacio adicional...');
+                        
+                        // Limpiar todas las imágenes base64 de todas las páginas
+                        let totalCleaned = 0;
+                        for (const [page, content] of Object.entries(allContent)) {
+                            const beforeCount = Object.keys(content).length;
+                            for (const [key, value] of Object.entries(content)) {
+                                if (key === 'lastModified') continue;
+                                if (value && typeof value === 'object' && value.value) {
+                                    const val = value.value;
+                                    if (typeof val === 'string' && val.startsWith('data:image')) {
+                                        delete allContent[page][key];
+                                        totalCleaned++;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        console.log(`🧹 Limpiadas ${totalCleaned} imágenes base64 adicionales`);
+                        
+                        // Intentar guardar de nuevo
+                        try {
+                            localStorage.setItem(CONTENT_STORAGE_KEY, JSON.stringify(allContent));
+                            console.log('✅ Guardado exitoso después de limpieza');
+                        } catch (retryError) {
+                            // Si aún falla, rechazar con mensaje claro
+                            reject(new Error(
+                                `No se pudo guardar: el almacenamiento local está lleno.\n\n` +
+                                `Solución: Elimina imágenes base64 grandes o exporta/limpia contenido antiguo.\n\n` +
+                                `Error: ${retryError.message}`
+                            ));
+                            return;
+                        }
+                    } else {
+                        throw quotaError;
+                    }
+                }
                 
                 // Verificar que se guardó correctamente
                 const verify = localStorage.getItem(CONTENT_STORAGE_KEY);
@@ -49,7 +223,8 @@ window.CMSAPI = (function() {
                 resolve({ 
                     success: true, 
                     savedElements: savedCount,
-                    pagePath: pagePath
+                    pagePath: pagePath,
+                    removedImages: removedImages
                 });
             } catch (error) {
                 console.error('❌ savePageContent: Error al guardar:', error);

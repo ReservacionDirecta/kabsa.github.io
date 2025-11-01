@@ -193,10 +193,18 @@ window.savePage = async function(pagePath) {
         console.log('✅ GUARDADO COMPLETADO EXITOSAMENTE');
         console.log('═══════════════════════════════════════');
         
-        const message = `¡Cambios guardados exitosamente!\n\n` +
-                       `✅ Se guardaron ${changeCount} elemento(s) editado(s).\n\n` +
-                       `Los cambios se aplicarán automáticamente al visitar:\n${pagePath}\n\n` +
-                       `Recarga la página para ver los cambios aplicados.`;
+        let message = `¡Cambios guardados exitosamente!\n\n` +
+                       `✅ Se guardaron ${result.savedElements || changeCount} elemento(s) editado(s).\n\n`;
+        
+        // Si hubo imágenes removidas, informar al usuario
+        if (result.removedImages && result.removedImages > 0) {
+            message += `⚠️ NOTA: ${result.removedImages} imagen(es) base64 grande(s) no se guardaron.\n` +
+                      `Usa URLs de imágenes externas (como Unsplash) en lugar de imágenes base64.\n\n`;
+        }
+        
+        message += `Los cambios se aplicarán automáticamente al visitar:\n${pagePath}\n\n` +
+                  `Recarga la página para ver los cambios aplicados.`;
+        
         alert(message);
         
     } catch (error) {
