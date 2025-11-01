@@ -27,58 +27,42 @@ window.CMSNews = (function() {
             }
         }
         
-        // Si no hay noticias guardadas, intentar parsear desde noticias.html
+        // Si no hay noticias guardadas, cargar las noticias por defecto
         if (newsData.length === 0) {
-            try {
-                const response = await fetch('noticias.html');
-                const html = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                
-                const articles = doc.querySelectorAll('#news-container article, article');
-                articles.forEach((article, index) => {
-                    const img = article.querySelector('img');
-                    const title = article.querySelector('h3');
-                    const dateText = article.querySelector('.text-sm.text-gray-600, .text-sm');
-                    const description = article.querySelector('p.text-gray-700, article p:not(.text-sm)');
-                    
-                    if (title && description) {
-                        // Parsear fecha
-                        let date = new Date().toISOString().split('T')[0];
-                        if (dateText) {
-                            const dateMatch = dateText.textContent.match(/(\d{1,2})\s+(\w{3})\s+(\d{4})/);
-                            if (dateMatch) {
-                                const months = {
-                                    'Ene': '01', 'Feb': '02', 'Mar': '03', 'Abr': '04',
-                                    'May': '05', 'Jun': '06', 'Jul': '07', 'Ago': '08',
-                                    'Sep': '09', 'Oct': '10', 'Nov': '11', 'Dic': '12'
-                                };
-                                const day = dateMatch[1].padStart(2, '0');
-                                const month = months[dateMatch[2]] || '01';
-                                const year = dateMatch[3];
-                                date = `${year}-${month}-${day}`;
-                            }
-                        }
-                        
-                        newsData.push({
-                            id: `news-${Date.now()}-${index}`,
-                            title: title.textContent.trim(),
-                            date: date,
-                            image: img ? (img.src || img.getAttribute('src') || '') : '',
-                            description: description.textContent.trim(),
-                            createdAt: new Date().toISOString(),
-                            updatedAt: new Date().toISOString()
-                        });
-                    }
-                });
-                
-                // Guardar las noticias parseadas
-                if (newsData.length > 0) {
-                    saveNews();
+            // Cargar noticias por defecto
+            const defaultNews = [
+                {
+                    id: 'news-default-1',
+                    title: 'KABSA ejecuta obra de saneamiento en Piura',
+                    date: '2025-03-15',
+                    image: 'https://images.unsplash.com/photo-1574103188526-4fabd2623804?q=80&w=1200&auto=format&fit=crop',
+                    description: 'Proyecto integral que beneficiará a más de 30,000 habitantes.',
+                    createdAt: new Date('2025-03-15').toISOString(),
+                    updatedAt: new Date('2025-03-15').toISOString()
+                },
+                {
+                    id: 'news-default-2',
+                    title: 'Adjudicación de proyecto vial',
+                    date: '2025-02-28',
+                    image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=1200&auto=format&fit=crop',
+                    description: 'Tramo San Marcos – Pedro Gálvez en Cajamarca.',
+                    createdAt: new Date('2025-02-28').toISOString(),
+                    updatedAt: new Date('2025-02-28').toISOString()
+                },
+                {
+                    id: 'news-default-3',
+                    title: 'Campaña de Invierno 2025',
+                    date: '2025-01-10',
+                    image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1200&auto=format&fit=crop',
+                    description: 'Apoyo a comunidades altoandinas con kits de abrigo y salud.',
+                    createdAt: new Date('2025-01-10').toISOString(),
+                    updatedAt: new Date('2025-01-10').toISOString()
                 }
-            } catch (error) {
-                console.warn('No se pudieron cargar noticias desde noticias.html:', error);
-            }
+            ];
+            
+            newsData = defaultNews;
+            saveNews();
+            console.log('✅ Noticias por defecto cargadas:', newsData.length);
         }
         
         // Ordenar por fecha (más recientes primero)

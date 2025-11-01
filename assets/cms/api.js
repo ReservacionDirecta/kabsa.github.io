@@ -400,15 +400,160 @@ window.CMSAPI = (function() {
     function updateStats() {
         const allContent = getAllContent();
         const pages = Object.keys(allContent);
-        const lastEdit = pages.length > 0 
-            ? allContent[pages[pages.length - 1]].lastModified 
-            : null;
         
-        // Actualizar UI si existe
+        // Encontrar la última edición más reciente
+        let lastEdit = null;
+        let lastEditPage = null;
+        pages.forEach(page => {
+            const pageData = allContent[page];
+            if (pageData && pageData.lastModified) {
+                const editDate = new Date(pageData.lastModified);
+                if (!lastEdit || editDate > lastEdit) {
+                    lastEdit = editDate;
+                    lastEditPage = page;
+                }
+            }
+        });
+        
+        // Actualizar UI de última edición
         const lastEditEl = document.getElementById('lastEdit');
-        if (lastEditEl && lastEdit) {
-            const date = new Date(lastEdit);
-            lastEditEl.textContent = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+        if (lastEditEl) {
+            if (lastEdit) {
+                const date = new Date(lastEdit);
+                const now = new Date();
+                const diffMs = now - date;
+                const diffMins = Math.floor(diffMs / 60000);
+                const diffHours = Math.floor(diffMs / 3600000);
+                const diffDays = Math.floor(diffMs / 86400000);
+                
+                let timeText = '';
+                if (diffMins < 1) {
+                    timeText = 'Hace un momento';
+                } else if (diffMins < 60) {
+                    timeText = `Hace ${diffMins} min`;
+                } else if (diffHours < 24) {
+                    timeText = `Hace ${diffHours} h`;
+                } else if (diffDays < 7) {
+                    timeText = `Hace ${diffDays} día${diffDays > 1 ? 's' : ''}`;
+                } else {
+                    timeText = date.toLocaleDateString('es-PE', { day: 'numeric', month: 'short' });
+                }
+                
+                lastEditEl.textContent = timeText;
+                lastEditEl.title = `Última edición: ${date.toLocaleString('es-PE')} - ${lastEditPage}`;
+            } else {
+                lastEditEl.textContent = 'Nunca';
+            }
+        }
+        
+        // Calcular total de elementos editados
+        let totalEdits = 0;
+        pages.forEach(page => {
+            const pageData = allContent[page];
+            if (pageData) {
+                totalEdits += Object.keys(pageData).filter(k => k !== 'lastModified').length;
+            }
+        });
+        
+        const totalEditsEl = document.getElementById('totalEdits');
+        if (totalEditsEl) {
+            totalEditsEl.textContent = totalEdits;
+        }
+        
+        // Calcular espacio usado
+        try {
+            let usedSize = 0;
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key && key.startsWith('cms_')) {
+                    const value = localStorage.getItem(key);
+                    if (value) {
+                        usedSize += key.length + value.length;
+                    }
+                }
+            }
+            const usedKB = Math.round(usedSize / 1024);
+            const storageUsedEl = document.getElementById('storageUsed');
+            if (storageUsedEl) {
+                storageUsedEl.textContent = usedKB > 1024 ? `${(usedKB / 1024).toFixed(1)} MB` : `${usedKB} KB`;
+                storageUsedEl.style.color = usedKB > 3000 ? '#dc2626' : usedKB > 2000 ? '#f59e0b' : '#059669';
+            }
+        } catch (e) {
+            console.warn('Error calculando espacio usado:', e);
+        }
+        
+        // Actualizar noticias
+        try {
+            if (window.CMSNews) {
+                window.CMSNews.loadNews().then(news => {
+                    const totalNewsEl = document.getElementById('totalNews');
+                    if (totalNewsEl && news) {
+                        totalNewsEl.textContent = news.length;
+                    }
+                }).catch(() => {});
+            }
+        } catch (e) {
+            console.warn('Error cargando noticias:', e);
+        }
+        
+        // Actualizar medios
+        try {
+            if (window.CMSMedia && window.CMSMedia.getMediaLibrary) {
+                const media = window.CMSMedia.getMediaLibrary();
+                const totalMediaEl = document.getElementById('totalMedia');
+                if (totalMediaEl) {
+                    totalMediaEl.textContent = media.length;
+                }
+            }
+        } catch (e) {
+            console.warn('Error cargando medios:', e);
+        }
+        
+        // Mostrar páginas más editadas
+        updateMostEditedPages(allContent);
+    }
+    
+    /**
+     * Actualiza la lista de páginas más editadas
+     */
+    function updateMostEditedPages(allContent) {
+        const pagesList = [];
+        
+        Object.keys(allContent).forEach(pagePath => {
+            const pageData = allContent[pagePath];
+            if (pageData) {
+                const editCount = Object.keys(pageData).filter(k => k !== 'lastModified').length;
+                if (editCount > 0) {
+                    pagesList.push({
+                        path: pagePath,
+                        count: editCount,
+                        lastModified: pageData.lastModified
+                    });
+                }
+            }
+        });
+        
+        // Ordenar por cantidad de ediciones
+        pagesList.sort((a, b) => b.count - a.count);
+        
+        const container = document.getElementById('mostEditedPages');
+        if (container) {
+            if (pagesList.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-sm">Aún no hay ediciones</p>';
+            } else {
+                container.innerHTML = pagesList.slice(0, 5).map((page, index) => {
+                    const pageName = page.path.replace('.html', '').replace('index', 'Inicio');
+                    return `
+                        <div class="flex items-center justify-between p-2 bg-gray-50 rounded hover:bg-gray-100 transition-colors cursor-pointer" onclick="window.showSection('pages'); window.editPage('${page.path}')">
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-semibold text-gray-600 w-6">${index + 1}.</span>
+                                <span class="text-sm text-gray-800">${pageName}</span>
+                            </div>
+                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">${page.count} edit.</span>
+                        </div>
+                    `;
+                }).join('');
+            }
         }
     }
 
@@ -443,7 +588,8 @@ window.CMSAPI = (function() {
         exportContent,
         importContent,
         applyContentToPage,
-        updateStats
+        updateStats,
+        updateMostEditedPages
     };
 })();
 
