@@ -12,8 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     empresaSection.style.transition = 'background-image 0.5s ease-in-out';
     const empresaCards = document.querySelectorAll('#empresas .grid > div.company-card, #empresas .grid > div[data-bg-image]');
     
+    // Seleccionar título y subtítulo de la sección
+    const sectionTitle = document.getElementById('section-title');
+    const sectionSubtitle = document.getElementById('section-subtitle');
+    
     console.log("Sección empresa:", empresaSection);
     console.log("Tarjetas de empresas encontradas:", empresaCards.length);
+    console.log("Título encontrado:", !!sectionTitle);
+    console.log("Subtítulo encontrado:", !!sectionSubtitle);
     
     if (empresaSection && empresaCards.length > 0) {
         // Añadir eventos de hover a las tarjetas de empresas
@@ -26,25 +32,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 card.addEventListener('mouseenter', () => {
                     console.log("Hover en tarjeta", index, "Imagen:", bgImage);
-                    // Usar la URL directamente del atributo data-bg-image
+                    
+                    // Cambiar fondo de la sección
                     empresaSection.style.backgroundImage = `url("${bgImage}")`;
                     empresaSection.style.backgroundSize = 'cover';
                     empresaSection.style.backgroundPosition = 'center';
                     empresaSection.style.backgroundRepeat = 'no-repeat';
+                    
                     // Agregar overlay oscuro para mejor legibilidad
                     const overlay = empresaSection.querySelector('#section-overlay');
                     if (overlay) {
                         overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
                     }
+                    
+                    // Cambiar color del título a blanco
+                    if (sectionTitle) {
+                        sectionTitle.style.color = '#ffffff';
+                        sectionTitle.style.transition = 'color 0.3s ease-in-out';
+                    }
+                    
+                    // Cambiar color del subtítulo a blanco
+                    if (sectionSubtitle) {
+                        sectionSubtitle.style.color = '#ffffff';
+                        sectionSubtitle.style.transition = 'color 0.3s ease-in-out';
+                    }
                 });
                 
                 card.addEventListener('mouseleave', () => {
                     console.log("Salida de tarjeta", index);
+                    
+                    // Restaurar fondo de la sección
                     empresaSection.style.backgroundImage = 'none';
+                    
                     // Quitar overlay
                     const overlay = empresaSection.querySelector('#section-overlay');
                     if (overlay) {
                         overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                    }
+                    
+                    // Restaurar color del título (azul corporativo)
+                    if (sectionTitle) {
+                        sectionTitle.style.color = '';
+                    }
+                    
+                    // Restaurar color del subtítulo (gris)
+                    if (sectionSubtitle) {
+                        sectionSubtitle.style.color = '';
                     }
                 });
             } else {
